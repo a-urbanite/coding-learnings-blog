@@ -1,0 +1,15 @@
+.inputPostText {
+    height: 200px;
+    width: 200px;
+    background-color: aqua;
+}
+
+
+.editor {
+    /* text-align: center; */
+    width: 60%;
+    /* margin-left: auto; */
+    margin-right: auto;
+    margin-top: 5%;
+    /* height: 400px; */
+  }
