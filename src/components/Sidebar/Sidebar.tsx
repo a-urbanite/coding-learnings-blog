@@ -1,8 +1,12 @@
 import React from 'react'
 
-const Sidebar = () => {
+const Sidebar = ({postLists}: any) => {
   return (
-    <div>Sidebar</div>
+        <ul>
+            <>{postLists.map((post: any) => {
+                return (<li key={post.id}>{post.title}</li>)
+            })}</>
+        </ul>
   )
 }
 

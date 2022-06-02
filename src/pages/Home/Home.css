@@ -13,3 +13,9 @@ p {
     margin: 0px !important;
 }
 
+.homepage {
+    /* flex: auto; */
+    display: flex;
+    flex-direction: row;
+}
+
