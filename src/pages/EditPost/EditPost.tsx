@@ -31,7 +31,7 @@ const EditPost = ({isAuth, postToEdit}: CreatePostPageProps) => {
 
   const updatePost = async () => {
     const postDoc = doc(db, 'posts', postToEdit.post.post.id)
-    await updateDoc(postDoc, {title: changedTitle, postText: changedPostText});
+    await updateDoc(postDoc, {title: changedTitle, postText: changedPostText, date: new Date().toLocaleDateString()});
     navigate('/')
   }
 
