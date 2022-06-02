@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import {collection, deleteDoc, getDocs, doc} from 'firebase/firestore'
+import {collection, deleteDoc, getDocs, doc, updateDoc} from 'firebase/firestore'
 import { auth, db } from '../../firebase-config';
+import { useNavigate } from 'react-router-dom'
 import './Home.css'
 import parse from 'html-react-parser'
 
-const Home = ({isAuth}: any) => {
+const Home = ({isAuth, setPostToEdit}: any) => {
   const [postLists, setPostList] = useState<any>([]);
   const postsCollectionRef = collection(db, "posts" )
+
+  let navigate = useNavigate();
 
   const getPosts = async () => {
     console.log("GETPOSTS TRIGGERED")
@@ -21,11 +24,23 @@ const Home = ({isAuth}: any) => {
     getPosts()
   };
 
+  const editPost = async (post: any) => {
+    setPostToEdit({post: {post}})
+    navigate('/editpost')
+    // console.log('EDITPOST TRIGGERED')
+    // const postDoc = doc(db, 'posts', id)
+    // await updateDoc(postDoc);
+    // getPosts()
+
+  };
+
   useEffect(() => {
     console.log('USEEFFECT TRIGGERED')
     getPosts()
   },[])
   
+  // console.log(postLists[0].date.seconds.toLocaleDateString())
+  console.log(new Date().toLocaleDateString())
 
   return (
 
@@ -40,9 +55,13 @@ const Home = ({isAuth}: any) => {
             <div className='deletePost'>
               {isAuth && post.author.id === auth.currentUser?.uid && <button onClick={() => {deletePost(post.id)}}>&#128465;</button>}
             </div>
+            <div>
+              <button onClick={() => {editPost(post)}}>Edit</button>
+            </div>
           </div>
           <div className='postTextContainer'>{parse(post.postText)}</div>
           <h3>@{post.author.name}</h3>
+          {/* <h3>{post.date.toDateString()}</h3> */}
         </div>
       )
     })}</div>

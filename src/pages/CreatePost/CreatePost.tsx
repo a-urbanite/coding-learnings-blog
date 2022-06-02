@@ -25,7 +25,7 @@ const CreatePost = ({isAuth}: CreatePostPageProps) => {
       date: new Date(), 
       author: 
         {name: auth.currentUser?.displayName, 
-          id: auth.currentUser?.uid}}
+        id: auth.currentUser?.uid}}
       )
     navigate('/')
   }
@@ -43,29 +43,16 @@ const CreatePost = ({isAuth}: CreatePostPageProps) => {
             <h1>Create a Post</h1>
             <div className='inputGp'>
                 <label>Title:</label>
-                <input placeholder='Title...' onChange={(event) => {
-                  setTitle(event.target.value)
-                }}/>
+                <input 
+                  placeholder='Title...' 
+                  onChange={(event) => {setTitle(event.target.value)}}
+                />
             </div>
             <div className='inputGp'>
                 <label>Text:</label>
-                {/* <textarea placeholder='Post...' 
-                  onChange={(event) => {
-                    console.log(event.target)
-                    setPostText(event.target.innerText)
-                  }}/> */}
-                {/* <div 
-                  className='inputPostText' 
-                  contentEditable 
-                  // onChange={(event) => {
-                  //   console.log(event.target)
-                  //   setPostText(event.target.innerText)
-                  // }}
-                  onInput={e => setPostText(e.currentTarget.innerHTML)}
-                  ></div> */}
-                  <div className='editor'>
-                    <ReactQuill theme="snow" onChange={setPostText}/>
-                  </div>
+                <div className='editor'>
+                  <ReactQuill theme="snow" onChange={setPostText}/>
+                </div>
             </div>
             <button onClick={createPost}>Submit Post</button>
         </div>

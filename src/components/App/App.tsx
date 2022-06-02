@@ -4,6 +4,7 @@ import './App.css';
 import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
 import Home from '../../pages/Home/Home';
 import CreatePost from '../../pages/CreatePost/CreatePost';
+import EditPost from '../../pages/EditPost/EditPost';
 import Login from '../../pages/Login';
 import {signOut} from 'firebase/auth'
 import { auth } from '../../firebase-config';
@@ -11,6 +12,7 @@ import { auth } from '../../firebase-config';
 
 function App() {
   const [isAuth, setIsAuth] = useState<any>(localStorage.getItem('isAuth'));
+  const [postToEdit, setPostToEdit] = useState<any>({});
 
   const signUserOut = () => {
     signOut(auth).then(() => {
@@ -33,8 +35,9 @@ function App() {
         }
       </nav>
       <Routes>
-        <Route path="/" element={<Home isAuth={isAuth}/>} />
+        <Route path="/" element={<Home isAuth={isAuth} setPostToEdit={setPostToEdit}/>} />
         <Route path="/createpost" element={<CreatePost isAuth={isAuth}/>} />
+        <Route path="/editpost" element={<EditPost isAuth={isAuth} postToEdit={postToEdit}/>} />
         <Route path="/login" element={<Login setIsAuth={setIsAuth}/>} />
       </Routes>
     </Router>
