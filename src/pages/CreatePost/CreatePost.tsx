@@ -35,7 +35,7 @@ const CreatePost = ({isAuth}: CreatePostPageProps) => {
       navigate("/login")
     }
   }, [])
-  
+
 
   return (
     <div className='createPostPage'>
@@ -51,7 +51,8 @@ const CreatePost = ({isAuth}: CreatePostPageProps) => {
             <div className='inputGp'>
                 <label>Text:</label>
                 <div className='editor'>
-                  <ReactQuill theme="snow" onChange={setPostText}/>
+                  <ReactQuill 
+                    theme="snow" onChange={setPostText}/>
                 </div>
             </div>
             <button onClick={createPost}>Submit Post</button>

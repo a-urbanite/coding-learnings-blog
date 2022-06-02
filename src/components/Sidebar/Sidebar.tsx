@@ -4,7 +4,7 @@ const Sidebar = ({postLists}: any) => {
   return (
         <ul>
             <>{postLists.map((post: any) => {
-                return (<li key={post.id}>{post.title}</li>)
+                return (<li key={post.id}>{post.title} - {post.date}</li>)
             })}</>
         </ul>
   )
