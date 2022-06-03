@@ -26,20 +26,18 @@ const Post = ({post, isAuth, getPosts, setPostToEdit}: any) => {
 
   return (
     <div className='post' key={post.id}> 
-      <div className='postHeader'>
-        <div className='title'>
+      <div className='post__header'>
           <h1>{post.title}</h1>
-        </div>
-        <div className='deletePost'>
+      </div>
+      <div className='post__text'>{parse(post.postText)}</div>
+      <div className='post__footer'>
+        <h3>@{post.author.name}</h3>
+        <h3>{post.date}</h3>
+        <div className='post__buttonContainer'>
           {isAuth && post.author.id === auth.currentUser?.uid && <button onClick={() => {deletePost(post.id)}}>&#128465;</button>}
-        </div>
-        <div>
-          <button onClick={() => {editPost(post)}}>Edit</button>
+          {isAuth && post.author.id === auth.currentUser?.uid && <button onClick={() => {editPost(post)}}>&#9999;</button>}
         </div>
       </div>
-      <div className='postTextContainer'>{parse(post.postText)}</div>
-      <h3>@{post.author.name}</h3>
-      <h3>{post.date}</h3>
     </div>
   )
 }

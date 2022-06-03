@@ -10,6 +10,12 @@
     box-shadow: 1px 1px 1px #999;
 }
 
+.post__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 p {
     margin: 0px !important;
 }

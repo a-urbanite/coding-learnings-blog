@@ -1,5 +1,5 @@
 nav {
-    background-color: rgb(250, 238, 65);
+    background-color: var(--as-Languid-lavender);
     display: flex;
     justify-content: center;
     align-items: center;
