@@ -1,0 +1,13 @@
+nav {
+    background-color: rgb(250, 238, 65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  a {
+    color: black;
+    text-decoration: none;
+    margin: 10px;
+    font-size: 25px;
+  }

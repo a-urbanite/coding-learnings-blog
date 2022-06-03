@@ -3,6 +3,7 @@ import { deleteDoc, doc } from 'firebase/firestore';
 import { auth, db } from '../../firebase-config'
 import { useNavigate } from 'react-router-dom'
 import parse from 'html-react-parser'
+import './Post.css'
 
 const Post = ({post, isAuth, getPosts, setPostToEdit}: any) => {
 
