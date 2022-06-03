@@ -6,3 +6,12 @@ body {
   margin: 0% !important;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+:root {
+  --as-Languid-lavender: #C4B7CB;
+  --as-Silver-sand: #BBC7CE;
+  --as-Powder-blue: #bfedef;
+  --as-Magic-mint: #98E2C6;
+  --as-Ebony: #545C52;
+  --as-Signal-Orange: rgb(241, 81, 82);
+}

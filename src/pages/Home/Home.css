@@ -1,15 +1,13 @@
-p {
-    margin: 0px !important;
-}
-
 .homepage {
+    background-color: var(--as-Languid-lavender);
     /* display: flex; */
     /* flex-direction: row; */
 }
 
 .gallery {
     /* flex: 70%; */
-    width: calc(100vw - 300px);
+    padding: 30px;
+    width: calc(100vw - 380px);
     left: 300px;
     position: relative;
     /* width: 70%; */
