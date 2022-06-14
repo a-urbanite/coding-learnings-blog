@@ -13,13 +13,23 @@ function App() {
   const [isAuth, setIsAuth] = useState<any>(localStorage.getItem('isAuth'));
   const [postToEdit, setPostToEdit] = useState<any>({});
 
+  // const [title, setTitle] = useState("")
+  // const [postText, setPostText] = useState<string | null>("")
+
   return (
     <Router>
       <Navbar isAuth={isAuth} setIsAuth={setIsAuth}></Navbar>
       <Routes>
         <Route path="/" element={<Home isAuth={isAuth} setPostToEdit={setPostToEdit}/>} />
-        <Route path="/createpost" element={<CreatePost isAuth={isAuth}/>} />
-        <Route path="/editpost" element={<EditPost isAuth={isAuth} postToEdit={postToEdit}/>} />
+        <Route path="/createpost" element={
+          <CreatePost 
+            isAuth={isAuth} 
+          />} />
+        <Route path="/editpost" element={
+          <EditPost 
+            isAuth={isAuth} 
+            postToEdit={postToEdit} 
+          />} />
         <Route path="/login" element={<Login setIsAuth={setIsAuth}/>} />
       </Routes>
     </Router>

@@ -11,7 +11,7 @@ const Post = ({post, isAuth, getPosts, setPostToEdit}: any) => {
 
   const deletePost = async (id: any) => {
     var result = window.confirm("Want to delete?");
-    console.log('DELETEPOST TRIGGERED')
+    // console.log('DELETEPOST TRIGGERED')
     if (result) {
         const postDoc = doc(db, 'posts', id)
         await deleteDoc(postDoc);

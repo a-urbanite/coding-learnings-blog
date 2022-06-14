@@ -4,6 +4,7 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import {collection, deleteDoc, getDocs, doc, updateDoc} from 'firebase/firestore'
 import { auth, db } from '../../firebase-config';
+import Editor from '../../components/Editor/Editor';
 
 interface CreatePostPageProps {
     isAuth: boolean
@@ -12,8 +13,8 @@ interface CreatePostPageProps {
 
 const EditPost = ({isAuth, postToEdit}: CreatePostPageProps) => {
 
-  const [changedTitle, setChangedTitle] = useState("")
-  const [changedPostText, setChangedPostText] = useState<string | null>("")
+  const [title, setTitle] = useState("")
+  const [postText, setPostText] = useState<string | null>("")
   let navigate = useNavigate();
 
   useEffect(() => {
@@ -22,23 +23,24 @@ const EditPost = ({isAuth, postToEdit}: CreatePostPageProps) => {
     }
   }, [])
 
-  useEffect(() => {
-    setChangedTitle(postToEdit.post.post.title)
-    setChangedPostText(postToEdit.post.post.postText)
-  }, [])
-
-  // console.log(postToEdit.post.post.postText)
-
   const updatePost = async () => {
     const postDoc = doc(db, 'posts', postToEdit.post.post.id)
-    await updateDoc(postDoc, {title: changedTitle, postText: changedPostText, date: new Date().toLocaleDateString()});
+    await updateDoc(postDoc, {title: title, postText: postText, date: new Date().toLocaleDateString()});
     navigate('/')
   }
 
   return (
     <div className='createPostPage'>
-      <div className='cpContainer'>
-          <h1>Create a Post</h1>
+      <h1>Edit a Post</h1>
+      <Editor 
+          title={postToEdit.post.post.title} 
+          setTitle={setTitle}
+          postText={postToEdit.post.post.postText}
+          setPostText={setPostText}
+      />
+
+
+      {/* <div className='cpContainer'>
           <div className='inputGp'>
               <label>Title:</label>
               <input 
@@ -56,10 +58,9 @@ const EditPost = ({isAuth, postToEdit}: CreatePostPageProps) => {
                   onChange={setChangedPostText}
                 />
               </div>
-          </div>
+          </div> */}
           <button onClick={updatePost}>Update Post</button>
       </div>
-  </div>
   )
 }
 
