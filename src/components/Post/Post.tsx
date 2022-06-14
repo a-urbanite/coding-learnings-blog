@@ -7,6 +7,8 @@ import './Post.css'
 
 const Post = ({post, isAuth, getPosts, setPostToEdit}: any) => {
 
+  console.log("POSTYPOST", post)
+
   let navigate = useNavigate();
 
   const deletePost = async (id: any) => {
@@ -20,7 +22,7 @@ const Post = ({post, isAuth, getPosts, setPostToEdit}: any) => {
     };
   
     const editPost = async (post: any) => {
-      setPostToEdit({post: {post}})
+      setPostToEdit(post)
       navigate('/editpost')
     };
 

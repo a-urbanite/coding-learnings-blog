@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { addDoc, collection } from 'firebase/firestore'
 import { db, auth } from '../../firebase-config'
 import { useNavigate } from 'react-router-dom'
@@ -43,8 +43,7 @@ const CreatePost = ({isAuth}: CreatePostPageProps) => {
           title={title} 
           setTitle={setTitle}
           postText={postText}
-          setPostText={setPostText}
-          />
+          setPostText={setPostText} />
         <button className='submit' onClick={createPost}>Submit Post</button>
     </div>
   )
