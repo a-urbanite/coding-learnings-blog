@@ -1,5 +1,4 @@
 import { deleteDoc, doc } from 'firebase/firestore';
-// import React from 'react'
 import { auth, db } from '../../firebase-config'
 import { useNavigate } from 'react-router-dom'
 import parse from 'html-react-parser'
@@ -7,13 +6,10 @@ import './Post.css'
 
 const Post = ({post, isAuth, getPosts, setPostToEdit}: any) => {
 
-  console.log("POSTYPOST", post)
-
   let navigate = useNavigate();
 
   const deletePost = async (id: any) => {
     var result = window.confirm("Want to delete?");
-    // console.log('DELETEPOST TRIGGERED')
     if (result) {
         const postDoc = doc(db, 'posts', id)
         await deleteDoc(postDoc);
