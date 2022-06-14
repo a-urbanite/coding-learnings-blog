@@ -16,11 +16,11 @@ const Navbar = ({isAuth, setIsAuth}: any) => {
 
   return (
     <nav>
-        <Link to="/"> Home </Link>
+        <Link className='mainMenuLink' to="/"> Home </Link>
         { !isAuth ? 
-        <Link to="/login"> Login </Link> : 
+        <Link className='mainMenuLink' to="/login"> Login </Link> : 
         <>
-        <Link to="/createpost"> Create Post </Link>
+        <Link className='mainMenuLink' to="/createpost"> Create Post </Link>
         <button onClick={signUserOut}>Log Out</button>
         </>
         }

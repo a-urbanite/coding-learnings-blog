@@ -5,7 +5,7 @@ nav {
     align-items: center;
   }
   
-  a {
+.mainMenuLink {
     color: black;
     text-decoration: none;
     margin: 10px;

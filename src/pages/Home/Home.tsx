@@ -1,9 +1,7 @@
-import React, { useEffect, useState, useRef } from 'react'
-import {collection, deleteDoc, getDocs, doc, updateDoc} from 'firebase/firestore'
-import { auth, db } from '../../firebase-config';
-// import { useNavigate } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { collection, getDocs } from 'firebase/firestore'
+import { db } from '../../firebase-config';
 import './Home.css'
-// import parse from 'html-react-parser'
 import Post from '../../components/Post/Post';
 import Sidebar from '../../components/Sidebar/Sidebar';
 
@@ -26,9 +24,7 @@ const Home = ({isAuth, setPostToEdit}: any) => {
   const postsCollectionRef = collection(db, "posts" )
 
   const getPosts = async () => {
-    // console.log("GETPOSTS TRIGGERED")
     const data = await getDocs(postsCollectionRef);
-    // console.log(data)
     setPostList(data.docs.map((doc) => ({...doc.data(), id: doc.id})))
   }
 
@@ -43,9 +39,7 @@ const Home = ({isAuth, setPostToEdit}: any) => {
   return (
     <div className='homepage'>
       {/* <div ref={myRef}>I wanna be seen</div>  */}
-      <div className='sidebar'>
-        <Sidebar postLists={postLists}></Sidebar>
-      </div>
+      <Sidebar postLists={postLists}></Sidebar>
       <div className='gallery'>{postLists.map((post: any) => {
         return (
           <Post key={post.id} post={post} isAuth={isAuth} getPosts={getPosts} setPostToEdit={setPostToEdit}></Post>
