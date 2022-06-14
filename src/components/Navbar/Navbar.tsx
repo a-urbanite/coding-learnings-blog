@@ -17,6 +17,7 @@ const Navbar = ({isAuth, setIsAuth}: any) => {
   return (
     <nav>
         <Link className='mainMenuLink' to="/"> Home </Link>
+        <Link className='mainMenuLink' to="/blog"> Blog </Link>
         { !isAuth ? 
         <Link className='mainMenuLink' to="/login"> Login </Link> : 
         <>

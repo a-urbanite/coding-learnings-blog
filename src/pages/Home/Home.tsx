@@ -1,52 +1,20 @@
-import { useEffect, useState } from 'react'
-import { collection, getDocs } from 'firebase/firestore'
-import { db } from '../../firebase-config';
+import React from 'react'
 import './Home.css'
-import Post from '../../components/Post/Post';
-import Sidebar from '../../components/Sidebar/Sidebar';
 
-// const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
-// General scroll to element function
-
-const Home = ({isAuth, setPostToEdit}: any) => {
-  // const myRef = useRef<HTMLDivElement>(null as unknown as HTMLDivElement)
-  // // const scrollToRef = ({myRef}: any) => window.scrollTo(0, myRef.current.offsetTop)   
-  // // const executeScroll = () => scrollToRef(myRef)
-  // const scroll = () => { window.scrollTo(
-  //   {
-  //     top: myRef.current.offsetTop,
-  //     left: 0,
-  //     behavior: 'smooth'
-  //   })
-  // }
-
-  const [postLists, setPostList] = useState<any>([]);
-  const postsCollectionRef = collection(db, "posts" )
-
-  const getPosts = async () => {
-    const data = await getDocs(postsCollectionRef);
-    setPostList(data.docs.map((doc) => ({...doc.data(), id: doc.id})))
-  }
-
-  useEffect(() => {
-    // console.log('USEEFFECT TRIGGERED')
-    // console.log('MYREF', myRef.current)
-    getPosts()
-  },[])
-
-
-  
+const Home = () => {
   return (
-    <div className='homepage'>
-      {/* <div ref={myRef}>I wanna be seen</div>  */}
-      <Sidebar postLists={postLists}></Sidebar>
-      <div className='gallery'>{postLists.map((post: any) => {
-        return (
-          <Post key={post.id} post={post} isAuth={isAuth} getPosts={getPosts} setPostToEdit={setPostToEdit}></Post>
-        )
-        })}
-      </div>
-      {/* <button onClick={() => {scroll()}}> Click to scroll </button>  */}
+    <div className='pageWrapper'>
+        <h1 className='profileTitle'>Alexander Städtler</h1>
+        <img className='profilePic' src='https://www.staedtler-mapdesign.de/wp-content/uploads/2018/10/alex_cartoon_rund-768x576-1.png'></img>
+        <div className='profileText'>
+            Enthusiastic Fullstack Dev from Germany 
+            with a pivot towards backend. My background in 
+            archaeology has taught me a great deal about managing 
+            projects and quality standards. As a process-oriented 
+            professional, I care deeply about well-functioning 
+            teams, clearly formulated goals and priorities, 
+            as well as agile structures and strategies.
+        </div>
     </div>
   )
 }

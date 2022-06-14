@@ -1,23 +1,28 @@
-.homepage {
-    background-color: var(--as-Magic-mint);
-    /* display: flex; */
-    /* flex-direction: row; */
+.profileTitle {
+    position: absolute;
+    /* margin-top: 5%; */
+    left: -50px ;
 }
 
-.gallery {
-    /* flex: 70%; */
-    padding: 30px;
-    width: calc(100vw - 380px);
-    left: 300px;
+.profilePic {
+    margin-top: 10%;
+    width: 400px;
+}
+
+.profileText {
+    width: 400px;
+    height: 200px;
+    text-align: justify;
+}
+
+.pageWrapper {
     position: relative;
-    /* width: 70%; */
-    /* justify-content: flex-end; */
+    width: 80%;
+    height: 80%;
+    background-color: #ffe8dc;
+    /* margin-top: 5%; */
+    margin-left: 15%;
+    /* display: flex;
+    flex-direction: column; */
     /* align-items: flex-end; */
 }
-
-.sidebar {
-    /* flex: 30%; */
-    width: 300px;
-    position: fixed;
-}
-
