@@ -1,18 +1,23 @@
 .profileTitle {
     position: absolute;
     /* margin-top: 5%; */
-    left: -50px ;
+    left: -72px ;
+    /* font-family: 'Quicksand', sans-serif; */
 }
 
 .profilePic {
     margin-top: 10%;
+    margin-left: 10%;
     width: 400px;
 }
 
 .profileText {
-    width: 400px;
+    margin-top: 10%;
+    margin-left: 10%;
+    width: 600px;
     height: 200px;
     text-align: justify;
+    
 }
 
 .pageWrapper {

@@ -8,6 +8,7 @@ nav {
 .mainMenuLink {
     color: black;
     text-decoration: none;
+    font-family: 'Quicksand', sans-serif;
     margin: 10px;
     font-size: 25px;
   }
