@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <div className='pageWrapper'>
         <h1 className='profileTitle'>Alexander Städtler</h1>
-        <img className='profilePic' src='https://www.staedtler-mapdesign.de/wp-content/uploads/2018/10/alex_cartoon_rund-768x576-1.png'></img>
+        <img className='profilePic' src='gs://react-blog-30aa0.appspot.com/Bewerbungsfoto.JPG'></img>
         <div className='profileText'>
             Enthusiastic Fullstack Dev from Germany 
             with a pivot towards backend. My background in 
