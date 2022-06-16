@@ -7,6 +7,7 @@ import CreatePost from '../../pages/CreatePost/CreatePost';
 import EditPost from '../../pages/EditPost/EditPost';
 import Login from '../../pages/Login';
 import Navbar from '../Navbar/Navbar';
+import Navbar2 from '../Navbar2/Navbar2';
 import Home from '../../pages/Home/Home';
 import Archaeology from '../../pages/Archaeology/Archaeology';
 import CodingProjects from '../../pages/CodingProjects/CodingProjects';
@@ -24,6 +25,7 @@ function App() {
         </div>
       </header> */}
       <Navbar isAuth={isAuth} setIsAuth={setIsAuth}></Navbar>
+      <Navbar2></Navbar2>
       <Routes>
         <Route path='/' element={<Home />}/>
         <Route path="/blog" element={<Blog isAuth={isAuth} setPostToEdit={setPostToEdit}/>} />
