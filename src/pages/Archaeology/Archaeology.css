@@ -1,0 +1,12 @@
+.pageWrapper2 {
+    position: relative;
+    width: 80%;
+    height: 80%;
+    background-color: #ffe8dc;
+    /* margin-top: 5%; */
+    margin-left: 15%;
+    padding: 5%
+    /* display: flex;
+    flex-direction: column; */
+    /* align-items: flex-end; */
+}

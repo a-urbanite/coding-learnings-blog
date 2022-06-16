@@ -8,6 +8,8 @@ import EditPost from '../../pages/EditPost/EditPost';
 import Login from '../../pages/Login';
 import Navbar from '../Navbar/Navbar';
 import Home from '../../pages/Home/Home';
+import Archaeology from '../../pages/Archaeology/Archaeology';
+import CodingProjects from '../../pages/CodingProjects/CodingProjects';
 
 
 function App() {
@@ -16,6 +18,11 @@ function App() {
 
   return (
     <Router>
+      {/* <header>
+        <div className="nav-area">
+          navbar content
+        </div>
+      </header> */}
       <Navbar isAuth={isAuth} setIsAuth={setIsAuth}></Navbar>
       <Routes>
         <Route path='/' element={<Home />}/>
@@ -30,6 +37,8 @@ function App() {
             postToEdit={postToEdit} 
           />} />
         <Route path="/login" element={<Login setIsAuth={setIsAuth}/>} />
+        <Route path="/archaeology" element={<Archaeology/>} />
+        <Route path="/coding" element={<CodingProjects/>} />
       </Routes>
     </Router>
   );
