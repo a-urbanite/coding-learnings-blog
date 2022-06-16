@@ -43,3 +43,53 @@
     flex-direction: column; */
     /* align-items: flex-end; */
 }
+
+.CV {
+    margin: 5% 5% 0% 5%;
+}
+
+li {
+    margin-bottom: 2%;
+}
+
+.downloadButton {
+    background-color: var(--as-Languid-lavender);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.downloadButton:hover {
+    background-color: #fff8f5;
+    color: black
+}
+
+.skillListWrapper {
+    display: flex;
+}
+
+.columnA {
+    /* background-color: red; */
+    /* height: 200px; */
+    width: 50%
+}
+
+.columnB {
+    /* background-color: green; */
+    /* height: 200px; */
+    width: 50%
+}
+
+h2 {
+    margin-top: 3rem;
+}
+
+.downloadButtonWrapper {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-evenly;
+}
