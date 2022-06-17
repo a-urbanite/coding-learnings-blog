@@ -1,0 +1,26 @@
+.Navbar2Wrapper {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.mainMenuLink,.NavbarButton {
+    display:flex;
+    align-items:center;
+    height: 3rem; 
+    background-color: #fff8f5;
+    border: none;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.5rem;
+    color: black;
+    text-decoration: none;
+}
+
+.mainMenuLink {
+    margin-right: 1rem;
+}
+
+.mainMenuLink:hover {
+    background-color: #ffe8dc;
+    color: grey
+}

@@ -7,25 +7,23 @@ import CreatePost from '../../pages/CreatePost/CreatePost';
 import EditPost from '../../pages/EditPost/EditPost';
 import Login from '../../pages/Login';
 import Navbar from '../Navbar/Navbar';
-import Navbar2 from '../Navbar2/Navbar2';
 import Home from '../../pages/Home/Home';
 import Archaeology from '../../pages/Archaeology/Archaeology';
 import CodingProjects from '../../pages/CodingProjects/CodingProjects';
+import Navbar2 from '../Navbar2/Navbar2';
 
+import Navbar3Func from '../Navbar3/Navbar3Func';
 
 function App() {
   const [isAuth, setIsAuth] = useState<any>(localStorage.getItem('isAuth'));
   const [postToEdit, setPostToEdit] = useState<any>({});
 
+
   return (
     <Router>
-      {/* <header>
-        <div className="nav-area">
-          navbar content
-        </div>
-      </header> */}
-      <Navbar isAuth={isAuth} setIsAuth={setIsAuth}></Navbar>
+      {/* <Navbar isAuth={isAuth} setIsAuth={setIsAuth}></Navbar> */}
       <Navbar2></Navbar2>
+      {/* <Navbar3Func></Navbar3Func> */}
       <Routes>
         <Route path='/' element={<Home />}/>
         <Route path="/blog" element={<Blog isAuth={isAuth} setPostToEdit={setPostToEdit}/>} />
