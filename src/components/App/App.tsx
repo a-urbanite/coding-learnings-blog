@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import './App.css';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-
 import Blog from '../../pages/Blog/Blog';
 import CreatePost from '../../pages/CreatePost/CreatePost';
 import EditPost from '../../pages/EditPost/EditPost';
@@ -10,19 +9,28 @@ import Navbar from '../Navbar/Navbar';
 import Home from '../../pages/Home/Home';
 import Archaeology from '../../pages/Archaeology/Archaeology';
 import CodingProjects from '../../pages/CodingProjects/CodingProjects';
-import Navbar2 from '../Navbar2/Navbar2';
+import {signOut} from 'firebase/auth'
+import { auth } from '../../firebase-config';
 
-import Navbar3Func from '../Navbar3/Navbar3Func';
+
 
 function App() {
   const [isAuth, setIsAuth] = useState<any>(localStorage.getItem('isAuth'));
   const [postToEdit, setPostToEdit] = useState<any>({});
 
+  const signUserOut = () => {
+    signOut(auth).then(() => {
+        localStorage.clear()
+        setIsAuth(false)
+        window.location.pathname = "/login"
+    })
+  }
+
 
   return (
     <Router>
       {/* <Navbar isAuth={isAuth} setIsAuth={setIsAuth}></Navbar> */}
-      <Navbar2></Navbar2>
+      <Navbar isAuth={isAuth} setIsAuth={setIsAuth} signUserOut={signUserOut}></Navbar>
       {/* <Navbar3Func></Navbar3Func> */}
       <Routes>
         <Route path='/' element={<Home />}/>
@@ -43,4 +51,5 @@ function App() {
     </Router>
   );
 }
+
 export default App;
