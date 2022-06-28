@@ -31,7 +31,7 @@ const CreatePost = ({isAuth}: CreatePostPageProps) => {
 
   useEffect(() => {
     if (!isAuth) {
-      navigate("/login")
+      navigate("/blog")
     }
   }, [])
 

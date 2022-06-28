@@ -29,9 +29,7 @@ function App() {
 
   return (
     <Router>
-      {/* <Navbar isAuth={isAuth} setIsAuth={setIsAuth}></Navbar> */}
       <Navbar isAuth={isAuth} setIsAuth={setIsAuth} signUserOut={signUserOut}></Navbar>
-      {/* <Navbar3Func></Navbar3Func> */}
       <Routes>
         <Route path='/' element={<Home />}/>
         <Route path="/blog" element={<Blog isAuth={isAuth} setPostToEdit={setPostToEdit}/>} />
