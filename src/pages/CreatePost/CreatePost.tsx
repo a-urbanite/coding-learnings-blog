@@ -36,6 +36,9 @@ const CreatePost = ({isAuth}: CreatePostPageProps) => {
   }, [])
 
 
+  
+
+
   return (
     <div className='createPostPage'>
         <h1>Create a Post</h1>
