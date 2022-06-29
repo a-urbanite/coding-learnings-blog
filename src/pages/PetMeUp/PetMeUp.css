@@ -1,22 +1,10 @@
-
-
-/* .bout-us__img {
-  margin-right: 10px;
+.title {
+    /* position: absolute; */
+    font-size: 2rem;
+    /* margin-top: 5%; */
+    /* left: -72px ; */
+    /* font-family: 'Quicksand', sans-serif; */
 }
-
-.about-us__title {
-    font-family: 'Gloria Hallelujah', cursive;
-    font-size: 48px;
-    margin-bottom: .5rem;
-    margin-top: 3rem;
-}
-
-.about-us-img__photo{
-    background-color: #b9eff8;
-    padding-right: 74%;
-    padding-bottom: 8%;
-    
-} */
 
 .teamSection {
     /* width: 100%; */
@@ -68,4 +56,87 @@
 
 .text-images {
     background-color: rgba(255, 255, 255, 0);
+    /* width: 100%; */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    /* height: 80%; */
+    /* margin: 1em 0em 1em 0em; */
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    /* padding: 100 px; */
+}
+
+@media only screen and (min-width: 901px) {
+
+    .title {
+        /* position: absolute; */
+        font-size: 2rem;
+        /* margin-top: 5%; */
+        /* left: -72px ; */
+        /* font-family: 'Quicksand', sans-serif; */
+    }
+    
+    .teamSection {
+        /* width: 100%; */
+        /* height: 25vh; */
+        /* background-color: green; */
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        /* margin: 1em; */
+        /* padding: .3em; */
+    }
+    
+    .about__saltie {
+        height: 25vh;
+        /* background-color: red; */
+        margin-left: 1em;
+        margin-right: 1em;
+        margin-bottom: 1em;
+        padding-left: 1em;
+        padding-right: 1em;
+        /* width: 10%; */
+        /* height: 100%; */
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        flex-direction: column;
+        /* height: 10%; */
+        
+    }
+    .saltie__icon {
+        font-size: 2em;
+        margin: 0.5em;
+        /* height: 100%; */
+        /* background-color: #000; */
+        color: var(--as-Ebony);
+    }
+    
+    .saltie-img {
+        height: 65%;
+        /* color: #000; */
+        /* width: 25%; */
+    }
+    
+    .saltie-name {
+        /* font-size: 20px; */
+    
+    }
+    
+    .text-images {
+        background-color: rgba(255, 255, 255, 0);
+        /* width: 100%; */
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        /* height: 80%; */
+        /* margin: 1em 0em 1em 0em; */
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        /* padding: 100 px; */
+    }
 }

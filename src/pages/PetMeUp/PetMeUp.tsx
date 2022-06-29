@@ -5,7 +5,7 @@ import './PetMeUp.css'
 const PetMeUp = () => {
   return (
     <>
-        <h2>Pet Me Up!</h2>
+        <h1 className='title'>Pet Me Up!</h1>
         <p>
           This App was our graduation project at the SALT Bootcamp. 
           It was written by Cristina Salazar, Ludwig Slettingdalen Nemanja Dunic and me. We were team MultySalty!
@@ -51,8 +51,7 @@ const PetMeUp = () => {
         </div>
         <p>
           the goal was to showcase our ability to conceptualize, plan and execute the creation of a fullstack MERN application within the timeframe of 2 weeks.
-          We learned a lot during this time. The most interesting challenge (to me) proved to be to continously
-          adapt the time plan reacting to changes or wrong estimates in the implementation time of the various features.
+          We learned a lot during this time. 
         </p> <br/>
         <p>
           The basic concept of the app can be summarized in the tagline "Tinder for pets". 
@@ -70,7 +69,11 @@ const PetMeUp = () => {
           <li>to integrate CI/CD principles with an automated deoployment pipeline linking the Git Repo to Heroku</li>
         </ul>
         <p>
-          For the MVP we needed around half a week. Once we had that in place it was time to flesh out the App and add some fun features. Those included:
+          For the MVP we needed around half a week. We learned that proper planning is key to success.
+        </p>
+        <img className='text-images' src='/images/petmeUp_miroBoard.png' alt='petmeUp_miroBoard'/>
+        <p>
+          Once we had that in place it was time to flesh out the App and add some fun features, like:
         </p>
         <ul>
           <li>a map view to allow searching for profiles in a more visual and instinctive way</li>
@@ -80,8 +83,13 @@ const PetMeUp = () => {
           <li>designing the frontend with estalished standards of UI/UX and a more or less keen eye on aesthetics</li>
         </ul>
         <p>This took us about 1 week. The remaining half week we spent on bugfixing, refactoring and preparing the presentation. At the end out architexture looked like this:</p>
-        <img className='text-images' src='/images/petMeUp-architecture.png' alt='petMeUp_architecture'/>
-
+        <img className='text-images' src='/images/petMeUp_architecture.png' alt='petMeUp_architecture'/>
+        <p>During this second phase the most interesting challenge (to me) proved to be to continously
+          adapt the time plan reacting to changes or wrong estimates in the implementation time of the various features. 
+          And here is the finished product (click on the logo)(its Heroku free tier, so it might take a fes sec to load):</p>
+        <a href='https://ancient-basin-65065.herokuapp.com/' target='_blank' rel="noreferrer">
+          <img className='text-images' src='/images/petMeUp_logo.png' alt='petMeUp_logo'/>
+        </a>
     </>
   )
 }
