@@ -1,0 +1,36 @@
+@media only screen and (min-width: 601px) and (max-width: 900px){
+
+
+    .about__upperSection {
+        font-size: 28px;    /* changed */
+    }
+    
+    
+    
+    .saltie__icon {
+        font-size: 2em;
+    }
+    
+    .saltie-name {
+        /* font-size: 28px; */
+    
+    }
+    
+    }
+    
+    @media only screen and (min-width: 901px) {
+    
+        .about__saltie {
+            margin: 1em;
+           
+        }
+        
+        .about__upperSection {
+            font-size: 28px;   
+        }
+        
+        .saltie-name {
+            font-size: 28px;
+        
+        }
+    }

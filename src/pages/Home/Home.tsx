@@ -6,7 +6,7 @@ const Home = () => {
     <>
         <h1 className='profileTitle'>Alexander Städtler</h1>
         <div className='profileBox'>
-          <img className='profilePic' src='/Bewerbungsfoto.jpg' alt='profile pic'></img>
+          <img className='profilePic' src='/images/Bewerbungsfoto.jpg' alt='profile pic'></img>
           <div className='profileText'>
             <p>
               Enthusiastic Fullstack Dev from Germany 
