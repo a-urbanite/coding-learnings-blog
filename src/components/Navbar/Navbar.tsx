@@ -9,16 +9,17 @@ const Navbar = ({isAuth, setIsAuth, signUserOut}: any) => {
 
     return (
         <div className='Navbar2Wrapper'>
-            <Link className='mainMenuLink' to="/"> Home </Link>
-            <Menu menuButton={<MenuButton className='NavbarButton' ><Link className='mainMenuLink' to="/coding"> Coding </Link></MenuButton>} transition>
-                <MenuItem>Pet me Up</MenuItem>
-                <MenuItem>MovieFinder</MenuItem>
-                <MenuItem>Akzisemauer</MenuItem>
-                <SubMenu label="Styles">
+            <Link className='mainMenuLink' to="/"> Vita </Link>
+            <Menu menuButton={<MenuButton className='NavbarButton' > Coding </MenuButton>} transition>
+                <MenuItem><Link className='subMenuLink' to="/coding/pet-me-up"> Pet me Up! </Link></MenuItem>
+                <MenuItem><Link className='subMenuLink' to="/coding/moviefinder"> Moviefinder </Link></MenuItem>
+                <MenuItem><Link className='subMenuLink' to="/coding/akzisemauer"> Akzisemauer </Link></MenuItem>
+                <MenuItem><Link className='subMenuLink' to="/coding/dai-wordpress-plugin"> DAI Wordpress plugin </Link></MenuItem>
+                {/* <SubMenu label="Styles">
                     <MenuItem>about.css</MenuItem>
                     <MenuItem>home.css</MenuItem>
                     <MenuItem>index.css</MenuItem>
-                </SubMenu>
+                </SubMenu> */}
             </Menu>
             <Menu menuButton={<MenuButton className='NavbarButton'><Link className='mainMenuLink' to="/archaeology"> Archaeology </Link></MenuButton>} transition>
                 <MenuItem>Saasdve</MenuItem>

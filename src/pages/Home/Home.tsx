@@ -3,7 +3,7 @@ import './Home.css'
 
 const Home = () => {
   return (
-    <div className='pageWrapper'>
+    <>
         <h1 className='profileTitle'>Alexander Städtler</h1>
         <div className='profileBox'>
           <img className='profilePic' src='/Bewerbungsfoto.jpg' alt='profile pic'></img>
@@ -104,7 +104,7 @@ const Home = () => {
             <a className='downloadButton' href='/w11-extra-CV_alexander_staedtler.docx' download>CV as DOC</a>
           </div>
         </div>
-    </div>
+    </>
   )
 }
 
