@@ -22,6 +22,8 @@ const Post = ({post, isAuth, getPosts, setPostToEdit}: any) => {
       navigate('/editpost')
     };
 
+  console.log("POSTID", post.id)
+
   return (
     <div className='post' key={post.id}> 
       <div className='post__header'>

@@ -26,18 +26,14 @@ const CreatePost = ({isAuth}: CreatePostPageProps) => {
         {name: auth.currentUser?.displayName, 
         id: auth.currentUser?.uid}}
       )
-    navigate('/')
+    navigate('/blog')
   }
 
   useEffect(() => {
     if (!isAuth) {
-      navigate("/blog")
+      navigate("/")
     }
   }, [])
-
-
-  
-
 
   return (
     <div className='createPostPage'>

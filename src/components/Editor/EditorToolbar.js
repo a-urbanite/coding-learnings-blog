@@ -1,5 +1,6 @@
 import React from "react";
 import { Quill } from "react-quill";
+import htmlEditButton from "quill-html-edit-button";
 
 // Custom Undo button icon component for Quill editor. You can import it directly
 // from 'quill/assets/icons/undo.svg' but I found that a number of loaders do not
@@ -50,6 +51,10 @@ Font.whitelist = [
 ];
 Quill.register(Font, true);
 
+Quill.register({
+  "modules/htmlEditButton": htmlEditButton
+})
+
 // Modules object for setting up the Quill editor
 export const modules = {
   toolbar: {
@@ -63,7 +68,8 @@ export const modules = {
     delay: 500,
     maxStack: 100,
     userOnly: true
-  }
+  },
+  htmlEditButton: {}
 };
 
 // Formats objects for setting up the Quill editor

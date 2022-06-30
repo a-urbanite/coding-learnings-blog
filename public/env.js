@@ -1,7 +1,7 @@
 window.env = {
   "ALLUSERSPROFILE": "C:\\ProgramData",
   "APPDATA": "C:\\Users\\aurba\\AppData\\Roaming",
-  "CHROME_CRASHPAD_PIPE_NAME": "\\\\.\\pipe\\crashpad_2820_MBJTMBRZYTZCUNWF",
+  "CHROME_CRASHPAD_PIPE_NAME": "\\\\.\\pipe\\crashpad_16152_UHPBULKLTHFZDGLK",
   "COLORTERM": "truecolor",
   "CommonProgramFiles": "C:\\Program Files\\Common Files",
   "CommonProgramFiles(x86)": "C:\\Program Files (x86)\\Common Files",
@@ -184,7 +184,7 @@ window.env = {
   "npm_package_devDependencies_gh_pages": "^4.0.0",
   "npm_package_eslintConfig_extends_0": "react-app",
   "npm_package_eslintConfig_extends_1": "react-app/jest",
-  "npm_package_gitHead": "dcdb09f1e81c8cb570e084af785d2a50d0873caa",
+  "npm_package_gitHead": "d3ba98ddbaeb320558b0a11507868549f85d60b9",
   "npm_package_homepage": "https://a-urbanite.github.io",
   "npm_package_name": "react-blog",
   "npm_package_private": "true",
