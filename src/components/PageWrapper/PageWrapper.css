@@ -7,12 +7,33 @@
         background-color: #ffe8dc;
     }
 
+    .title {
+        font-size: 2rem;
+        margin-top: 0rem;
+        margin-bottom: 2rem;
+    }
+
+    .text-images {
+        background-color: rgba(255, 255, 255, 0);
+        /* width: 100%; */
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        /* height: 80%; */
+        /* margin: 1em 0em 1em 0em; */
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        /* padding: 100 px; */
+    }
+
 
 @media only screen and (min-width: 601px) and (max-width: 900px) {
     .pageWrapper {
         width: 85%;
         margin-left: 10%;
         margin-right: 5%;
+        padding: 1.5rem;
     }
 }
 
@@ -21,5 +42,6 @@
         width: 80%;
         margin-left: 15%;
         margin-right: 5%;
+        padding: 2rem;
     } 
 }

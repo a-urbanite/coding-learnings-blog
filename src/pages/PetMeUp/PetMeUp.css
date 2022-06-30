@@ -1,8 +1,4 @@
-.title {
-    font-size: 2rem;
-    margin-top: 0rem;
-    margin-bottom: 2rem;
-}
+
 
 .saltie__wrapper {
     display: flex;
@@ -54,19 +50,7 @@
 
 }
 
-.text-images {
-    background-color: rgba(255, 255, 255, 0);
-    /* width: 100%; */
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
-    /* height: 80%; */
-    /* margin: 1em 0em 1em 0em; */
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    /* padding: 100 px; */
-}
+
 
 @media only screen and (min-width: 901px) {
     .saltie {
