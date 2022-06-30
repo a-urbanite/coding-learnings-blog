@@ -19,14 +19,14 @@
 
 .profileText {
     /* background-color: green; */
-    margin-top: 10%;
+    /* margin-top: 10%; */
     margin-left: 10%;
     margin-right: 10%;
     width: 600px;
     height: 400px;
     text-align: justify;
     display: flex;
-    /* vertical-align: middle; */
+    vertical-align: middle;
     align-items: center;
     /* align-content:flex-end; */
     /* justify-content: center;  */
