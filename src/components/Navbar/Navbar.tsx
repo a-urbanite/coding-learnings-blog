@@ -8,7 +8,7 @@ import './Navbar.css'
 const Navbar = ({isAuth, setIsAuth, signUserOut}: any) => {
 
     return (
-        <div className='Navbar2Wrapper'>
+        <div className='NavbarWrapper'>
             <Link className='mainMenuLink' to="/"> Vita </Link>
             <Menu menuButton={<MenuButton className='NavbarButton' > Coding </MenuButton>} transition>
                 <MenuItem><Link className='subMenuLink' to="/coding/pet-me-up"> Pet me Up! </Link></MenuItem>

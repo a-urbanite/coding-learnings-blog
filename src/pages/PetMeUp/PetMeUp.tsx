@@ -86,7 +86,7 @@ const PetMeUp = () => {
         <img className='text-images' src='/images/petMeUp_architecture.png' alt='petMeUp_architecture'/>
         <p>During this second phase the most interesting challenge (to me) proved to be to continously
           adapt the time plan reacting to changes or wrong estimates in the implementation time of the various features. 
-          And here is the finished product (click on the logo)(its Heroku free tier, so it might take a fes sec to load):</p>
+          And here is the finished product (click on the logo)(its Heroku free tier, so it might take a few sec to load):</p>
         <a href='https://ancient-basin-65065.herokuapp.com/' target='_blank' rel="noreferrer">
           <img className='text-images' src='/images/petMeUp_logo.png' alt='petMeUp_logo'/>
         </a>
