@@ -3,7 +3,7 @@ import React from 'react'
 const MovieFinder = () => {
   return (
     <>
-      <h1 className='title'>MovieFinder</h1>
+      <h1 className='title'>[JS/TS] MovieFinder</h1>
       <p>
         I wrote this app during the SALT bootcamp, around halfway through. 
         The task was to conceptualize and realize a simple MERN fullstack app in one day.

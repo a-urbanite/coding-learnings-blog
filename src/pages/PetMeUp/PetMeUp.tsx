@@ -5,7 +5,7 @@ import './PetMeUp.css'
 const PetMeUp = () => {
   return (
     <>
-        <h1 className='title'>Pet Me Up!</h1>
+        <h1 className='title'>[JS/TS] Pet Me Up!</h1>
         <p>
           This App was our graduation project at the SALT Bootcamp. 
           It was written by Cristina Salazar, Ludwig Slettingdalen Nemanja Dunic and me. We were team MultySalty!

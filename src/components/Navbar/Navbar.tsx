@@ -11,10 +11,10 @@ const Navbar = ({isAuth, setIsAuth, signUserOut}: any) => {
         <div className='NavbarWrapper'>
             <Link className='mainMenuLink' to="/"> Vita </Link>
             <Menu menuButton={<MenuButton className='NavbarButton' > Coding </MenuButton>} transition>
-                <MenuItem><Link className='subMenuLink' to="/coding/pet-me-up"> Pet me Up! </Link></MenuItem>
-                <MenuItem><Link className='subMenuLink' to="/coding/moviefinder"> Moviefinder </Link></MenuItem>
-                <MenuItem><Link className='subMenuLink' to="/coding/akzisemauer"> Akzisemauer </Link></MenuItem>
-                <MenuItem><Link className='subMenuLink' to="/coding/dai-wordpress-plugin"> DAI Wordpress plugin </Link></MenuItem>
+                <MenuItem><Link className='subMenuLink' to="/coding/pet-me-up"> [TS] Pet me Up! </Link></MenuItem>
+                <MenuItem><Link className='subMenuLink' to="/coding/moviefinder"> [TS] Moviefinder </Link></MenuItem>
+                <MenuItem><Link className='subMenuLink' to="/coding/akzisemauer"> [webdev/geodata] Akzisemauer </Link></MenuItem>
+                <MenuItem><Link className='subMenuLink' to="/coding/dai-wordpress-plugin"> [PHP] Wordpress plugin </Link></MenuItem>
                 {/* <SubMenu label="Styles">
                     <MenuItem>about.css</MenuItem>
                     <MenuItem>home.css</MenuItem>
