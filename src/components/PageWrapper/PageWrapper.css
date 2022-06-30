@@ -1,9 +1,9 @@
     .pageWrapper {
         box-sizing: border-box;
-        width: 93%;
-        margin-left: 5%;
+        width: 92%;
+        margin-left: 6%;
         margin-right: 2%;
-        padding: 2rem;
+        padding: 1rem;
         background-color: #ffe8dc;
     }
 

@@ -1,31 +1,26 @@
 .title {
-    /* position: absolute; */
     font-size: 2rem;
-    /* margin-top: 5%; */
-    /* left: -72px ; */
-    /* font-family: 'Quicksand', sans-serif; */
+    margin-top: 0rem;
+    margin-bottom: 2rem;
 }
 
-.teamSection {
-    /* width: 100%; */
-    /* height: 25vh; */
-    /* background-color: green; */
+.saltie__wrapper {
     display: flex;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-    /* margin: 1em; */
-    /* padding: .3em; */
+    width: 100%;
 }
 
-.about__saltie {
-    height: 25vh;
+.saltie {
+    height: 9rem;
+    width: 9rem;
     /* background-color: red; */
-    margin-left: 1em;
-    margin-right: 1em;
-    margin-bottom: 1em;
-    padding-left: 1em;
-    padding-right: 1em;
+    /* margin-left: 0.2rem;
+    margin-right: 0.2rem; */
+    margin-bottom: 1rem;
+    /* padding-left: 1em; */
+    /* padding-right: 1em; */
     /* width: 10%; */
     /* height: 100%; */
     display: flex;
@@ -35,11 +30,16 @@
     /* height: 10%; */
     
 }
-.saltie__icon {
-    font-size: 2em;
-    margin: 0.5em;
-    /* height: 100%; */
-    /* background-color: #000; */
+
+.saltie-links__wrapper {
+    /* background-color: red; */
+    width: 100%; 
+     display: flex;
+    justify-content: space-evenly;
+}
+
+.saltie-links__icon {
+    font-size: 2rem;
     color: var(--as-Ebony);
 }
 
@@ -50,9 +50,13 @@
 }
 
 .saltie-name {
-    /* font-size: 20px; */
+    font-size: 0.8rem;
 
 }
+
+
+
+
 
 .text-images {
     background-color: rgba(255, 255, 255, 0);
@@ -69,74 +73,12 @@
 }
 
 @media only screen and (min-width: 901px) {
-
-    .title {
-        /* position: absolute; */
-        font-size: 2rem;
-        /* margin-top: 5%; */
-        /* left: -72px ; */
-        /* font-family: 'Quicksand', sans-serif; */
+    .saltie {
+        height: 10rem;
+        width: 10rem;  
     }
     
-    .teamSection {
-        /* width: 100%; */
-        /* height: 25vh; */
-        /* background-color: green; */
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
-        /* margin: 1em; */
-        /* padding: .3em; */
-    }
-    
-    .about__saltie {
-        height: 25vh;
-        /* background-color: red; */
-        margin-left: 1em;
-        margin-right: 1em;
-        margin-bottom: 1em;
-        padding-left: 1em;
-        padding-right: 1em;
-        /* width: 10%; */
-        /* height: 100%; */
-        display: flex;
-        align-items: center;
-        justify-content: start;
-        flex-direction: column;
-        /* height: 10%; */
-        
-    }
-    .saltie__icon {
-        font-size: 2em;
-        margin: 0.5em;
-        /* height: 100%; */
-        /* background-color: #000; */
-        color: var(--as-Ebony);
-    }
-    
-    .saltie-img {
-        height: 65%;
-        /* color: #000; */
-        /* width: 25%; */
-    }
-    
-    .saltie-name {
-        /* font-size: 20px; */
-    
-    }
-    
-    .text-images {
-        background-color: rgba(255, 255, 255, 0);
-        /* width: 100%; */
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 80%;
-        /* height: 80%; */
-        /* margin: 1em 0em 1em 0em; */
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-        /* padding: 100 px; */
+    .saltie__wrapper {
+        justify-content: space-evenly;
     }
 }

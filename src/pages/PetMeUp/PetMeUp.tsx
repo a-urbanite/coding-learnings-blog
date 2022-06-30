@@ -10,41 +10,41 @@ const PetMeUp = () => {
           This App was our graduation project at the SALT Bootcamp. 
           It was written by Cristina Salazar, Ludwig Slettingdalen Nemanja Dunic and me. We were team MultySalty!
           </p><br/>
-        <div className='teamSection'>
+        <div className='saltie__wrapper'>
 
-          <div className='about__saltie'>
+          <div className='saltie'>
             <img className='saltie-img' src="/images/teamPhotos/cristina.png" alt='Cristina'/>
             <p className='saltie-name'>Cristina Salazar</p>
-            <div className="saltie-links">
-              <a className='saltie__icon' href='https://github.com/a-poco' target='blank'><FaGithubSquare /></a>
-              <a className='saltie__icon' href='https://www.linkedin.com/in/cristinasalazarmunguia/' target='blank'><FaLinkedin/></a>
+            <div className="saltie-links__wrapper">
+              <a className='saltie-links__icon' href='https://github.com/a-poco' target='blank'><FaGithubSquare /></a>
+              <a className='saltie-links__icon' href='https://www.linkedin.com/in/cristinasalazarmunguia/' target='blank'><FaLinkedin/></a>
             </div>
           </div>
 
-          <div className='about__saltie'>
+          <div className='saltie'>
             <img className='saltie-img' src='/images/teamPhotos/alexander.png' alt="Alex" />
             <p className='saltie-name'>Alexander Städtler</p>
-            <div className="saltie-links">
-              <a className='saltie__icon' href='https://github.com/a-urbanite' target='blank'><FaGithubSquare /></a>
-              <a className='saltie__icon' href='https://www.linkedin.com/in/alexander-staedtler/' target='blank'><FaLinkedin/></a>
+            <div className="saltie-links__wrapper">
+              <a className='saltie-links__icon' href='https://github.com/a-urbanite' target='blank'><FaGithubSquare /></a>
+              <a className='saltie-links__icon' href='https://www.linkedin.com/in/alexander-staedtler/' target='blank'><FaLinkedin/></a>
             </div>
           </div>
 
-          <div className='about__saltie'>
+          <div className='saltie'>
             <img className='saltie-img' src='/images/teamPhotos/Ludwig.png' alt="Ludwig" />
             <p className='saltie-name'>Ludwig Slettingdalen</p>
-            <div className="saltie-links">
-              <a className='saltie__icon' href='https://github.com/406322' target='blank'><FaGithubSquare /></a>
-              <a className='saltie__icon' href='https://www.linkedin.com/in/ludwig-slettingdalen/' target='blank'><FaLinkedin/></a>
+            <div className="saltie-links__wrapper">
+              <a className='saltie-links__icon' href='https://github.com/406322' target='blank'><FaGithubSquare /></a>
+              <a className='saltie-links__icon' href='https://www.linkedin.com/in/ludwig-slettingdalen/' target='blank'><FaLinkedin/></a>
             </div>
           </div>
 
-          <div className='about__saltie'>
+          <div className='saltie'>
             <img className='saltie-img' src='/images/teamPhotos/Nemanja.png' alt="Nemanja" />
             <p className='saltie-name'>Nemanja Dunic</p>
-            <div className="saltie-links">
-              <a className='saltie__icon' href='https://github.com/dunicn' target='blank'><FaGithubSquare /></a>
-              <a className='saltie__icon' href='https://www.linkedin.com/in/nemanjadunic/' target='blank'><FaLinkedin/></a>
+            <div className="saltie-links__wrapper">
+              <a className='saltie-links__icon' href='https://github.com/dunicn' target='blank'><FaGithubSquare /></a>
+              <a className='saltie-links__icon' href='https://www.linkedin.com/in/nemanjadunic/' target='blank'><FaLinkedin/></a>
             </div>
           </div>
 
