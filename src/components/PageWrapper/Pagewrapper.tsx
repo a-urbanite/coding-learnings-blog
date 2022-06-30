@@ -3,9 +3,9 @@ import './PageWrapper.css'
 
 const Pagewrapper = ({contents}:any) => {
   return (
-    <div className='pageWrapper'>
-        <article className='pageArticle'>{contents}</article>
-    </div>
+    <article className='pageWrapper'>
+        {contents}
+    </article>
   )
 }
 

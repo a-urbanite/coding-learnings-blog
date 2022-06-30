@@ -1,42 +1,25 @@
-.pageWrapper {
-    position: relative;
-    width: 90%;
-    height: 80%;
-    background-color: #ffe8dc;
-    /* padding: 2rem; */
-    /* margin-top: 5%; */
-    margin-left: 5%;
-    /* display: flex;
-    flex-direction: column; */
-    /* align-items: flex-end; */
-}
-
-.pageArticle {
-    padding: 2rem;
-}
+    .pageWrapper {
+        box-sizing: border-box;
+        width: 93%;
+        margin-left: 5%;
+        margin-right: 2%;
+        padding: 2rem;
+        background-color: #ffe8dc;
+    }
 
 
 @media only screen and (min-width: 601px) and (max-width: 900px) {
-    
+    .pageWrapper {
+        width: 85%;
+        margin-left: 10%;
+        margin-right: 5%;
+    }
 }
 
 @media only screen and (min-width: 901px) {
-
     .pageWrapper {
-        position: relative;
         width: 80%;
-        height: 80%;
-        background-color: #ffe8dc;
-        /* padding: 2rem; */
-        /* margin-top: 5%; */
         margin-left: 15%;
-        /* display: flex;
-        flex-direction: column; */
-        /* align-items: flex-end; */
-    }
-    
-    .pageArticle {
-        padding: 2rem;
-    }
-    
+        margin-right: 5%;
+    } 
 }

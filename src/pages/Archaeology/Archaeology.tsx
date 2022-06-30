@@ -5,7 +5,7 @@ import Pagewrapper from '../../components/PageWrapper/Pagewrapper'
 const Archaeology = () => {
 
   return (
-        <div>
+        <>
             <h2>Intro</h2>
             <p>I am a German archaeologist with a specialisation in landscape archaeology and GIS-based methods. 
             I gained professional experience in Germany and Saudi Arabia and have a passion for the archaeology 
@@ -40,7 +40,7 @@ const Archaeology = () => {
 
     The output of my academic work can be found on my Academia profile. Professional experience is summarised in my LinkedIn profile or as PDF. And finally my Github Profile.
             </ul>
-        </div>
+        </>
   )
 }
 
