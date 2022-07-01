@@ -22,8 +22,20 @@ const Login = ({ setIsAuth }: any) => {
   let navigate = useNavigate();
   const [logInEmail, setlogInEmail] = useState<string>("");
   const [logInPassword, setlogInPassword] = useState<string>("");
-  const [signupEmail, setsignupEmail] = useState<string>("");
-  const [signupPassword, setsignupPassword] = useState<string>("");
+
+  const signInWithEmail = async(event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    // console.log("triggered!")
+    const result = await signInWithEmailAndPassword(auth, logInEmail, logInPassword).catch(function(error) {
+      console.log(error.code);
+      console.log(error.message);
+    });
+    // console.log(result)
+    if(result) {
+        setIsAuth(true);
+        navigate('/')
+    }
+  }
 
   const signInWithGoogle = () => {
     signInWithPopup(auth, provider).then((result) => {
@@ -32,34 +44,6 @@ const Login = ({ setIsAuth }: any) => {
       navigate('/')
     })
   }
-
-  const signInWithEmail = async(event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-console.log("triggered!")
-
-    const result = await signInWithEmailAndPassword(auth, logInEmail, logInPassword).catch(function(error) {
-      console.log(error.code);
-      console.log(error.message);
-   });
-
-   console.log(result)
-
-   if(result) {
-      setIsAuth(true);
-      navigate('/')
-   }
-
-  }
-
-  const signupWithEmail = async () => {
-    await createUserWithEmailAndPassword(auth, signupEmail as string, signupPassword as string)
-      .catch(function(error) {
-        console.log(error.code); 
-        console.log(error.message);
-      });
-
-  }
-
 
 
   return (
@@ -83,20 +67,8 @@ console.log("triggered!")
       </form>
       {/* <p>Sign in with Google</p>
       <button className='login-with-google-btn' onClick={signInWithGoogle}>Sign in with Google</button> */}
-      {/* <br/><br/>
-        <h1 className="title"> Sign up </h1>
-        <input
-          name="registerEmail"
-          placeholder="Email..."
-          onChange={(event) => {setsignupEmail(event.target.value)}}
-        />
-        <input
-          type='password'
-          name="registerPassword"
-          placeholder="Password..."
-          onChange={(event) => {setsignupPassword(event.target.value)}}
-        />
-        <button onClick={signupWithEmail}>Sign up with Email</button> */}
+      {/* <p>not registered yet? Signup</p>
+      <button onClick={() => navigate('/signup')}>Sign up</button> */}
     </>
   )
 }

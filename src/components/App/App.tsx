@@ -18,6 +18,7 @@ import MovieFinder from '../../pages/MovieFinder/MovieFinder';
 import Akzisemauer from '../../pages/Akzisemauer/Akzisemauer';
 import TestSite from '../../pages/TestSite/TestSite';
 import LCPA from '../../pages/LCPA/LCPA';
+import SignUp from '../../pages/SignUp/SignUp';
 
 
 
@@ -50,6 +51,7 @@ function App() {
             postToEdit={postToEdit} 
           />} />
         <Route path="/login" element={<Pagewrapper contents={<Login setIsAuth={setIsAuth}/>}/>} />
+        <Route path="/signup" element={<Pagewrapper contents={<SignUp/>}/>} />
         <Route path="/archaeology" element={<Pagewrapper contents={<Archaeology/>}/>} />
         <Route path="/coding" element={<CodingProjects/>} />
           <Route path="/coding/pet-me-up" element={<Pagewrapper contents={<PetMeUp/>}/>} />
