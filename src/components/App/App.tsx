@@ -16,6 +16,8 @@ import DAIWordpressPlugin from '../../pages/DAIWordpressPlugin/DAIWordpressPlugi
 import Pagewrapper from '../PageWrapper/Pagewrapper';
 import MovieFinder from '../../pages/MovieFinder/MovieFinder';
 import Akzisemauer from '../../pages/Akzisemauer/Akzisemauer';
+import TestSite from '../../pages/TestSite/TestSite';
+import LCPA from '../../pages/LCPA/LCPA';
 
 
 
@@ -54,6 +56,8 @@ function App() {
           <Route path="/coding/moviefinder" element={<Pagewrapper contents={<MovieFinder/>}/>} />
           <Route path="/coding/akzisemauer" element={<Pagewrapper contents={<Akzisemauer/>}/>} />
           <Route path="/coding/dai-wordpress-plugin" element={<Pagewrapper contents={<DAIWordpressPlugin/>}/>} />
+          <Route path="/coding/least-cost-path-analysis" element={<Pagewrapper contents={<LCPA/>}/>} />
+        <Route path="/test-site" element={<Pagewrapper contents={<TestSite/>}/>} />
       </Routes>
     </Router>
   );

@@ -22,7 +22,7 @@ const DAIWordpressPlugin = () => {
         Finally I decided to write a plugin on ym own that fit the specific needs of the institute.
         Wordpress as a content management system (CMS) is written in PHP and designed to be pretty easy to modify with custom code.
         Over the years, this lead to a vast ecosystem of plugins and its customizability is surely one cornerstone of 
-        <a href='https://wpbuffs.com/wordpress-market-share/' target="_blank" rel="noreferrer">Wordpress` large success.</a> 
+        &nbsp;<a href='https://wpbuffs.com/wordpress-market-share/' target="_blank" rel="noreferrer">Wordpress` large success.</a> 
       </p><br/>
       <p>
         I specified two custom fields that extend the metadata of media attachments, 

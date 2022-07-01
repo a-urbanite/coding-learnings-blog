@@ -15,13 +15,15 @@ const Navbar = ({isAuth, setIsAuth, signUserOut}: any) => {
                 <MenuItem><Link className='subMenuLink' to="/coding/moviefinder"> [TS] Moviefinder </Link></MenuItem>
                 <MenuItem><Link className='subMenuLink' to="/coding/akzisemauer"> [webdev/geodata] Akzisemauer </Link></MenuItem>
                 <MenuItem><Link className='subMenuLink' to="/coding/dai-wordpress-plugin"> [PHP] Wordpress plugin </Link></MenuItem>
+                <MenuItem><Link className='subMenuLink' to="/coding/least-cost-path-analysis"> [R] Least Cost Path analysis </Link></MenuItem>
                 {/* <SubMenu label="Styles">
                     <MenuItem>about.css</MenuItem>
                     <MenuItem>home.css</MenuItem>
                     <MenuItem>index.css</MenuItem>
                 </SubMenu> */}
             </Menu>
-            <Menu menuButton={<MenuButton className='NavbarButton'><Link className='mainMenuLink' to="/archaeology"> Archaeology </Link></MenuButton>} transition>
+            <Link className='mainMenuLink' to="/archaeology"> Archaeology </Link>
+            {/* <Menu menuButton={<MenuButton className='NavbarButton'><Link className='mainMenuLink' to="/archaeology"> Archaeology </Link></MenuButton>} transition>
                 <MenuItem>Saasdve</MenuItem>
                 <MenuItem>Cloasdsase Window</MenuItem>
                 <SubMenu label="Styles">
@@ -29,7 +31,8 @@ const Navbar = ({isAuth, setIsAuth, signUserOut}: any) => {
                     <MenuItem>homesad.css</MenuItem>
                     <MenuItem>indesaddsx.css</MenuItem>
                 </SubMenu>
-            </Menu>
+            </Menu> */}
+            { isAuth && <Link className='mainMenuLink' to="/test-site"> Test site </Link>}
             <Link className='mainMenuLink' to="/blog"> Blog </Link>
                 { !isAuth ? <Link className='mainMenuLink' to="/login"> Login </Link> : 
                 <>
