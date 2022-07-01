@@ -1,16 +1,18 @@
 import React from 'react'
 import '../Home/Home.css'
-import Pagewrapper from '../../components/PageWrapper/Pagewrapper'
+// import Pagewrapper from '../../components/PageWrapper/Pagewrapper'
 
 const Archaeology = () => {
 
   return (
         <>
-            <h2>Intro</h2>
-            <p>I am a German archaeologist with a specialisation in landscape archaeology and GIS-based methods. 
-            I gained professional experience in Germany and Saudi Arabia and have a passion for the archaeology 
-            of road systems. Beside my academic career I work as a freelance map designer and Web Developer. 
-            This Website serves as a portfolio and presents a few of the projects I worked on over the last years</p>
+            <h1 className='title'>Archaeology Intro</h1>
+            <p>
+              I am a German archaeologist with a specialisation in landscape archaeology and GIS-based methods. 
+              I gained professional experience in Germany and Saudi Arabia and have a passion for the archaeology 
+              of road systems. Currently i seek to establish a career as Fullstack Javascript Web Developer 
+              but i hope that in the future i can combine my two passions coding and archaeology.
+            </p>
             <h2>Academic career</h2>
             <ul>
                 <li>
@@ -38,7 +40,7 @@ const Archaeology = () => {
 
     
 
-    The output of my academic work can be found on my Academia profile. Professional experience is summarised in my LinkedIn profile or as PDF. And finally my Github Profile.
+    The output of my academic work can be found on my Academia profile. 
             </ul>
         </>
   )

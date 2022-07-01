@@ -1,0 +1,11 @@
+integrate mobile first approach and make media breaks on:
+    front page
+    login page
+    blog
+login page  
+    formatting
+    replace google signin by email signin
+    block signup of new users
+blog
+    integrate the menu with scroll feature
+    inttegrate sort function for posts

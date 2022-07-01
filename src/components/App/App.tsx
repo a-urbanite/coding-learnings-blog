@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Blog from '../../pages/Blog/Blog';
 import CreatePost from '../../pages/CreatePost/CreatePost';
 import EditPost from '../../pages/EditPost/EditPost';
-import Login from '../../pages/Login';
+import Login from '../../pages/LoginPage/Login';
 import Navbar from '../Navbar/Navbar';
 import Home from '../../pages/Home/Home';
 import Archaeology from '../../pages/Archaeology/Archaeology';
@@ -49,7 +49,7 @@ function App() {
             isAuth={isAuth} 
             postToEdit={postToEdit} 
           />} />
-        <Route path="/login" element={<Login setIsAuth={setIsAuth}/>} />
+        <Route path="/login" element={<Pagewrapper contents={<Login setIsAuth={setIsAuth}/>}/>} />
         <Route path="/archaeology" element={<Pagewrapper contents={<Archaeology/>}/>} />
         <Route path="/coding" element={<CodingProjects/>} />
           <Route path="/coding/pet-me-up" element={<Pagewrapper contents={<PetMeUp/>}/>} />
