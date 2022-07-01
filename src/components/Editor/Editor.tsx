@@ -12,9 +12,6 @@ interface EditorProps {
 
 const Editor = ({title, setTitle, postText, setPostText}: EditorProps) => {
 
-	// const [title, setTitle] = useState("")
-  // const [postText, setPostText] = useState<string | null>("")
-
 	console.log("EDITOR LAUNCHED", typeof postText, postText)
 
   return (
