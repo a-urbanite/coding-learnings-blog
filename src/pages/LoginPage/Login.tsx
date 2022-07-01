@@ -33,11 +33,16 @@ const Login = ({ setIsAuth }: any) => {
     })
   }
 
-  const signInWithEmail = async() => {
+  const signInWithEmail = async(event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+console.log("triggered!")
+
     const result = await signInWithEmailAndPassword(auth, logInEmail, logInPassword).catch(function(error) {
       console.log(error.code);
       console.log(error.message);
    });
+
+   console.log(result)
 
    if(result) {
       setIsAuth(true);
@@ -60,7 +65,8 @@ const Login = ({ setIsAuth }: any) => {
   return (
     <>
       <h1 className='title'>Sign in</h1>
-      <p>Sign in with Email</p>
+      <form onSubmit={signInWithEmail}>
+        <h2>Sign in with Email</h2>
         <input 
           name='loginMail' 
           placeholder='Email...'
@@ -72,7 +78,9 @@ const Login = ({ setIsAuth }: any) => {
           placeholder='password...'
           onChange={(event) => {setlogInPassword(event.target.value)}}>
         </input>
-        <button onClick={signInWithEmail}>Sign In with Email</button>
+        {/* <button onClick={signInWithEmail}>Sign In with Email</button> */}
+        <input type="submit" autoFocus value="Go!"/> 
+      </form>
       {/* <p>Sign in with Google</p>
       <button className='login-with-google-btn' onClick={signInWithGoogle}>Sign in with Google</button> */}
       {/* <br/><br/>
