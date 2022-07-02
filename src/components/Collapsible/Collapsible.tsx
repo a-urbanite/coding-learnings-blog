@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Collapsible.css"
 
-const Collapsible = ({collapsed, children, titleOpen, titleClosed}:any) => {
+const Collapsible = ({collapsed, children, titleOpen, titleClosed, classname}:any) => {
     const [isCollapsed, setIsCollapsed] = React.useState(collapsed);
   
     return (
