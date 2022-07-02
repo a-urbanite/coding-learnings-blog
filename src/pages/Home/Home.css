@@ -17,20 +17,37 @@
     height: 400px;
 }
 
-.profileText {
+.profileBlock {
     /* background-color: green; */
     /* margin-top: 10%; */
     margin-left: 10%;
     margin-right: 10%;
     width: 600px;
     height: 400px;
-    text-align: justify;
+
     display: flex;
-    vertical-align: middle;
-    align-items: center;
+    flex-direction: column;
+    /* vertical-align: middle; */
+    justify-content: center;
     /* align-content:flex-end; */
     /* justify-content: center;  */
     
+}
+
+.profileText {
+    text-align: justify;
+}
+
+.icon__wrapper{
+    display: flex;
+    justify-content: space-evenly;
+    /* align-items: center; */
+    margin-top: 1rem;
+}
+
+.icon {
+    font-size: 2rem;
+    color: var(--as-Ebony);
 }
 
 .CV {
