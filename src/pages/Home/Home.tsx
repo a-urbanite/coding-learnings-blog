@@ -26,7 +26,7 @@ const Home = () => {
           </div>
         </div>
         {/* <h2>Download CV</h2> */}
-          <Collapsible titleOpen="collapse content" titleClosed="Show whole CV" classname="collapse-button">
+          <Collapsible collapsed={true} titleOpen="collapse content" titleClosed="Show whole CV" classname="collapse-button">
             <div className='CV'>
               <h2>EDUCATION & TRAINING</h2>
               <ul>

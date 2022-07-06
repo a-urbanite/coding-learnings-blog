@@ -45,6 +45,11 @@
     color: var(--as-Languid-lavender);
 }
 
+.icon:hover {
+    /* font-size: 3rem; */
+    color: white;
+}
+
 .collapse-button {
     margin-top: 10%;
     margin-left: 10%;
