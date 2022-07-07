@@ -71,7 +71,7 @@ const Home = () => {
                   <ul>
                     <li>NodeJS</li>
                     <li>ExpressJS</li>
-                    <li>MongoDB/PostgreSQL/GraphQL</li>
+                    <li>MongoDB/ PostgreSQL/ GraphQL</li>
                     <li>REST API</li>
                   </ul>
                 </div>
@@ -97,7 +97,7 @@ const Home = () => {
                     <li>QGIS/ArcGIS</li>
                     <li>Meshlab</li>
                     <li>Metashape</li>
-                    <li>WebMapping (Leaflet/Openlayers/ArcGIS Server)</li>
+                    <li>WebMapping (Leaflet/ Openlayers/ ArcGIS Server)</li>
                   </ul>
                 </div>
               </div>

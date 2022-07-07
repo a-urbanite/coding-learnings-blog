@@ -1,32 +1,15 @@
 
-
 .profileBox {
     display: flex;
+    flex-direction: column;
     
-}
-
-.profilePic {
-    /* margin-top: 10%; */
-    margin-left: 10%;
-    /* width: 300px; */
-    height: 23rem;
 }
 
 .profileBlock {
-    /* background-color: green; */
-    /* margin-top: 10%; */
-    margin-left: 10%;
-    margin-right: 10%;
-    /* width: 600px; */
-    /* height: 400px; */
-
+    margin-top: 10%;
     display: flex;
     flex-direction: column;
-    /* vertical-align: middle; */
     justify-content: center;
-    /* align-content:flex-end; */
-    /* justify-content: center;  */
-    
 }
 
 .profileText {
@@ -36,8 +19,7 @@
 .icon__wrapper{
     display: flex;
     justify-content: space-evenly;
-    /* align-items: center; */
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 
 .icon {
@@ -46,7 +28,6 @@
 }
 
 .icon:hover {
-    /* font-size: 3rem; */
     color: white;
 }
 
@@ -102,14 +83,10 @@ li {
 }
 
 .columnA {
-    /* background-color: red; */
-    /* height: 200px; */
     width: 50%
 }
 
 .columnB {
-    /* background-color: green; */
-    /* height: 200px; */
     width: 50%
 }
 
@@ -121,4 +98,40 @@ h2 {
     margin-top: 3rem;
     display: flex;
     justify-content: space-evenly;
+}
+
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+    .profileBox {
+        flex-direction: row;
+    }
+
+    .profilePic {
+        margin-left: 10%;
+        height: 23rem;
+    }
+
+    .profileBlock {
+        margin-top: 0%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}
+
+@media only screen and (min-width: 901px) {
+
+    .profileBox {
+        flex-direction: row;
+    }
+
+    .profilePic {
+        margin-left: 10%;
+        height: 23rem;
+    }
+
+    .profileBlock {
+        margin-top: 10%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
 }

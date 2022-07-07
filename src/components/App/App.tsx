@@ -8,7 +8,6 @@ import Login from '../../pages/LoginPage/Login';
 import Navbar from '../Navbar/Navbar';
 import Home from '../../pages/Home/Home';
 import Archaeology from '../../pages/Archaeology/Archaeology';
-import CodingProjects from '../../pages/CodingProjects/CodingProjects';
 import {signOut} from 'firebase/auth'
 import { auth } from '../../firebase-config';
 import PetMeUp from '../../pages/PetMeUp/PetMeUp';
@@ -53,7 +52,7 @@ function App() {
         <Route path="/login" element={<Pagewrapper contents={<Login setIsAuth={setIsAuth}/>}/>} />
         <Route path="/signup" element={<Pagewrapper contents={<SignUp/>}/>} />
         <Route path="/archaeology" element={<Pagewrapper contents={<Archaeology/>}/>} />
-        <Route path="/coding" element={<CodingProjects/>} />
+        <Route path="/coding" />
           <Route path="/coding/pet-me-up" element={<Pagewrapper contents={<PetMeUp/>}/>} />
           <Route path="/coding/moviefinder" element={<Pagewrapper contents={<MovieFinder/>}/>} />
           <Route path="/coding/akzisemauer" element={<Pagewrapper contents={<Akzisemauer/>}/>} />
