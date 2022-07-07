@@ -26,6 +26,7 @@ const Home = () => {
           </div>
         </div>
         {/* <h2>Download CV</h2> */}
+        <div className='CV_wrapper'>
           <Collapsible collapsed={true} titleOpen="collapse content" titleClosed="Show whole CV" classname="collapse-button">
             <div className='CV'>
               <h2>EDUCATION & TRAINING</h2>
@@ -101,11 +102,13 @@ const Home = () => {
                   </ul>
                 </div>
               </div>
+              {/* <h2>DOWNLOAD</h2> */}
+            </div>
+            <div className='downloadButtonWrapper'>
+              <a className='downloadButton' href='/w11-extra-CV_alexander_staedtler.pdf' download>Download PDF</a>
+              <a className='downloadButton' href='/w11-extra-CV_alexander_staedtler.docx' download>Download DOC</a>
             </div>
           </Collapsible>
-        <div className='downloadButtonWrapper'>
-          <a className='downloadButton' href='/w11-extra-CV_alexander_staedtler.pdf' download>PDF</a>
-          <a className='downloadButton' href='/w11-extra-CV_alexander_staedtler.docx' download>DOC</a>
         </div>
     </>
   )

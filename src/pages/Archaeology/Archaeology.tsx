@@ -31,16 +31,16 @@ const Archaeology = () => {
                     2018 I finished my Master studies and followed up with 1 year abroad in Australia and Asia where i gained interesting insights professionally as an Archaeological Consultant but also mentally as a traveller and guest to many fascinating cultures.
                 </li>
                 <li>
+                    2019 i returned to Germany and decided to become a programmer and 2020 I started a job as Webmaster in the German Archaeological Institute overseeing the online presence of the world´s largest research institute on archaeology.
+                </li>
+                <li>
                     In 2019 and 2020 i summarized my research in a monography that is currently being published in the Tayma Studies series. When it is finally published i will link to it here. With this publication i aim to summarize and, for now, conclude my academic career as i will pursue a new career in web development. In the future i hope merge both paths together again.
                 </li>
 
-    
-
-    2019 i returned to Germany and decided to become a programmer and 2020 I started a job as Webmaster in the German Archaeological Institute overseeing the online presence of the world´s largest research institute on archaeology.
-
-    
-
-    The output of my academic work can be found on my Academia profile. 
+    The output of my academic work can be found on&nbsp;
+    <a href="https://independent.academia.edu/AlexanderSt%C3%A4dtler" target="_blank" rel="noreferrer">
+        my Academia profile. 
+    </a>
             </ul>
         </>
   )

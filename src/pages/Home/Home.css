@@ -19,6 +19,7 @@
 .icon__wrapper{
     display: flex;
     justify-content: space-evenly;
+    /* align-items: center; */
     margin-top: 2rem;
 }
 
@@ -28,6 +29,7 @@
 }
 
 .icon:hover {
+    /* font-size: 3rem; */
     color: white;
 }
 
