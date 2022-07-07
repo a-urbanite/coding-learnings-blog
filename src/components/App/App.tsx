@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Blog from '../../pages/Blog/Blog';
 import CreatePost from '../../pages/CreatePost/CreatePost';
 import EditPost from '../../pages/EditPost/EditPost';
-import Login from '../../pages/LoginPage/Login';
+import Login from '../../pages/SignIn/SignIn';
 import Navbar from '../Navbar/Navbar';
 import Home from '../../pages/Home/Home';
 import Archaeology from '../../pages/Archaeology/Archaeology';

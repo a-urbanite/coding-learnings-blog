@@ -2,8 +2,6 @@ import React from 'react'
 import {auth, provider} from '../../firebase-config'
 import {signInWithPopup} from 'firebase/auth'
 import { useNavigate } from 'react-router-dom'
-
-
 import { useState, useEffect } from "react";
 // import { useNavigate } from "react-router-dom"
 import {
@@ -14,7 +12,8 @@ import {
   updateProfile
 } from "firebase/auth";
 // import { auth } from "../../firebase/firebase-config";
-// import "./SingUp.css"
+import "./SignIn.css"
+
 
 
 const Login = ({ setIsAuth }: any) => {
@@ -49,21 +48,27 @@ const Login = ({ setIsAuth }: any) => {
   return (
     <>
       <h1 className='title'>Sign in</h1>
-      <form onSubmit={signInWithEmail}>
-        <h2>Sign in with Email</h2>
+      <form className='loginForm' onSubmit={signInWithEmail}>
+        {/* <h2>Sign in with Email</h2> */}
         <input 
+          className='loginForm__input'
           name='loginMail' 
           placeholder='Email...'
           onChange={(event) => {setlogInEmail(event.target.value)}}>
         </input>
         <input 
+          className='loginForm__input'
           type="password"
           name='loginPassword' 
           placeholder='password...'
           onChange={(event) => {setlogInPassword(event.target.value)}}>
         </input>
         {/* <button onClick={signInWithEmail}>Sign In with Email</button> */}
-        <input type="submit" autoFocus value="Go!"/> 
+        <input 
+          className='loginForm__submit'
+          type="submit" 
+          autoFocus 
+          value="Go!"/> 
       </form>
       {/* <p>Sign in with Google</p>
       <button className='login-with-google-btn' onClick={signInWithGoogle}>Sign in with Google</button> */}
