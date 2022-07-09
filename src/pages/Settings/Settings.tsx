@@ -1,23 +1,24 @@
 import { getAdditionalUserInfo, updateProfile } from 'firebase/auth';
 import React, { useEffect, useState } from 'react'
+import { Navigate, useNavigate } from 'react-router-dom';
 import { auth } from '../../firebase-config';
 // import updateDispla
 
 const Settings = (isAuth: any) => {
 
-  console.log("USER OBJECT",isAuth)
+  const navigate = useNavigate();
 
-  const [displayname, setdisplayname] = useState("");
+  // console.log("USER OBJECT",isAuth)
+  // console.log("AUTH OBJECT",auth)
+
+  const [displayname, setdisplayname] = useState<string>(auth.currentUser!.displayName!);
+  const [photoURL, setphotoURL] = useState<string>(auth.currentUser!.photoURL!);
 
   const updateUserProfile = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
-        // console.log(displayname)
-        const response = await updateProfile(isAuth.isAuth, {'displayName': displayname, 'photoURL': ""});
-        console.log(response)
-        // getProfile
-        // getUser(isAuth.isAuth.uid)
-        // getAdditionalUserInfo()
+        await updateProfile(isAuth.isAuth, {'displayName': displayname, 'photoURL': photoURL});
         console.log(auth)
+        navigate('/settings')
   }
 
   useEffect(() => {
@@ -30,10 +31,15 @@ const Settings = (isAuth: any) => {
   return (
     <>
         <h1>Settings</h1>
-        <p>change profile information</p>
+        <p>Welcome {auth.currentUser?.displayName}! Change your profile information here.</p>
+        <img src={auth.currentUser!.photoURL!} className="profilePic" alt='profilePic'></img>
         <form onSubmit={updateUserProfile}>
-          <input onChange={(event) => {setdisplayname(event.target.value)}} placeholder='your username'></input>
-          <input type="submit" value="Send Request"/>
+          <label htmlFor="displayname">User name:</label>
+          <input id='displayname' onChange={(event) => {setdisplayname(event.target.value)}} defaultValue={displayname}></input>
+          <label htmlFor="photoURL">photo URL:</label>
+          <input id='photoURL' onChange={(event) => {setphotoURL(event.target.value)}} defaultValue={photoURL}></input>
+          {/* <input></input> */}
+          <input type="submit" value="Go!"/>
         </form>
 
         
