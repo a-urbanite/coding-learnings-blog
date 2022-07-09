@@ -19,12 +19,14 @@ const EditPost = ({isAuth, postToEdit}: CreatePostPageProps) => {
     if (!isAuth) {
       navigate("/login")
     }
+    setTitle(postToEdit.title)
+    setPostText(postToEdit.postText)
   }, [])
 
   const updatePost = async () => {
     const postDoc = doc(db, 'posts', postToEdit.id)
     await updateDoc(postDoc, {title: title, postText: postText, date: new Date().toLocaleDateString()});
-    navigate('/')
+    navigate('/blog')
   }
 
   return (
