@@ -18,6 +18,7 @@ import Akzisemauer from '../../pages/Akzisemauer/Akzisemauer';
 import TestSite from '../../pages/TestSite/TestSite';
 import LCPA from '../../pages/LCPA/LCPA';
 import SignUp from '../../pages/SignUp/SignUp';
+import Settings from '../../pages/Settings/Settings';
 
 
 
@@ -59,6 +60,7 @@ function App() {
           <Route path="/coding/dai-wordpress-plugin" element={<Pagewrapper contents={<DAIWordpressPlugin/>}/>} />
           <Route path="/coding/least-cost-path-analysis" element={<Pagewrapper contents={<LCPA/>}/>} />
         <Route path="/test-site" element={<Pagewrapper contents={<TestSite/>}/>} />
+        <Route path="/settings" element={<Pagewrapper contents={<Settings isAuth={isAuth}/>}/>} />
       </Routes>
     </Router>
   );

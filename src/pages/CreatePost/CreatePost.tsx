@@ -17,7 +17,7 @@ const CreatePost = ({isAuth}: CreatePostPageProps) => {
 
   const postsCollectionRef = collection(db, "posts" )
   const createPost = async () => {
-    console.log(auth)
+    console.log("AUTH OBJECT", auth)
     await addDoc(postsCollectionRef, {
       title, 
       postText, 

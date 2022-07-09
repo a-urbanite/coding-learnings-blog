@@ -29,9 +29,9 @@ const Login = ({ setIsAuth }: any) => {
       console.log(error.code);
       console.log(error.message);
     });
-    // console.log(result)
+    // console.log("RETURN OF LOGIN OBJECT",result)
     if(result) {
-        setIsAuth(true);
+        setIsAuth(result.user);
         navigate('/')
     }
   }

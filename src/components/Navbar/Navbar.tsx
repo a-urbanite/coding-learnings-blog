@@ -3,6 +3,7 @@ import '@szhsin/react-menu/dist/index.css';
 import '@szhsin/react-menu/dist/transitions/slide.css';
 import { Link } from 'react-router-dom';
 import './Navbar.css'
+import { AiFillSetting } from "react-icons/ai";
 
 
 const Navbar = ({isAuth, setIsAuth, signUserOut}: any) => {
@@ -34,12 +35,10 @@ const Navbar = ({isAuth, setIsAuth, signUserOut}: any) => {
             </Menu> */}
             { isAuth && <Link className='mainMenuLink' to="/test-site"> Test site </Link>}
             <Link className='mainMenuLink' to="/blog"> Blog </Link>
-                { !isAuth ? <Link className='mainMenuLink' to="/login"> Login </Link> : 
-                <>
-                <Link className='mainMenuLink' to="/createpost"> Create Post </Link>
-                <button onClick={signUserOut}>Log Out</button>
-                </>
-                }
+            { !isAuth && <Link className='mainMenuLink' to="/login"> Login </Link>}
+            { isAuth && <Link className='mainMenuLink' to="/createpost"> Create Post </Link>}
+            { isAuth && <button onClick={signUserOut}>Log Out</button>}
+            { isAuth && <Link className='mainMenuLink' to="/settings"> <AiFillSetting/> </Link>}
         </div>
     );
 }
