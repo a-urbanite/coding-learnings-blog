@@ -1,6 +1,7 @@
+// import userEvent from '@testing-library/user-event';
 import { getAdditionalUserInfo, updateProfile } from 'firebase/auth';
 import React, { useEffect, useState } from 'react'
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { auth } from '../../firebase-config';
 // import updateDispla
 
@@ -17,7 +18,8 @@ const Settings = (isAuth: any) => {
   const updateUserProfile = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
         await updateProfile(isAuth.isAuth, {'displayName': displayname, 'photoURL': photoURL});
-        console.log(auth)
+        // console.log(auth)
+        // user.updateEmail
         navigate('/settings')
   }
 
@@ -33,12 +35,13 @@ const Settings = (isAuth: any) => {
         <h1>Settings</h1>
         <p>Welcome {auth.currentUser?.displayName}! Change your profile information here.</p>
         <img src={auth.currentUser!.photoURL!} className="profilePic" alt='profilePic'></img>
-        <form onSubmit={updateUserProfile}>
+        <form className='settingsForm' onSubmit={updateUserProfile}>
           <label htmlFor="displayname">User name:</label>
           <input id='displayname' onChange={(event) => {setdisplayname(event.target.value)}} defaultValue={displayname}></input>
           <label htmlFor="photoURL">photo URL:</label>
           <input id='photoURL' onChange={(event) => {setphotoURL(event.target.value)}} defaultValue={photoURL}></input>
-          {/* <input></input> */}
+          <label htmlFor="email">Email:</label>
+          <input id='email' defaultValue={auth.currentUser!.email!}/>
           <input type="submit" value="Go!"/>
         </form>
 

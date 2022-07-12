@@ -18,6 +18,9 @@
 .sidebar {
     /* flex: 30%; */
     width: 300px;
+    height: 90%;
     position: fixed;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    overflow-y: scroll; /* Add vertical scrollbar */
 }
 
