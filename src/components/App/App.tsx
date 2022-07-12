@@ -53,12 +53,13 @@ function App() {
         <Route path="/login" element={<Pagewrapper contents={<Login setIsAuth={setIsAuth}/>}/>} />
         <Route path="/signup" element={<Pagewrapper contents={<SignUp/>}/>} />
         <Route path="/archaeology" element={<Pagewrapper contents={<Archaeology/>}/>} />
-        <Route path="/coding" />
-          <Route path="/coding/pet-me-up" element={<Pagewrapper contents={<PetMeUp/>}/>} />
-          <Route path="/coding/moviefinder" element={<Pagewrapper contents={<MovieFinder/>}/>} />
-          <Route path="/coding/akzisemauer" element={<Pagewrapper contents={<Akzisemauer/>}/>} />
-          <Route path="/coding/dai-wordpress-plugin" element={<Pagewrapper contents={<DAIWordpressPlugin/>}/>} />
-          <Route path="/coding/least-cost-path-analysis" element={<Pagewrapper contents={<LCPA/>}/>} />
+        <Route path="coding">
+          <Route path="pet-me-up" element={<Pagewrapper contents={<PetMeUp/>}/>} />
+          <Route path="moviefinder" element={<Pagewrapper contents={<MovieFinder/>}/>} />
+          <Route path="akzisemauer" element={<Pagewrapper contents={<Akzisemauer/>}/>} />
+          <Route path="dai-wordpress-plugin" element={<Pagewrapper contents={<DAIWordpressPlugin/>}/>} />
+          <Route path="least-cost-path-analysis" element={<Pagewrapper contents={<LCPA/>}/>} />
+        </Route>
         <Route path="/test-site" element={<Pagewrapper contents={<TestSite/>}/>} />
         <Route path="/settings" element={<Pagewrapper contents={<Settings isAuth={isAuth}/>}/>} />
       </Routes>
