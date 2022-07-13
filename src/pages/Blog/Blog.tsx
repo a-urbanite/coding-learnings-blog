@@ -4,6 +4,7 @@ import { db } from '../../firebase-config';
 import './Blog.css'
 import Post from '../../components/Post/Post';
 import Sidebar from '../../components/Sidebar/Sidebar';
+import { Outlet } from 'react-router-dom';
 
 // const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
 // General scroll to element function

@@ -19,7 +19,7 @@ import TestSite from '../../pages/TestSite/TestSite';
 import LCPA from '../../pages/LCPA/LCPA';
 import SignUp from '../../pages/SignUp/SignUp';
 import Settings from '../../pages/Settings/Settings';
-
+import ArticlePage from '../../pages/ArticlePage/ArticlePage'
 
 
 function App() {
@@ -40,16 +40,10 @@ function App() {
       <Navbar isAuth={isAuth} setIsAuth={setIsAuth} signUserOut={signUserOut}></Navbar>
       <Routes>
         <Route path='/' element={<Pagewrapper contents={<Home/>}/>}/>
-        <Route path="/blog" element={<Blog isAuth={isAuth} setPostToEdit={setPostToEdit}/>} />
-        <Route path="/createpost" element={
-          <CreatePost 
-            isAuth={isAuth} 
-          />} />
-        <Route path="/editpost" element={
-          <EditPost 
-            isAuth={isAuth} 
-            postToEdit={postToEdit} 
-          />} />
+        <Route path="/blog" element={<Blog isAuth={isAuth} setPostToEdit={setPostToEdit}/>}/>
+          <Route path='/blog/:id' element={<Pagewrapper contents={<ArticlePage />}/>}/>
+        <Route path="/createpost" element={<CreatePost isAuth={isAuth}/>} />
+        <Route path="/editpost" element={<EditPost isAuth={isAuth} postToEdit={postToEdit}/>}/>
         <Route path="/login" element={<Pagewrapper contents={<Login setIsAuth={setIsAuth}/>}/>} />
         <Route path="/signup" element={<Pagewrapper contents={<SignUp/>}/>} />
         <Route path="/archaeology" element={<Pagewrapper contents={<Archaeology/>}/>} />

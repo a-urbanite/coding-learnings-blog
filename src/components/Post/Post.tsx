@@ -1,11 +1,14 @@
 import { deleteDoc, doc } from 'firebase/firestore';
 import { auth, db } from '../../firebase-config'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import parse from 'html-react-parser'
 import './Post.css'
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 const Post = ({post, isAuth, getPosts, setPostToEdit}: any) => {
 
+  const location = useLocation();
   let navigate = useNavigate();
 
   const deletePost = async (id: any) => {
@@ -22,12 +25,11 @@ const Post = ({post, isAuth, getPosts, setPostToEdit}: any) => {
       navigate('/editpost')
     };
 
-  console.log("POSTID", post.id)
 
   return (
     <div className='post' key={post.id}> 
       <div className='post__header'>
-          <h1>{post.title}</h1>
+        {location.pathname === "/blog" ? <Link to={post.id}><h1>{post.title}</h1></Link> : <h1>{post.title}</h1>}
       </div>
       <div className='post__text'>{parse(post.postText)}</div>
       <div className='post__footer'>
