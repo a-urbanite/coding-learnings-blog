@@ -28,7 +28,7 @@ const EditPost = ({isAuth, postToEdit}: CreatePostPageProps) => {
     await updateDoc(postDoc, {
       title: title, 
       postText: postText, 
-      date: new Date().toLocaleDateString(),
+      // date: new Date().toLocaleDateString(),
       author: 
         {name: auth.currentUser?.displayName, 
         id: auth.currentUser?.uid}
