@@ -34,7 +34,7 @@ const Post = ({post, isAuth, getPosts, setPostToEdit}: any) => {
       <div className='post__text'>{parse(post.postText)}</div>
       <div className='post__footer'>
         <h3>@{post.author.name}</h3>
-        <h3>{post.date}</h3>
+        { typeof post.date=="string" ? <h3>{post.date}</h3> : <p>test</p>}
         <div className='post__buttonContainer'>
           {isAuth /*&& post.author.id === auth.currentUser?.uid*/ && <button onClick={() => {deletePost(post.id)}}>&#128465;</button>}
           {isAuth /*&& post.author.id === auth.currentUser?.uid*/ && <button onClick={() => {editPost(post)}}>&#9999;</button>}

@@ -17,11 +17,11 @@ const CreatePost = ({isAuth}: CreatePostPageProps) => {
 
   const postsCollectionRef = collection(db, "posts" )
   const createPost = async () => {
-    console.log("AUTH OBJECT", auth)
+    // console.log("AUTH OBJECT", auth)
     await addDoc(postsCollectionRef, {
       title, 
       postText, 
-      date: new Date().toLocaleDateString(), 
+      date: new Date().getUTCSeconds, 
       author: 
         {name: auth.currentUser?.displayName, 
         id: auth.currentUser?.uid}}

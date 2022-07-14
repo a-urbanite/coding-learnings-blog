@@ -4,7 +4,6 @@ import { db } from '../../firebase-config';
 import './Blog.css'
 import Post from '../../components/Post/Post';
 import Sidebar from '../../components/Sidebar/Sidebar';
-import { Outlet } from 'react-router-dom';
 
 // const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
 // General scroll to element function
@@ -21,27 +20,41 @@ const Blog = ({isAuth, setPostToEdit}: any) => {
   //   })
   // }
 
-  const [postLists, setPostList] = useState<any>([]);
+  const [postList, setPostList] = useState<any>([]);
   const postsCollectionRef = collection(db, "posts" )
 
   const getPosts = async () => {
+
     const data = await getDocs(postsCollectionRef);
-    setPostList(data.docs.map((doc) => ({...doc.data(), id: doc.id})))
+    const postArr: any[] = data.docs.map((doc) => ({...doc.data(), id: doc.id}))
+    // console.log(postArr)
+    setPostList(postArr)
+
+  }
+
+  const [sortOrderAsc, setsortOrderAsc] = useState(false)
+  const sortPosts = (category: any) => {
+
+    const sortedPosts = postList.sort((a: any, b: any) => 
+    { return !sortOrderAsc ? a[category].localeCompare(b[category]) : b[category].localeCompare(a[category])})
+    setsortOrderAsc(!sortOrderAsc)
+    setPostList([...sortedPosts])
+
   }
 
   useEffect(() => {
-    // console.log('USEEFFECT TRIGGERED')
-    // console.log('MYREF', myRef.current)
     getPosts()
   },[])
-
-
   
   return (
     <div className='homepage'>
       {/* <div ref={myRef}>I wanna be seen</div>  */}
-      <Sidebar postLists={postLists}></Sidebar>
-      <div className='gallery'>{postLists.map((post: any) => {
+      <Sidebar postList={postList}></Sidebar>
+      <div className='gallery'>
+        <button onClick={() => sortPosts("title")}>Sort after name {!sortOrderAsc ? "ASC" : "DESC"}</button>
+        <button onClick={() => sortPosts("date")}>Sort after date {!sortOrderAsc ? "ASC" : "DESC"}</button>
+        {/* <button onClick={() => sortPosts("desc")}>Sort after name DESC</button> */}
+        {postList.map((post: any) => {
         return (
           <Post key={post.id} post={post} isAuth={isAuth} getPosts={getPosts} setPostToEdit={setPostToEdit}></Post>
         )

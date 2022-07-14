@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './Sidebar.css'
 
-const Sidebar = ({postLists}: any) => {
+const Sidebar = ({postList}: any) => {
 
   const clickHandler = () => {
     console.log("Hello!!!")
@@ -12,7 +12,7 @@ const Sidebar = ({postLists}: any) => {
     <div className='sidebar'>
       <h2 className='sidebar__title'>Articles</h2>
       <ul className='sidebar__list'>
-          <>{postLists.map((post: any) => {
+          <>{postList.map((post: any) => {
               return (<li key={post.id} className='sidebar__item'>
                         <Link className='sideBarLink' to={'/'} onClick={() => clickHandler()}>
                           {post.title} - {post.date}
