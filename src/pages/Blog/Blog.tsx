@@ -42,8 +42,17 @@ const Blog = ({isAuth, setPostToEdit}: any) => {
 
   }
 
+  const sortAfterDate = () => {
+    const sortedPosts = postList.sort((a: any, b: any) =>
+    {
+      
+    }
+    )
+  }
+
   useEffect(() => {
     getPosts()
+    console.log(postList)
   },[])
   
   return (
@@ -51,8 +60,9 @@ const Blog = ({isAuth, setPostToEdit}: any) => {
       {/* <div ref={myRef}>I wanna be seen</div>  */}
       <Sidebar postList={postList}></Sidebar>
       <div className='gallery'>
-        <button onClick={() => sortPosts("title")}>Sort after name {!sortOrderAsc ? "ASC" : "DESC"}</button>
-        <button onClick={() => sortPosts("date")}>Sort after date {!sortOrderAsc ? "ASC" : "DESC"}</button>
+        {!sortOrderAsc ? "ASC" : "DESC"}
+        <button onClick={() => sortPosts("title")}>Sort after name</button>
+        <button onClick={() => sortAfterDate()}>Sort after date</button>
         {/* <button onClick={() => sortPosts("desc")}>Sort after name DESC</button> */}
         {postList.map((post: any) => {
         return (

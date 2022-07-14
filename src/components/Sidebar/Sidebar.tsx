@@ -15,7 +15,7 @@ const Sidebar = ({postList}: any) => {
           <>{postList.map((post: any) => {
               return (<li key={post.id} className='sidebar__item'>
                         <Link className='sideBarLink' to={'/'} onClick={() => clickHandler()}>
-                          {post.title} - {post.date}
+                          {post.title} - Date dummy
                         </Link>  
                       </li>)
           })}</>

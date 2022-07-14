@@ -21,7 +21,7 @@ const CreatePost = ({isAuth}: CreatePostPageProps) => {
     await addDoc(postsCollectionRef, {
       title, 
       postText, 
-      date: new Date().getUTCSeconds, 
+      date: new Date(), 
       author: 
         {name: auth.currentUser?.displayName, 
         id: auth.currentUser?.uid}}

@@ -25,6 +25,12 @@ const Post = ({post, isAuth, getPosts, setPostToEdit}: any) => {
       navigate('/editpost')
     };
 
+//   const  simpleDateFormat = new simpleDateFormat("dd-MM-yyyy HH:mm:ss");
+// sfd.format(new Date(timestamp))
+
+// const newDateObject = new Date(post.date.seconds * 1000);
+// console.log("NEWLY CONSTRUCTED DATE PER POST", new Date(post.date.seconds * 1000).toLocaleDateString())
+
 
   return (
     <div className='post' key={post.id}> 
@@ -34,7 +40,7 @@ const Post = ({post, isAuth, getPosts, setPostToEdit}: any) => {
       <div className='post__text'>{parse(post.postText)}</div>
       <div className='post__footer'>
         <h3>@{post.author.name}</h3>
-        { typeof post.date=="string" ? <h3>{post.date}</h3> : <p>test</p>}
+        { typeof post.date=="string" ? <h3>{post.date}</h3> : <p>{new Date(post.date.seconds * 1000).toLocaleDateString()}</p>}
         <div className='post__buttonContainer'>
           {isAuth /*&& post.author.id === auth.currentUser?.uid*/ && <button onClick={() => {deletePost(post.id)}}>&#128465;</button>}
           {isAuth /*&& post.author.id === auth.currentUser?.uid*/ && <button onClick={() => {editPost(post)}}>&#9999;</button>}
