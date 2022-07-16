@@ -4,7 +4,7 @@ import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import parse from 'html-react-parser'
 import './Post.css'
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+// import { useState } from 'react';
 
 const Post = ({post, isAuth, getPosts, setPostToEdit}: any) => {
 
@@ -25,15 +25,8 @@ const Post = ({post, isAuth, getPosts, setPostToEdit}: any) => {
       navigate('/editpost')
     };
 
-//   const  simpleDateFormat = new simpleDateFormat("dd-MM-yyyy HH:mm:ss");
-// sfd.format(new Date(timestamp))
-
-// const newDateObject = new Date(post.date.seconds * 1000);
-// console.log("NEWLY CONSTRUCTED DATE PER POST", new Date(post.date.seconds * 1000).toLocaleDateString())
-
-
   return (
-    <div className='post' key={post.id}> 
+    <div className='post' key={post.id} id={post.id}> 
       <div className='post__header'>
         {location.pathname === "/blog" ? <Link to={post.id}><h1>{post.title}</h1></Link> : <h1>{post.title}</h1>}
       </div>
