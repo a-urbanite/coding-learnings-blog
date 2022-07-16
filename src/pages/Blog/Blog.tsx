@@ -4,6 +4,7 @@ import { db } from '../../firebase-config';
 import './Blog.css'
 import Post from '../../components/Post/Post';
 import Sidebar from '../../components/Sidebar/Sidebar';
+import { sortAfterDateAsc, sortAfterDateDesc, sortAfterStringAsc, sortAfterStringDesc } from './sorters';
 
 // const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
 // General scroll to element function
@@ -19,40 +20,35 @@ const Blog = ({isAuth, setPostToEdit}: any) => {
   //     behavior: 'smooth'
   //   })
   // }
-
   const [postList, setPostList] = useState<any>([]);
+  const [sortOrderAsc, setsortOrderAsc] = useState(false)
   const postsCollectionRef = collection(db, "posts" )
 
   const getPosts = async () => {
 
     const data = await getDocs(postsCollectionRef);
     const postArr: any[] = data.docs.map((doc) => ({...doc.data(), id: doc.id}))
-    // console.log(postArr)
-    setPostList(postArr)
+    const sortedArr = sortAfterDateDesc(postArr, "date")
+    setPostList(sortedArr)
 
   }
 
-  const [sortOrderAsc, setsortOrderAsc] = useState(false)
-  const sortPosts = (category: any) => {
 
-    const sortedPosts = postList.sort((a: any, b: any) => 
-    { return !sortOrderAsc ? a[category].localeCompare(b[category]) : b[category].localeCompare(a[category])})
-    setsortOrderAsc(!sortOrderAsc)
-    setPostList([...sortedPosts])
+  const sortPosts = (category: any, array: any[], setter: any) => {
 
-  }
-
-  const sortAfterDate = () => {
-    const sortedPosts = postList.sort((a: any, b: any) =>
-    {
-      
+    let sortedPosts
+    if (category === "title") {
+      sortedPosts = !sortOrderAsc ? sortAfterStringAsc(array, category) : sortAfterStringDesc(array, category)
+    } else {
+      sortedPosts = !sortOrderAsc ? sortAfterDateAsc(array, category) : sortAfterDateDesc(array, category)
     }
-    )
+    setsortOrderAsc(!sortOrderAsc)
+    setter([...sortedPosts])
+
   }
 
   useEffect(() => {
     getPosts()
-    console.log(postList)
   },[])
   
   return (
@@ -61,9 +57,8 @@ const Blog = ({isAuth, setPostToEdit}: any) => {
       <Sidebar postList={postList}></Sidebar>
       <div className='gallery'>
         {!sortOrderAsc ? "ASC" : "DESC"}
-        <button onClick={() => sortPosts("title")}>Sort after name</button>
-        <button onClick={() => sortAfterDate()}>Sort after date</button>
-        {/* <button onClick={() => sortPosts("desc")}>Sort after name DESC</button> */}
+        <button onClick={() => sortPosts("title", postList, setPostList)}>Sort after name</button>
+        <button onClick={() => sortPosts("date", postList, setPostList)}>Sort after date</button>
         {postList.map((post: any) => {
         return (
           <Post key={post.id} post={post} isAuth={isAuth} getPosts={getPosts} setPostToEdit={setPostToEdit}></Post>
