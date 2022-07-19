@@ -66,7 +66,7 @@ const EditPost = ({isAuth, postToEdit}: CreatePostPageProps) => {
       <input onChange={() => setchangeDateChecker(!changeDateChecker)} type="checkbox"></input>
       <input type="date" onChange={(event) => {setpubDate(event.target.value)}}></input>
       <button onClick={updatePost}>Update Post</button>
-      </div>
+    </div>
   )
 }
 

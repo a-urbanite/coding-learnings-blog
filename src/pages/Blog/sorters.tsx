@@ -10,3 +10,5 @@ export const sortAfterDateAsc = (array: any[], category: string) => {
 export const sortAfterDateDesc = (array: any[], category: string) => {
   return array.sort((a: any, b: any) => b[category].seconds.toString().localeCompare(a[category].seconds.toString()))
 }
+
+export const findDuplicates = (arr:any) => arr.filter((item:any, index:any) => arr.indexOf(item) !== index)

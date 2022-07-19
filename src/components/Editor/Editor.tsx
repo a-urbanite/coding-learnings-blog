@@ -12,7 +12,7 @@ interface EditorProps {
 
 const Editor = ({title, setTitle, postText, setPostText}: EditorProps) => {
 
-	console.log("EDITOR LAUNCHED", typeof postText, postText)
+	// console.log("EDITOR LAUNCHED", typeof postText, postText)
 
   return (
     <div>        
