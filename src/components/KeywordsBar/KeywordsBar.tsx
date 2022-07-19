@@ -17,7 +17,6 @@ const KeywordsBar = ({keywords, setkeywords}: any) => {
 
   const deletekeyword = (event: any) => {
     event.preventDefault();
-    // console.log("delete keyword triggered")
     const keywordToRemove = event.target.parentElement.innerText.slice(0, -1)
     setkeywords(keywords.filter((keyword: any) => keyword !== keywordToRemove))
   } 

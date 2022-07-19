@@ -6,9 +6,6 @@ import './Post.css'
 import { Link } from 'react-router-dom';
 
 const Post = ({post, isAuth, getPosts, setPostToEdit}: any) => {
-
-console.log(post)
-
   const location = useLocation();
   let navigate = useNavigate();
 

@@ -30,9 +30,6 @@ const EditPost = ({isAuth, postToEdit}: CreatePostPageProps) => {
     }
   }, [])
 
-  // console.log(new Date(pubDate))
-  
-  
   const updatePost = async () => {
     const postDoc = doc(db, 'posts', postToEdit.id)
     await updateDoc(postDoc, {
