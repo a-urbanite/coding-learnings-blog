@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { doc, updateDoc} from 'firebase/firestore'
 import { auth, db } from '../../firebase-config';
 import Editor from '../../components/Editor/Editor';
+import KeywordsBar from '../../components/KeywordsBar/KeywordsBar';
 
 interface CreatePostPageProps {
     isAuth: boolean
@@ -15,6 +16,7 @@ const EditPost = ({isAuth, postToEdit}: CreatePostPageProps) => {
   const [postText, setPostText] = useState<string | null>("")
   const [pubDate, setpubDate] = useState<any>(null)
   const [changeDateChecker, setchangeDateChecker] = useState(false)
+  const [keywords, setkeywords] = useState<string[]>([])
   let navigate = useNavigate();
 
   useEffect(() => {
@@ -23,6 +25,9 @@ const EditPost = ({isAuth, postToEdit}: CreatePostPageProps) => {
     }
     setTitle(postToEdit.title)
     setPostText(postToEdit.postText)
+    if (postToEdit.keywords) {
+      setkeywords(postToEdit?.keywords)
+    }
   }, [])
 
   // console.log(new Date(pubDate))
@@ -30,28 +35,16 @@ const EditPost = ({isAuth, postToEdit}: CreatePostPageProps) => {
   
   const updatePost = async () => {
     const postDoc = doc(db, 'posts', postToEdit.id)
-    if (changeDateChecker) {
-      
-      console.log("PUBDATECHANGE TRIGGERED!", pubDate)
-      await updateDoc(postDoc, {
-        title: title, 
-        postText: postText, 
-        date: new Date(pubDate),
-        author: 
-          {name: auth.currentUser?.displayName, 
-          id: auth.currentUser?.uid}
-        }
-      )
-    } else {
-      await updateDoc(postDoc, {
-        title: title, 
-        postText: postText, 
-        author: 
-          {name: auth.currentUser?.displayName, 
-          id: auth.currentUser?.uid}
-        }
-      )
-    }
+    await updateDoc(postDoc, {
+      title: title, 
+      postText: postText, 
+      date: changeDateChecker? new Date(pubDate) : postToEdit.date,
+      author: 
+        {name: auth.currentUser?.displayName, 
+        id: auth.currentUser?.uid},
+      keywords: keywords
+      }
+    )
     navigate('/blog')
   }
 
@@ -63,6 +56,7 @@ const EditPost = ({isAuth, postToEdit}: CreatePostPageProps) => {
           setTitle={setTitle}
           postText={postToEdit.postText}
           setPostText={setPostText}/>
+      <KeywordsBar keywords={keywords} setkeywords={setkeywords}></KeywordsBar>
       <input onChange={() => setchangeDateChecker(!changeDateChecker)} type="checkbox"></input>
       <input type="date" onChange={(event) => {setpubDate(event.target.value)}}></input>
       <button onClick={updatePost}>Update Post</button>

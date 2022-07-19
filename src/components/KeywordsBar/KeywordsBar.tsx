@@ -7,12 +7,12 @@ const KeywordsBar = ({keywords, setkeywords}: any) => {
 
   const addKeyword = (event: any) => {
     event.preventDefault();
-    const enteredKeyword = event.target[0].value
+    const enteredKeyword = event.target.parentNode.children[0].value
     if (enteredKeyword.length > 0) { 
-      setkeywords((oldArray: any) => [...oldArray, event.target[0].value])
+      setkeywords((oldArray: any) => [...oldArray, enteredKeyword])
       setvalidating(true)
     } 
-    event.target[0].value = ""
+    event.target.parentNode.children[0].value = ""
   }
 
   const deletekeyword = (event: any) => {
@@ -35,9 +35,9 @@ const KeywordsBar = ({keywords, setkeywords}: any) => {
 
   return (
     <div className='keywordContainer'>
-      <form onSubmit={(e) => addKeyword(e)}>
+      <form>
           <input placeholder='keywords...' id='keywordInput' ></input>
-          {/* <button className='submit' onClick={createPost}>add keyword</button> */}
+          <button className='submit' onClick={(e) => addKeyword(e)}>add keyword</button>
       </form>
       {!validating && 
       <>
