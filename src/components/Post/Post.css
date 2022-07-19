@@ -26,3 +26,9 @@ p {
     background: rgb(78, 78, 78) ;
     color: whitesmoke ;
 }
+
+.keyword {
+    background-color: var(--as-Languid-lavender);
+    margin-right: 0.5rem;
+    padding: 0.3rem;
+}

@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import './App.css';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Blog from '../../pages/Blog/Blog';
 import CreatePost from '../../pages/CreatePost/CreatePost';
