@@ -12,3 +12,13 @@ export const sortAfterDateDesc = (array: any[], category: string) => {
 }
 
 export const findDuplicates = (arr:any) => arr.filter((item:any, index:any) => arr.indexOf(item) !== index)
+
+export const countElementInArr = (searchElement: any, arr: any[]) => {
+  let count = 0;
+  arr.forEach(element => {
+    if (element === searchElement) {
+      count += 1;
+    }
+  });
+  return count
+}
