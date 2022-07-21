@@ -20,6 +20,7 @@ const KeywordsUI = ({ postList, setPostList, filteredPosts, setfilteredPosts, se
         count: countElementInArr(keyword, keywordsArr)
       }) 
     })
+    countedKeywords.sort((a,b) => b.count - a.count);
     setallKeywords(countedKeywords)
   }
 
@@ -31,7 +32,8 @@ const KeywordsUI = ({ postList, setPostList, filteredPosts, setfilteredPosts, se
 
   const deselectkeyword = (keyword: string) => {
     const keywordToAdd = selectedKeywords.filter((element: { keyword: string }) => element.keyword === keyword)
-    setallKeywords((oldArr) => [...oldArr, ...keywordToAdd])
+    const sortedKeywords = [...keywordsArr, ...keywordToAdd].sort((a,b) => b.count - a.count);
+    setallKeywords(sortedKeywords)
     setselectedKeywords(selectedKeywords.filter((element: { keyword: string }) => element.keyword !== keyword))
   }
 
