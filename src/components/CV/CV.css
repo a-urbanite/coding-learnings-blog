@@ -2,16 +2,6 @@
   margin: 5% 5% 0% 5%;
 }
 
-.CV__heading2 {
-  margin-top: 3rem;
-  margin-bottom: 2rem;
-}
-
-.CV__heading3 {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-}
-
 .CV__skillListWrapper {
   display: flex;
 }
@@ -22,10 +12,6 @@
 
 .CV__columnB {
   width: 50%
-}
-
-.CV li {
-  margin-bottom: 2%;
 }
 
 .CV__downloadWrapper {

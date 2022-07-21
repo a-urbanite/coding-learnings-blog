@@ -16,8 +16,16 @@ button {
   padding: 0.1rem;
   margin: 0.1rem;
   font-family: 'Quicksand', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
   border: 1px solid #ccc;
   box-shadow: 1px 1px 1px rgb(156, 156, 156);
+}
+
+button:hover {
+  background-color: rgb(226, 226, 226);
+  /* border: 1px solid rgb(94, 94, 94); */
 }
 
 

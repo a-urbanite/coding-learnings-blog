@@ -3,7 +3,7 @@ import './PageWrapper.css'
 
 const Pagewrapper = ({contents}:any) => {
   return (
-    <article className='pageWrapper'>
+    <article className='page'>
         {contents}
     </article>
   )

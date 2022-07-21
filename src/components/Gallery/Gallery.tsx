@@ -19,9 +19,9 @@ const Gallery = ({sortOrderAsc, postList, setPostList, isAuth, getPosts, setPost
   return (
     <div className='gallery'>
       <div className='gallery__sorter'>
-        {!sortOrderAsc ? "ASC" : "DESC"}
         <button onClick={() => sortPosts("title", postList, setPostList)}>Sort after name</button>
         <button onClick={() => sortPosts("date", postList, setPostList)}>Sort after date</button>
+        {!sortOrderAsc ? " ASC" : " DESC"}
       </div>
       {postsToDisplay.map((post: any, index:any) => {
         return (

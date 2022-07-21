@@ -1,4 +1,4 @@
-    .pageWrapper {
+    .page {
         box-sizing: border-box;
         width: 92%;
         margin-left: 6%;
@@ -12,6 +12,20 @@
         margin-top: 1rem;
         margin-bottom: 2rem;
     }
+
+    h2 {
+        margin-top: 3rem;
+        margin-bottom: 2rem;
+      }
+      
+    h3 {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        }
+
+    li {
+        margin-bottom: 2%;
+        }
 
     .text-images {
         background-color: rgba(255, 255, 255, 0);
@@ -29,7 +43,7 @@
 
 
 @media only screen and (min-width: 601px) and (max-width: 900px) {
-    .pageWrapper {
+    .page {
         width: 85%;
         margin-left: 10%;
         margin-right: 5%;
@@ -38,7 +52,7 @@
 }
 
 @media only screen and (min-width: 901px) {
-    .pageWrapper {
+    .page {
         width: 80%;
         margin-left: 15%;
         margin-right: 5%;
