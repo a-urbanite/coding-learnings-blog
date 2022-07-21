@@ -6,6 +6,13 @@
 .sidebar__list {
     list-style: none;
     padding-inline-start: 0px;
+    width: 20%;
+    position: fixed;
+    /* flex: 30%; */
+    height: 70vh;
+
+    overflow-x: hidden;  
+    overflow-y: scroll;
 }
 
 .sideBarLink {

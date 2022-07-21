@@ -1,35 +1,21 @@
-.homepage {
+.blogpage {
     background-color: var(--as-Magic-mint);
     min-height: 90vh;
     display: flex; 
     flex-direction: row;
 }
 
-.gallery {
-    /* flex: 70%; */
-    padding: 30px;
-    /* width: calc(100vw - 380px); */
-    /* left: 300px; */
-    width: 75%;
-    /* position: relative; */
-    /* width: 70%; */
-    /* justify-content: flex-end; */
-    /* align-items: flex-end; */
-}
-
-.sidebar__container {
+.columnA {
     width: 25%;
     padding-left: 0.5rem;
     /* height: 90%; */
 }
 
-.sidebar {
-    width: 20%;
-    position: fixed;
-    /* flex: 30%; */
-    height: 70vh;
-
-    overflow-x: hidden;  
-    overflow-y: scroll;
+.columnB {
+    width: 75%;
+    padding: 0.5rem;
 }
+
+
+
 

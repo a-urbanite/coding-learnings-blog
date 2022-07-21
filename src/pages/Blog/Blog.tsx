@@ -6,6 +6,7 @@ import Post from '../../components/Post/Post';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import { sortAfterDateAsc, sortAfterDateDesc, sortAfterStringAsc, sortAfterStringDesc } from './sorters';
 import KeywordsUI from '../../components/KeywordsUI/KeywordsUI';
+import Gallery from '../../components/Gallery/Gallery';
 
 const Blog = ({isAuth, setPostToEdit}: any) => {
   const [postList, setPostList] = useState<any>([]);
@@ -22,16 +23,16 @@ const Blog = ({isAuth, setPostToEdit}: any) => {
     setPostList(sortedArr)
   }
 
-  const sortPosts = (category: any, array: any[], setter: any) => {
-    let sortedPosts
-    if (category === "title") {
-      sortedPosts = !sortOrderAsc ? sortAfterStringAsc(array, category) : sortAfterStringDesc(array, category)
-    } else {
-      sortedPosts = !sortOrderAsc ? sortAfterDateAsc(array, category) : sortAfterDateDesc(array, category)
-    }
-    setsortOrderAsc(!sortOrderAsc)
-    setter([...sortedPosts])
-  }
+  // const sortPosts = (category: any, array: any[], setter: any) => {
+  //   let sortedPosts
+  //   if (category === "title") {
+  //     sortedPosts = !sortOrderAsc ? sortAfterStringAsc(array, category) : sortAfterStringDesc(array, category)
+  //   } else {
+  //     sortedPosts = !sortOrderAsc ? sortAfterDateAsc(array, category) : sortAfterDateDesc(array, category)
+  //   }
+  //   setsortOrderAsc(!sortOrderAsc)
+  //   setter([...sortedPosts])
+  // }
 
   useEffect(() => {
     getPosts()
@@ -53,8 +54,8 @@ const Blog = ({isAuth, setPostToEdit}: any) => {
   console.log("POSTSTODISPLAY", postsToDisplay)
   
   return (
-    <div className='homepage'>
-      <div className='sidebar__container'>
+    <div className='blogpage'>
+      <div className='columnA'>
         <KeywordsUI 
           postList={postList} 
           setPostList={setPostList} 
@@ -65,15 +66,17 @@ const Blog = ({isAuth, setPostToEdit}: any) => {
           ></KeywordsUI>
         <Sidebar postsToDisplay={postsToDisplay} ></Sidebar>
       </div>
-      <div className='gallery'>
-        {!sortOrderAsc ? "ASC" : "DESC"}
-        <button onClick={() => sortPosts("title", postList, setPostList)}>Sort after name</button>
-        <button onClick={() => sortPosts("date", postList, setPostList)}>Sort after date</button>
-        {postsToDisplay.map((post: any, index:any) => {
-          return (
-            <Post key={post.id} post={post} isAuth={isAuth} getPosts={getPosts} setPostToEdit={setPostToEdit}></Post>
-          )
-        })}
+      <div className='columnB'>
+        <Gallery 
+          sortOrderAsc={sortOrderAsc} 
+          setsortOrderAsc={setsortOrderAsc}
+          postList={postList}
+          setPostList={setPostList}
+          isAuth={isAuth}
+          getPosts={getPosts}
+          setPostToEdit={setPostToEdit}
+          postsToDisplay={postsToDisplay}
+          />
       </div>
     </div>
   )

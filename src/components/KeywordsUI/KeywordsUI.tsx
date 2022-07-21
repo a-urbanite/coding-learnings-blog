@@ -4,8 +4,6 @@ import { countElementInArr } from '../../pages/Blog/sorters'
 
 const KeywordsUI = ({ postList, setPostList, filteredPosts, setfilteredPosts, selectedKeywords, setselectedKeywords }: any) => {
   const [keywordsArr, setallKeywords] = useState<any[]>([])
-  // const [selectedKeywords, setselectedKeywords] = useState<any[]>([])
-  // const [filteredPosts, setfilteredPosts] = useState<any[]>([])
 
   const getAllKeywords = () => {
     let keywordsArr: string[] = []

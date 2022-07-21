@@ -8,18 +8,16 @@ const Sidebar = ({postsToDisplay}: any) => {
   }
 
   return (
-    <>
+    <div className='sidebar'>
       <h2 className='sidebar__title'>Articles</h2>
-      <div className='sidebar'>
-        <ul className='sidebar__list'>
-            <>{postsToDisplay.map((post: any) => {
-                return (<li key={post.id} className='sidebar__item'>
-                          <button onClick={() => scrollToFunc(post.id)}> {post.title} - {new Date(post.date.seconds * 1000).toLocaleDateString()} </button>
-                        </li>)
-            })}</>
-        </ul>
-      </div>
-    </>
+      <ul className='sidebar__list'>
+          <>{postsToDisplay.map((post: any) => {
+              return (<li key={post.id} className='sidebar__item'>
+                        <button onClick={() => scrollToFunc(post.id)}> {post.title} - {new Date(post.date.seconds * 1000).toLocaleDateString()} </button>
+                      </li>)
+          })}</>
+      </ul>
+    </div>
   )
 }
 
