@@ -28,7 +28,9 @@ p {
 }
 
 .keyword {
-    background-color: var(--as-Languid-lavender);
+    /* background-color: var(--as-Languid-lavender); */
     margin-right: 0.5rem;
-    padding: 0.3rem;
+    padding: 0.1rem;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px #999;
 }

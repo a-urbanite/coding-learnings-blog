@@ -1,20 +1,17 @@
+.sidebar {
+    /* background-color: yellow; */
+}
+
 .sidebar__title {
     text-align: center;
-    /* margin-top: 30px ; */
+    margin: 0;
 }
 
 .sidebar__list {
     list-style: none;
     padding-inline-start: 0px;
-    width: 20%;
-    position: fixed;
-    /* flex: 30%; */
-    height: 70vh;
+    height: 60vh;
 
     overflow-x: hidden;  
-    overflow-y: scroll;
-}
-
-.sideBarLink {
-    color: red
+    overflow-y: auto;
 }

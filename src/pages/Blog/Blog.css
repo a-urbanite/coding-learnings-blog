@@ -1,19 +1,23 @@
-.blogpage {
-    background-color: var(--as-Magic-mint);
-    min-height: 90vh;
+.blog {
     display: flex; 
     flex-direction: row;
+
+    background-color: var(--as-Magic-mint);
+    min-height: 90vh;
 }
 
-.columnA {
+.blog__columnA {
+    position: fixed;
     width: 25%;
-    padding-left: 0.5rem;
+    padding: 0.5rem;
     /* height: 90%; */
 }
 
-.columnB {
-    width: 75%;
-    padding: 0.5rem;
+.blog__columnB {
+    position: relative;
+    left: 25%;
+    width: 70%;
+    padding: 1.5rem;
 }
 
 

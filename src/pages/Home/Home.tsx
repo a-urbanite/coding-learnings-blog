@@ -53,8 +53,8 @@ const Home = () => {
                 </li>
               </ul>
               <h2 className='CV__heading'>TECHNICAL SKILLS</h2>
-              <div className='skillListWrapper'>
-                <div className='columnA'>
+              <div className='CV__skillListWrapper'>
+                <div className='CV__columnA'>
                     <h3>Languages</h3>
                   <ul>
                     <li>German - native</li>
@@ -76,7 +76,7 @@ const Home = () => {
                     <li>REST API</li>
                   </ul>
                 </div>
-                <div className='columnB'>
+                <div className='CV__columnB'>
                   <h3>Frontend</h3>
                   <ul>
                     <li>React</li>

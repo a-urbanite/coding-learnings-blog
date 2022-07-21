@@ -25,6 +25,7 @@ const Post = ({post, isAuth, getPosts, setPostToEdit}: any) => {
 
   return (
     <div className='post' key={post.id} id={post.id}> 
+        { post.keywords && <span>Keywords: {post.keywords.map((keyword:string) => <span className='keyword'>{keyword}</span>)}</span>}
       <div className='post__header'>
         {location.pathname === "/blog" ? <Link to={post.id}><h1>{post.title}</h1></Link> : <h1>{post.title}</h1>}
       </div>
@@ -32,7 +33,6 @@ const Post = ({post, isAuth, getPosts, setPostToEdit}: any) => {
       <div className='post__footer'>
         <h3>@{post.author.name}</h3>
         <p>{new Date(post.date.seconds * 1000).toLocaleDateString()}</p>
-        { post.keywords && <span>Keywords: {post.keywords.map((keyword:string) => <span className='keyword'>{keyword}</span>)}</span>}
         <div className='post__buttonContainer'>
           {isAuth /*&& post.author.id === auth.currentUser?.uid*/ && <button onClick={() => {deletePost(post.id)}}>&#128465;</button>}
           {isAuth /*&& post.author.id === auth.currentUser?.uid*/ && <button onClick={() => {editPost(post)}}>&#9999;</button>}

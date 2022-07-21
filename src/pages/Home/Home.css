@@ -80,15 +80,15 @@ li {
     color: black
 }
 
-.skillListWrapper {
+.CV__skillListWrapper {
     display: flex;
 }
 
-.columnA {
+.CV__columnA {
     width: 50%
 }
 
-.columnB {
+.CV__columnB {
     width: 50%
 }
 

@@ -23,17 +23,6 @@ const Blog = ({isAuth, setPostToEdit}: any) => {
     setPostList(sortedArr)
   }
 
-  // const sortPosts = (category: any, array: any[], setter: any) => {
-  //   let sortedPosts
-  //   if (category === "title") {
-  //     sortedPosts = !sortOrderAsc ? sortAfterStringAsc(array, category) : sortAfterStringDesc(array, category)
-  //   } else {
-  //     sortedPosts = !sortOrderAsc ? sortAfterDateAsc(array, category) : sortAfterDateDesc(array, category)
-  //   }
-  //   setsortOrderAsc(!sortOrderAsc)
-  //   setter([...sortedPosts])
-  // }
-
   useEffect(() => {
     getPosts()
   },[])
@@ -50,23 +39,20 @@ const Blog = ({isAuth, setPostToEdit}: any) => {
     }
   },[filteredPosts])
 
-  console.log("POSTLIST", postList)
-  console.log("POSTSTODISPLAY", postsToDisplay)
   
   return (
-    <div className='blogpage'>
-      <div className='columnA'>
+    <div className='blog'>
+      <div className='blog__columnA'>
         <KeywordsUI 
           postList={postList} 
           setPostList={setPostList} 
           filteredPosts={filteredPosts} 
           setfilteredPosts={setfilteredPosts}
           selectedKeywords={selectedKeywords}
-          setselectedKeywords={setselectedKeywords}
-          ></KeywordsUI>
-        <Sidebar postsToDisplay={postsToDisplay} ></Sidebar>
+          setselectedKeywords={setselectedKeywords}/>
+        <Sidebar postsToDisplay={postsToDisplay} />
       </div>
-      <div className='columnB'>
+      <div className='blog__columnB'>
         <Gallery 
           sortOrderAsc={sortOrderAsc} 
           setsortOrderAsc={setsortOrderAsc}
