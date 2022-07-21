@@ -1,4 +1,4 @@
-.NavbarWrapper {
+.mainNav {
     display: flex;
     justify-content: space-evenly;
     width: 92%;
@@ -6,33 +6,27 @@
     margin-right: 2%;
 }
 
-.mainMenuLink,.NavbarButton {
+.mainNav__link {
     display:flex;
     align-items:center;
     height: 3rem; 
     background-color: #fff8f5;
     border: none;
+    box-shadow: none;
     font-family: 'Quicksand', sans-serif;
     font-size: 0.8rem;
     color: black;
     text-decoration: none;
-}
-
-.mainMenuLink {
+    margin: 0;
     margin-right: 0.3rem;
 }
 
-.mainMenuLink:hover {
+.mainNav__link:hover {
     background-color: #ffe8dc;
     color: grey
 }
 
-.NavbarButton:hover {
-    background-color: #ffe8dc;
-    color: grey
-}
-
-.subMenuLink {
+.mainNav__subLink {
     display:flex;
     align-items:center;
     border: none;
@@ -43,34 +37,29 @@
 
 @media only screen and (min-width: 601px) and (max-width: 900px) {
 
-    .NavbarWrapper {
+    .mainNav {
         width: 85%;
         margin-left: 10%;
         margin-right: 5%;
     }
 
-    .mainMenuLink,.NavbarButton {
+    .mainNav__link {
         font-size: 1.5rem;
-    }
-    
-    .mainMenuLink {
         margin-right: 1.0rem;
     }
+
 }
 
 @media only screen and (min-width: 901px) { 
 
-    .NavbarWrapper {
+    .mainNav {
         width: 80%;
         margin-left: 15%;
         margin-right: 5%;
     }
 
-    .mainMenuLink,.NavbarButton {
+    .mainNav__link {
         font-size: 1.5rem;
-    }
-
-    .mainMenuLink {
         margin-right: 1.0rem;
     }
 

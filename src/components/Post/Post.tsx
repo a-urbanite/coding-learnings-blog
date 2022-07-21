@@ -25,10 +25,14 @@ const Post = ({post, isAuth, getPosts, setPostToEdit}: any) => {
 
   return (
     <div className='post' key={post.id} id={post.id}> 
-        { post.keywords && <span>Keywords: {post.keywords.map((keyword:string) => <span className='keyword'>{keyword}</span>)}</span>}
-      <div className='post__header'>
-        {location.pathname === "/blog" ? <Link to={post.id}><h1>{post.title}</h1></Link> : <h1>{post.title}</h1>}
-      </div>
+        { post.keywords && <span>Keywords: {post.keywords.map((keyword:string) => <span className='post__keyword'>{keyword}</span>)}</span>}
+
+        {location.pathname === "/blog" ? 
+          <Link style={{ textDecoration: 'none' }} to={post.id}>
+            <h1 className='post__heading'>{post.title}</h1>
+          </Link> : 
+          <h1 className='post__heading'>{post.title}</h1>}
+   
       <div className='post__text'>{parse(post.postText)}</div>
       <div className='post__footer'>
         <h3>@{post.author.name}</h3>

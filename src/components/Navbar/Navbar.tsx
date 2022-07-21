@@ -9,36 +9,27 @@ import { AiFillSetting } from "react-icons/ai";
 const Navbar = ({isAuth, setIsAuth, signUserOut}: any) => {
 
     return (
-        <div className='NavbarWrapper'>
-            <Link className='mainMenuLink' to="/"> Vita </Link>
-            <Menu menuButton={<MenuButton className='NavbarButton' > Coding </MenuButton>} transition>
-                <MenuItem><Link className='subMenuLink' to="/coding/pet-me-up"> [TS] Pet me Up! </Link></MenuItem>
-                <MenuItem><Link className='subMenuLink' to="/coding/moviefinder"> [TS] Moviefinder </Link></MenuItem>
-                <MenuItem><Link className='subMenuLink' to="/coding/akzisemauer"> [webdev/geodata] Akzisemauer </Link></MenuItem>
-                <MenuItem><Link className='subMenuLink' to="/coding/dai-wordpress-plugin"> [PHP] Wordpress plugin </Link></MenuItem>
-                <MenuItem><Link className='subMenuLink' to="/coding/least-cost-path-analysis"> [R] Least Cost Path analysis </Link></MenuItem>
+        <div className='mainNav'>
+            <Link className='mainNav__link' to="/"> Vita </Link>
+            <Menu menuButton={<MenuButton className='mainNav__link' > Coding </MenuButton>} transition>
+                <MenuItem><Link className='mainNav__subLink' to="/coding/pet-me-up"> [TS] Pet me Up! </Link></MenuItem>
+                <MenuItem><Link className='mainNav__subLink' to="/coding/moviefinder"> [TS] Moviefinder </Link></MenuItem>
+                <MenuItem><Link className='mainNav__subLink' to="/coding/akzisemauer"> [webdev/geodata] Akzisemauer </Link></MenuItem>
+                <MenuItem><Link className='mainNav__subLink' to="/coding/dai-wordpress-plugin"> [PHP] Wordpress plugin </Link></MenuItem>
+                <MenuItem><Link className='mainNav__subLink' to="/coding/least-cost-path-analysis"> [R] Least Cost Path analysis </Link></MenuItem>
                 {/* <SubMenu label="Styles">
                     <MenuItem>about.css</MenuItem>
                     <MenuItem>home.css</MenuItem>
                     <MenuItem>index.css</MenuItem>
                 </SubMenu> */}
             </Menu>
-            <Link className='mainMenuLink' to="/archaeology"> Archaeology </Link>
-            {/* <Menu menuButton={<MenuButton className='NavbarButton'><Link className='mainMenuLink' to="/archaeology"> Archaeology </Link></MenuButton>} transition>
-                <MenuItem>Saasdve</MenuItem>
-                <MenuItem>Cloasdsase Window</MenuItem>
-                <SubMenu label="Styles">
-                    <MenuItem>absadasout.css</MenuItem>
-                    <MenuItem>homesad.css</MenuItem>
-                    <MenuItem>indesaddsx.css</MenuItem>
-                </SubMenu>
-            </Menu> */}
-            { isAuth && <Link className='mainMenuLink' to="/test-site"> Test site </Link>}
-            <Link className='mainMenuLink' to="/blog"> Blog </Link>
-            { !isAuth && <Link className='mainMenuLink' to="/login"> Login </Link>}
-            { isAuth && <Link className='mainMenuLink' to="/createpost"> Create Post </Link>}
-            { isAuth && <button onClick={signUserOut}>Log Out</button>}
-            { isAuth && <Link className='mainMenuLink' to="/settings"> <AiFillSetting/> </Link>}
+            <Link className='mainNav__link' to="/archaeology"> Archaeology </Link>
+            { isAuth && <Link className='mainNav__link' to="/test-site"> Test site </Link>}
+            <Link className='mainNav__link' to="/blog"> Blog </Link>
+            { !isAuth && <Link className='mainNav__link' to="/login"> Login </Link>}
+            { isAuth && <Link className='mainNav__link' to="/createpost"> Create Post </Link>}
+            { isAuth && <button className='mainNav__link' onClick={signUserOut}>Log Out</button>}
+            { isAuth && <Link className='mainNav__link' to="/settings"> <AiFillSetting/> </Link>}
         </div>
     );
 }
