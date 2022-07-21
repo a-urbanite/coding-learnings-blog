@@ -29,7 +29,7 @@ const Home = () => {
         <div className='CV_wrapper'>
           <Collapsible collapsed={true} titleOpen="collapse content" titleClosed="Show whole CV" classname="collapse-button">
             <div className='CV'>
-              <h2>EDUCATION & TRAINING</h2>
+              <h2 className='CV__heading'>EDUCATION & TRAINING</h2>
               <ul>
                 <li>Full Stack JavaScript - School of Applied Technology 
                   Intensive three month training program for full stack web development with a focus on TDD, mob programming, and applied learning.</li>
@@ -40,7 +40,7 @@ const Home = () => {
                 <li>Cultural Heritage Management Assistent
                   October 2008 - September 2009</li>
               </ul>
-              <h2>WORK EXPERIENCE</h2>
+              <h2 className='CV__heading'>WORK EXPERIENCE</h2>
               <ul>
                 <li>Webmaster - Deutsches Archaologisches Institut
                   April 2020 - December 2021 - Berlin, Germany
@@ -52,7 +52,7 @@ const Home = () => {
                   A sequence of employments with archaeological institutes and projects. Activities spanned from office work in Berlin to Field Work in Saudi Arabia, mostly revolving around Geodata and Research Data Management.
                 </li>
               </ul>
-              <h2>TECHNICAL SKILLS</h2>
+              <h2 className='CV__heading'>TECHNICAL SKILLS</h2>
               <div className='skillListWrapper'>
                 <div className='columnA'>
                     <h3>Languages</h3>

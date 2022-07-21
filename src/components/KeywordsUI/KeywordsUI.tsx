@@ -56,14 +56,18 @@ const KeywordsUI = ({ postList, setPostList, filteredPosts, setfilteredPosts, se
 
   return (
     <div className='keywordsUI'>
-      <h2>Keywords</h2>
-      {keywordsArr.map((keyword) => {
-        return <button onClick={() => selectkeyword(keyword.keyword)}>{keyword.keyword}({keyword.count})</button>
-      })}
+      <h2 className='keywordsUI__title'>Keywords</h2>
+      <div className='keywordsUI__KeywordsContainer'>
+        {keywordsArr.map((keyword) => {
+          return <button className='keywordsUI__avKeyword' onClick={() => selectkeyword(keyword.keyword)}>{keyword.keyword}({keyword.count})</button>
+        })}
+      </div>
       <p>Selected:</p>
-      {selectedKeywords.map((keyword: any) => {
-        return <button onClick={() => deselectkeyword(keyword.keyword)}>{keyword.keyword}({keyword.count})</button>
-      })}
+      <div className='keywordsUI__KeywordsContainer'>
+        {selectedKeywords.map((keyword: any) => {
+          return <button className='keywordsUI__selKeyword' onClick={() => deselectkeyword(keyword.keyword)}>{keyword.keyword}({keyword.count})</button>
+        })}
+      </div>
     </div>
   )
 }

@@ -1,5 +1,14 @@
 .keywordsUI {
-  /* display: flex; */
-  /* justify-content: center;
-  align-items: center; */
+  background-color: red;
+}
+
+.keywordsUI__KeywordsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  /* align-items: center; */
+  justify-content: center;
+}
+
+.keywordsUI__title {
+  text-align: center;
 }

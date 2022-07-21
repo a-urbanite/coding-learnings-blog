@@ -1,6 +1,11 @@
 .sidebar__title {
     text-align: center;
-    margin-top: 30px ;
+    /* margin-top: 30px ; */
+}
+
+.sidebar__list {
+    list-style: none;
+    padding-inline-start: 0px;
 }
 
 .sideBarLink {

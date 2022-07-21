@@ -19,6 +19,7 @@
 
 .sidebar__container {
     width: 25%;
+    padding-left: 0.5rem;
     /* height: 90%; */
 }
 
@@ -32,10 +33,3 @@
     overflow-y: scroll;
 }
 
-.keywordsUI {
-    /* width: 300px;
-    height: 90%; */
-    /* display: flex; */
-    /* justify-content: center;
-    align-items: center; */
-  }
