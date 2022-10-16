@@ -24,7 +24,7 @@ const Articlepage = () => {
   return (
     <>
       {loading ? "Loading..." : <Post post={post}></Post>}
-      <Link to='/blog'>Back</Link>
+      <Link to='/'>Back</Link>
     </>
   )
 }
