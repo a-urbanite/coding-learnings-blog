@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import parse from 'html-react-parser'
 import './Post.css'
 import { Link } from 'react-router-dom';
+import { Key } from 'react';
 
 const Post = ({post, isAuth, getPosts, setPostToEdit}: any) => {
   const location = useLocation();
@@ -25,7 +26,13 @@ const Post = ({post, isAuth, getPosts, setPostToEdit}: any) => {
 
   return (
     <div className='post' key={post.id} id={post.id}> 
-        { post.keywords && <span>Keywords: {post.keywords.map((keyword:string) => <span className='post__keyword'>{keyword}</span>)}</span>}
+        { post.keywords && 
+          <span>
+            Keywords: 
+            {post.keywords.map((keyword:string, index: Key | null | undefined) => 
+              <span key={index} className='post__keyword'>{keyword}</span>)
+            }
+          </span>}
 
         {location.pathname === "/" ? 
           <Link style={{ textDecoration: 'none' }} to={`blog/${post.id}`}>
@@ -38,8 +45,8 @@ const Post = ({post, isAuth, getPosts, setPostToEdit}: any) => {
         <h3>@{post.author.name}</h3>
         <p>{new Date(post.date.seconds * 1000).toLocaleDateString()}</p>
         <div className='post__buttonContainer'>
-          {isAuth /*&& post.author.id === auth.currentUser?.uid*/ && <button onClick={() => {deletePost(post.id)}}>&#128465;</button>}
-          {isAuth /*&& post.author.id === auth.currentUser?.uid*/ && <button onClick={() => {editPost(post)}}>&#9999;</button>}
+          {isAuth && <button onClick={() => {deletePost(post.id)}}>&#128465;</button>}
+          {isAuth && <button onClick={() => {editPost(post)}}>&#9999;</button>}
         </div>
       </div>
     </div>

@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import { Key, useEffect, useState } from 'react'
 import './KeywordsUI.css'
 import { countElementInArr } from '../../pages/Blog/sorters'
 
-const KeywordsUI = ({ postList, setPostList, filteredPosts, setfilteredPosts, selectedKeywords, setselectedKeywords }: any) => {
+const KeywordsUI = ({ postList, setfilteredPosts, selectedKeywords, setselectedKeywords }: any) => {
   const [keywordsArr, setallKeywords] = useState<any[]>([])
 
   const getAllKeywords = () => {
@@ -58,13 +58,21 @@ const KeywordsUI = ({ postList, setPostList, filteredPosts, setfilteredPosts, se
     <div className='keywordsUI'>
       <h2 className='keywordsUI__title'>Keywords</h2>
       <div className='keywordsUI__KeywordsContainer'>
-        {keywordsArr.map((keyword) => {
-          return <button className='keywordsUI__Keyword' onClick={() => selectkeyword(keyword.keyword)}>{keyword.keyword}({keyword.count})</button>
+        {keywordsArr.map((keyword, index) => {
+          return  <button 
+                    key={index}
+                    className='keywordsUI__Keyword' 
+                    onClick={() => selectkeyword(keyword.keyword)}>{keyword.keyword}({keyword.count})
+                  </button>
         })}
       </div>
       <div className='keywordsUI__KeywordsContainer'>
-        Selected:{selectedKeywords.map((keyword: any) => {
-          return <button className='keywordsUI__Keyword' onClick={() => deselectkeyword(keyword.keyword)}>{keyword.keyword}({keyword.count})</button>
+        Selected:{selectedKeywords.map((keyword: any, index: Key | null | undefined) => {
+          return  <button 
+                    key={index}
+                    className='keywordsUI__Keyword' 
+                    onClick={() => deselectkeyword(keyword.keyword)}>{keyword.keyword}({keyword.count})
+                  </button>
         })}
       </div>
     </div>

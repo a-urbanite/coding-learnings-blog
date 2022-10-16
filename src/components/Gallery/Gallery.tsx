@@ -24,7 +24,13 @@ const Gallery = ({sortOrderAsc, postList, setPostList, isAuth, getPosts, setPost
       </div>
       {postsToDisplay.map((post: any) => {
         return (
-          <Post key={post.id} post={post} isAuth={isAuth} getPosts={getPosts} setPostToEdit={setPostToEdit}></Post>
+          <Post 
+            key={post.id} 
+            post={post} 
+            isAuth={isAuth} 
+            getPosts={getPosts} 
+            setPostToEdit={setPostToEdit}>
+          </Post>
         )
       })}
     </div>
