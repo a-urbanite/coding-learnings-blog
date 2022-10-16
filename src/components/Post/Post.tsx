@@ -27,7 +27,7 @@ const Post = ({post, isAuth, getPosts, setPostToEdit}: any) => {
     <div className='post' key={post.id} id={post.id}> 
         { post.keywords && <span>Keywords: {post.keywords.map((keyword:string) => <span className='post__keyword'>{keyword}</span>)}</span>}
 
-        {location.pathname === "/blog" ? 
+        {location.pathname === "/" ? 
           <Link style={{ textDecoration: 'none' }} to={post.id}>
             <h1 className='post__heading'>{post.title}</h1>
           </Link> : 

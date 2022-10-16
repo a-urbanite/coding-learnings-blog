@@ -1,34 +1,19 @@
 // import userEvent from '@testing-library/user-event';
-import { getAdditionalUserInfo, updateProfile } from 'firebase/auth';
-import React, { useEffect, useState } from 'react'
+import { updateProfile } from 'firebase/auth';
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../../firebase-config';
-// import updateDispla
 
 const Settings = (isAuth: any) => {
-
   const navigate = useNavigate();
-
-  // console.log("USER OBJECT",isAuth)
-  // console.log("AUTH OBJECT",auth)
-
   const [displayname, setdisplayname] = useState<string>(auth.currentUser!.displayName!);
   const [photoURL, setphotoURL] = useState<string>(auth.currentUser!.photoURL!);
 
   const updateUserProfile = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
         await updateProfile(isAuth.isAuth, {'displayName': displayname, 'photoURL': photoURL});
-        // console.log(auth)
-        // user.updateEmail
         navigate('/settings')
   }
-
-  useEffect(() => {
-    console.log(displayname)
-  }, [displayname])
-  
-
-
 
   return (
     <>
@@ -44,8 +29,6 @@ const Settings = (isAuth: any) => {
           <input id='email' defaultValue={auth.currentUser!.email!}/>
           <input type="submit" value="Go!"/>
         </form>
-
-        
     </>
   )
 }

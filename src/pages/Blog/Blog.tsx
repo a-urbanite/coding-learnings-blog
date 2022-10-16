@@ -1,10 +1,9 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { collection, getDocs } from 'firebase/firestore'
 import { db } from '../../firebase-config';
 import './Blog.css'
-import Post from '../../components/Post/Post';
 import Sidebar from '../../components/Sidebar/Sidebar';
-import { sortAfterDateAsc, sortAfterDateDesc, sortAfterStringAsc, sortAfterStringDesc } from './sorters';
+import { sortAfterDateDesc } from './sorters';
 import KeywordsUI from '../../components/KeywordsUI/KeywordsUI';
 import Gallery from '../../components/Gallery/Gallery';
 

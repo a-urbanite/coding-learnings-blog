@@ -1,4 +1,3 @@
-import React from 'react'
 import Post from '../../components/Post/Post';
 import { sortAfterDateAsc, sortAfterDateDesc, sortAfterStringAsc, sortAfterStringDesc } from '../../pages/Blog/sorters';
 import "./Gallery.css"

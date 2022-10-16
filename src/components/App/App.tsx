@@ -5,17 +5,9 @@ import CreatePost from '../../pages/CreatePost/CreatePost';
 import EditPost from '../../pages/EditPost/EditPost';
 import Login from '../../pages/SignIn/SignIn';
 import Navbar from '../Navbar/Navbar';
-// import Home from '../../pages/Home/Home';
-// import Archaeology from '../../pages/Archaeology/Archaeology';
 import {signOut} from 'firebase/auth'
 import { auth } from '../../firebase-config';
-// import PetMeUp from '../../pages/PetMeUp/PetMeUp';
-// import DAIWordpressPlugin from '../../pages/DAIWordpressPlugin/DAIWordpressPlugin';
 import Pagewrapper from '../PageWrapper/Pagewrapper';
-// import MovieFinder from '../../pages/MovieFinder/MovieFinder';
-// import Akzisemauer from '../../pages/Akzisemauer/Akzisemauer';
-// import TestSite from '../../pages/TestSite/TestSite';
-// import LCPA from '../../pages/LCPA/LCPA';
 import SignUp from '../../pages/SignUp/SignUp';
 import Settings from '../../pages/Settings/Settings';
 import ArticlePage from '../../pages/ArticlePage/ArticlePage'

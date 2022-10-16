@@ -1,4 +1,3 @@
-// import React, { useState } from 'react'
 import ReactQuill from 'react-quill'
 import EditorToolbar, { modules, formats } from "./EditorToolbar";
 import 'react-quill/dist/quill.snow.css';
@@ -11,8 +10,6 @@ interface EditorProps {
 }
 
 const Editor = ({title, setTitle, postText, setPostText}: EditorProps) => {
-
-	// console.log("EDITOR LAUNCHED", typeof postText, postText)
 
   return (
     <div>        

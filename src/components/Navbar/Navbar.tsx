@@ -3,7 +3,7 @@ import './Navbar.css'
 import { AiFillSetting } from "react-icons/ai";
 
 
-const Navbar = ({isAuth, setIsAuth, signUserOut}: any) => {
+const Navbar = ({isAuth, signUserOut}: any) => {
 
     return (
         <div className='mainNav'>
