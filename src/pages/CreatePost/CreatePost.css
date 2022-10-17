@@ -1,15 +1,11 @@
-
-.Quill-Editor {
-    height: 300px;
-    margin-bottom: 3%;
-}
-
-.titleBox {
-    width: 50%;
-    margin-bottom: 3%;
-}
-
 .createPostPage {
+    padding-top: 1rem;
     padding-left: 5%;
     padding-right: 5%;
+}
+
+.bottomBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }

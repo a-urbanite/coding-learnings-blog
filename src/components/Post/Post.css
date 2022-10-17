@@ -1,26 +1,12 @@
 .post {
-    background-color: white;
-    /* margin: 3rem; */
-    margin-bottom: 30px;
-    padding: 10px;
-    /* max-width: 100%; */
-    line-height: 1.0;
-    border-radius:3px;
-    border: 1px solid #ccc;
-    box-shadow: 1px 1px 1px #999;
+    background-color: var(--as-dark);
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border: 1px solid var(--as-violet);
+    font-weight: 600;
 }
 
-.post h1 {
-    margin-top: 0.8rem;
-    margin-bottom: 1rem;
-}
-
-.post h2 {
-    margin-top: 0.8rem;
-    margin-bottom: 1rem;
-}
-
-.post h3 {
+.post h1, h2, h3 {
     margin-top: 0.8rem;
     margin-bottom: 1rem;
 }
@@ -28,20 +14,35 @@
 .post__keyword {
     /* background-color: var(--as-Languid-lavender); */
     /* margin-right: 0.5rem; */
-    margin: 0.1rem;
-    padding: 0.1rem;
-    border: 1px solid #ccc;
-    box-shadow: 1px 1px 1px #999;
+    margin: 0.2rem;
+    padding: 0rem 0.3rem 0.1rem 0.3rem;
+    border: 1px solid var(--as-violet);
+    /* background-color: var(--as-violet); */
+    /* box-shadow: 1px 1px 1px #999; */
+}
+
+.horzontalLine {
+    /* background-color: var(--as-violet); */
+    margin-top: 2rem;
+    border-top: 0.5px solid var(--as-violet);
+    border-bottom: none;
 }
 
 .post__footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 1rem;
+    /* font-size: larger; */
+    /* border: 1px solid var(--as-violet); */
 }
 
-p {
-    /* margin: 0px !important; */
+a {
+    color: var(--as-neonpink)
+}
+
+a:hover {
+    color: var(--as-violet)
 }
 
 .ql-syntax {

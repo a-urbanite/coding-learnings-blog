@@ -10,7 +10,7 @@ const Navbar = ({isAuth, signUserOut}: any) => {
             <Link className='mainNav__link' to="/"> Blog </Link>
             { !isAuth && <Link className='mainNav__link' to="/login"> Login </Link>}
             { isAuth && <Link className='mainNav__link' to="/createpost"> Create Post </Link>}
-            { isAuth && <button className='mainNav__link' onClick={signUserOut}>Log Out</button>}
+            { isAuth && <span className='mainNav__link' onClick={signUserOut}>Log Out</span>}
             { isAuth && <Link className='mainNav__link' to="/settings"> <AiFillSetting/> </Link>}
         </div>
     );

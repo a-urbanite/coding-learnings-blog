@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import './KeywordsBar.css'
 import { findDuplicates } from '../../pages/Blog/sorters'
 
@@ -16,9 +16,7 @@ const KeywordsBar = ({keywords, setkeywords}: any) => {
   }
 
   const deletekeyword = (event: any) => {
-    event.preventDefault();
-    const keywordToRemove = event.target.parentElement.innerText.slice(0, -1)
-    setkeywords(keywords.filter((keyword: any) => keyword !== keywordToRemove))
+    setkeywords(keywords.filter((keyword: any) => keyword !== event.target.innerText))
   } 
 
   useEffect(() => {
@@ -35,12 +33,20 @@ const KeywordsBar = ({keywords, setkeywords}: any) => {
   return (
     <div className='keywordContainer'>
       <form>
-          <input placeholder='keywords...' id='keywordInput' ></input>
-          <button className='submit' onClick={(e) => addKeyword(e)}>add keyword</button>
+          <input placeholder='keywords...' className='globalInput'></input>
+          <span className='globalBtn' onClick={(e) => addKeyword(e)}>add keyword</span>
       </form>
       {!validating && 
       <>
-        {keywords.map((keyword: any) => { return (<span key={keyword}>{keyword}<button onClick={deletekeyword}>x</button></span> )})}
+        {keywords.map((keyword: any) => { return (
+          <span 
+            key={keyword}
+            className='globalBtn'
+            onClick={(e) => deletekeyword(e)}
+            >
+              {keyword}
+          </span>
+          )})}
       </>
       }
     </div>

@@ -39,15 +39,16 @@ const CreatePost = ({isAuth}: CreatePostPageProps) => {
 
   return (
     <div className='createPostPage'>
-        <h1>Create a Post</h1>
+        <h1 className='sectionTitleLeft'>Create a Post</h1>
         <Editor 
           title={title} 
           setTitle={setTitle}
           postText={postText}
           setPostText={setPostText} />
-        <KeywordsBar keywords={keywords} setkeywords={setkeywords}></KeywordsBar>
-        <br />
-        <button className='submit' onClick={createPost}>Submit Post</button>
+        <div className='bottomBar'>
+          <KeywordsBar keywords={keywords} setkeywords={setkeywords}></KeywordsBar>
+          <span className='globalBtn' onClick={createPost}>Submit Post</span>
+        </div>
     </div>
   )
 }

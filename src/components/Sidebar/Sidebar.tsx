@@ -9,11 +9,16 @@ const Sidebar = ({postsToDisplay}: any) => {
 
   return (
     <div className='sidebar'>
-      <h2 className='sidebar__title'>Articles</h2>
+      <h2 className='sectionTitle'>Articles</h2>
       <ul className='sidebar__list'>
           <>{postsToDisplay.map((post: any) => {
-              return (<li key={post.id} >
-                        <button className='sidebar__item' onClick={() => scrollToFunc(post.id)}> {post.title} - {new Date(post.date.seconds * 1000).toLocaleDateString()} </button>
+              return (<li key={post.id} className='globalBtn'>
+                        <span 
+                          
+                          onClick={() => scrollToFunc(post.id)}
+                        > 
+                          <b>{post.title}</b> - {new Date(post.date.seconds * 1000).toLocaleDateString()} 
+                        </span>
                       </li>)
           })}</>
       </ul>

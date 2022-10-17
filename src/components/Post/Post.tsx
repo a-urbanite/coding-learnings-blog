@@ -41,12 +41,13 @@ const Post = ({post, isAuth, getPosts, setPostToEdit}: any) => {
           <h1 className='post__heading'>{post.title}</h1>}
    
       <div className='post__text'>{parse(post.postText)}</div>
+      <hr className='horzontalLine'/>
       <div className='post__footer'>
-        <h3>@{post.author.name}</h3>
+        <p>@{post.author.name}</p>
         <p>{new Date(post.date.seconds * 1000).toLocaleDateString()}</p>
         <div className='post__buttonContainer'>
-          {isAuth && <button onClick={() => {deletePost(post.id)}}>&#128465;</button>}
-          {isAuth && <button onClick={() => {editPost(post)}}>&#9999;</button>}
+          {isAuth && <span className='globalBtn' onClick={() => {editPost(post)}}>Edit</span>}
+          {isAuth && <span className='globalBtn' onClick={() => {deletePost(post.id)}}>Delete</span>}
         </div>
       </div>
     </div>

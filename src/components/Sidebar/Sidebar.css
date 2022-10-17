@@ -1,18 +1,10 @@
-.sidebar {
-    /* background-color: yellow; */
-}
-
-.sidebar__title {
-    text-align: center;
-    margin-top: 1rem;
-    margin-bottom: 0.5rem
+.articleLinkContainer {
+    background-color: var(--as-violet);
+    padding: 0.2rem;
 }
 
 .sidebar__list {
     list-style: none;
-    padding-inline-start: 0px;
-    height: 60vh;
+    /* padding-inline-start: 0px; */
 
-    overflow-x: hidden;  
-    overflow-y: auto;
 }

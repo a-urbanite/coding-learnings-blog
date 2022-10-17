@@ -42,7 +42,7 @@ const EditPost = ({isAuth, postToEdit}: CreatePostPageProps) => {
       keywords: keywords
       }
     )
-    navigate('/blog')
+    navigate('/')
   }
 
   return (
@@ -57,7 +57,7 @@ const EditPost = ({isAuth, postToEdit}: CreatePostPageProps) => {
       <input onChange={() => setchangeDateChecker(!changeDateChecker)} type="checkbox"></input>
       <input type="date" onChange={(event) => {setpubDate(event.target.value)}}></input>
       <button onClick={updatePost}>Update Post</button>
-      <button onClick={() => navigate("/blog")}>Back</button>
+      <button onClick={() => navigate("/")}>Back</button>
     </div>
   )
 }

@@ -1,23 +1,23 @@
 .blog {
     display: flex; 
     flex-direction: row;
-
-    background-color: var(--as-Magic-mint);
-    min-height: 90vh;
+    /* margin: 1rem; */
+    padding: 2rem;
+    background-color: var(--as-dark);
 }
 
 .blog__columnA {
-    position: fixed;
-    width: 25%;
-    padding: 0.5rem;
-    /* height: 90%; */
+    /* background-color: red; */
+    /* position: fixed; */
+    width: 30%;
+    padding-right: 2rem;
 }
 
 .blog__columnB {
-    position: relative;
-    left: 25%;
+    /* position: relative; */
     width: 70%;
-    padding: 1.5rem;
+    /* left: 25%; */
+    /* padding: 1.5rem 0rem 1.5rem 1.5rem; */
 }
 
 input[type=button] {
