@@ -2,10 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from 'firebase/firestore' 
 import { getAuth, GoogleAuthProvider } from 'firebase/auth'
 
+console.log(process.env)
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey:  "AIzaSyB41E8FzWEwhyRvvOlHWCaxakKMdnDqOrs",
-  authDomain: "react-blog-30aa0.firebaseapp.com",
+  apiKey:  process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
   projectId: "react-blog-30aa0",
   storageBucket: "react-blog-30aa0.appspot.com",
   messagingSenderId: "907503171090",

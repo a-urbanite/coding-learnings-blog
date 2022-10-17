@@ -1,16 +1,16 @@
 import { useState } from 'react';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import Blog from '../../pages/Blog/Blog';
-import CreatePost from '../../pages/CreatePost/CreatePost';
-import EditPost from '../../pages/EditPost/EditPost';
-import Login from '../../pages/SignIn/SignIn';
-import Navbar from '../Navbar/Navbar';
+import Blog from './pages/Blog/Blog';
+import CreatePost from './pages/CreatePost/CreatePost';
+import EditPost from './pages/EditPost/EditPost';
+import Login from './pages/SignIn/SignIn';
+import Navbar from './components/Navbar/Navbar';
 import {signOut} from 'firebase/auth'
-import { auth } from '../../firebase-config';
-import Pagewrapper from '../PageWrapper/Pagewrapper';
-import SignUp from '../../pages/SignUp/SignUp';
-import Settings from '../../pages/Settings/Settings';
-import ArticlePage from '../../pages/ArticlePage/ArticlePage'
+import { auth } from './firebase-config';
+import Pagewrapper from './components/PageWrapper/Pagewrapper';
+import SignUp from './pages/SignUp/SignUp';
+import Settings from './pages/Settings/Settings';
+import ArticlePage from './pages/ArticlePage/ArticlePage'
 
 
 function App() {
