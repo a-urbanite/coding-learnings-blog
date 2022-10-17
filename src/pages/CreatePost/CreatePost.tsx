@@ -27,7 +27,7 @@ const CreatePost = ({isAuth}: CreatePostPageProps) => {
         id: auth.currentUser?.uid},
       keywords
       })
-    navigate('/blog')
+    navigate('/')
   }
 
   useEffect(() => {
