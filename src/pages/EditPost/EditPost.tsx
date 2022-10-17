@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { doc, updateDoc} from 'firebase/firestore'
 import { auth, db } from '../../firebase-config';
-import Editor from '../../components/Editor/Editor';
-import KeywordsBar from '../../components/KeywordsBar/KeywordsBar';
+import Editor from '../../components/ArticleEditor/ArticleEditor';
+import KeywordsBar from '../../components/ArticleEditor/KeywordsBar/KeywordsBar';
 
 interface CreatePostPageProps {
     isAuth: boolean
@@ -46,7 +46,7 @@ const EditPost = ({isAuth, postToEdit}: CreatePostPageProps) => {
   }
 
   return (
-    <div className='createPostPage'>
+    <div className='page pageFrame'>
       <h1>Edit a Post</h1>
       <Editor 
           title={postToEdit.title} 

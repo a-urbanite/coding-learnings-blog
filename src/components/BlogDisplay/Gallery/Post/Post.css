@@ -3,7 +3,17 @@
     margin-bottom: 2rem;
     padding: 1rem;
     border: 1px solid var(--as-violet);
-    font-weight: 600;
+    /* font-weight: 600; */
+}
+
+.post__keywordsContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.post__heading {
+    font-size: 1.7rem;
 }
 
 .post h1, h2, h3 {
@@ -31,6 +41,7 @@
 .post__footer {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
     margin-top: 1rem;
     /* font-size: larger; */
@@ -51,4 +62,6 @@ a:hover {
     background: rgb(78, 78, 78) ;
     color: whitesmoke ;
 }
+
+
 

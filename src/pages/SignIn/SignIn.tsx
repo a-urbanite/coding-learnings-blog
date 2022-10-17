@@ -23,29 +23,29 @@ const Login = ({ setIsAuth }: any) => {
   }
 
   return (
-    <>
-      <h1 className='title'>Sign in</h1>
-      <form className='loginForm' onSubmit={signInWithEmail}>
+    <div className='page pageFrame'>
+      <h1 className='sectionTitleLeft'>Sign in</h1>
+      <form className='globalForm' onSubmit={signInWithEmail}>
         <input 
-          className='loginForm__input'
+          className='globalForm__input'
           name='loginMail' 
           placeholder='Email...'
           onChange={(event) => {setlogInEmail(event.target.value)}}>
         </input>
         <input 
-          className='loginForm__input'
+          className='globalForm__input'
           type="password"
           name='loginPassword' 
           placeholder='password...'
           onChange={(event) => {setlogInPassword(event.target.value)}}>
         </input>
         <input 
-          className='loginForm__submit'
+          className='globalForm__submit'
           type="submit" 
           autoFocus 
           value="Go!"/> 
       </form>
-    </>
+    </div>
   )
 }
 

@@ -1,0 +1,32 @@
+
+.globalBtn {
+  /* width: 100%; */
+  margin: 0.2rem 0.4rem 0.2rem 0rem;
+  padding: 0rem 0.3rem 0.1rem 0.3rem;
+  /* border: 1px solid var(--as-neonpink); */
+  color: var(--as-darkGrey);
+  /* color: var(--as-lightwhite); */
+  background-color: var(--as-neonpink);
+  cursor: pointer;
+  user-select: none;
+  font-size: 1rem;
+}
+
+    /* for tablets */
+    @media only screen and (min-width: 601px) and (max-width: 900px) {
+      .globalBtn {
+        font-size: 0.9rem;
+      }
+  }
+
+    /* for mobile */
+    @media only screen and (max-width: 600px) {
+      .globalBtn {
+        font-size: 0.8rem;
+      }
+    }
+
+.globalBtn:hover {
+  background-color: var(--as-violet);
+  color: var(--as-darkGrey);
+}

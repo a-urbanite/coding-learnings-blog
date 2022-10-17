@@ -27,7 +27,8 @@
 
 .mainNav__link:hover {
     background-color: var(--as-neonpink);
-    color: var(--as-darkGrey)
+    color: var(--as-darkGrey);
+    cursor: pointer;
 }
 
 

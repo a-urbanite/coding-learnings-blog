@@ -2,7 +2,7 @@ import { doc, getDoc } from 'firebase/firestore';
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom';
 import { db } from '../../firebase-config';
-import Post from '../../components/Post/Post';
+import Post from '../../components/BlogDisplay/Gallery/Post/Post';
 
 const Articlepage = () => {
   const { id } = useParams();
@@ -22,10 +22,10 @@ const Articlepage = () => {
   },[])
 
   return (
-    <>
+    <div className='page'>
       {loading ? "Loading..." : <Post post={post}></Post>}
-      <Link to='/'>Back</Link>
-    </>
+      <Link to='/'><span className='globalBtn'>Back</span></Link>
+    </div>
   )
 }
 

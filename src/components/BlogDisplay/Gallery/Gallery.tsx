@@ -1,5 +1,5 @@
-import Post from '../../components/Post/Post';
-import { sortAfterDateAsc, sortAfterDateDesc, sortAfterStringAsc, sortAfterStringDesc } from '../../pages/Blog/sorters';
+import Post from './Post/Post';
+import { sortAfterDateAsc, sortAfterDateDesc, sortAfterStringAsc, sortAfterStringDesc } from '../../../pages/Blog/sorters';
 import "./Gallery.css"
 
 const Gallery = ({sortOrderAsc, postList, setPostList, isAuth, getPosts, setPostToEdit, postsToDisplay, setsortOrderAsc}:any) => {

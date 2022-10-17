@@ -1,5 +1,5 @@
 import { deleteDoc, doc } from 'firebase/firestore';
-import { db } from '../../firebase-config'
+import { db } from '../../../../firebase-config'
 import { useLocation, useNavigate } from 'react-router-dom'
 import parse from 'html-react-parser'
 import './Post.css'
@@ -27,12 +27,12 @@ const Post = ({post, isAuth, getPosts, setPostToEdit}: any) => {
   return (
     <div className='post' key={post.id} id={post.id}> 
         { post.keywords && 
-          <span>
+          <div className='post__keywordsContainer'>
             Keywords: 
             {post.keywords.map((keyword:string, index: Key | null | undefined) => 
               <span key={index} className='post__keyword'>{keyword}</span>)
             }
-          </span>}
+          </div>}
 
         {location.pathname === "/" ? 
           <Link style={{ textDecoration: 'none' }} to={`blog/${post.id}`}>

@@ -3,6 +3,7 @@ import { updateProfile } from 'firebase/auth';
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../../firebase-config';
+import './Settings.css'
 
 const Settings = (isAuth: any) => {
   const navigate = useNavigate();
@@ -16,20 +17,33 @@ const Settings = (isAuth: any) => {
   }
 
   return (
-    <>
-        <h1>Settings</h1>
-        <p>Welcome {auth.currentUser?.displayName}! Change your profile information here.</p>
-        <img src={auth.currentUser!.photoURL!} className="profilePic" alt='profilePic'></img>
-        <form className='settingsForm' onSubmit={updateUserProfile}>
+    <div className='page pageFrame'>
+        <h1 className='sectionTitleLeft'>Settings</h1>
+        <p>Welcome {auth.currentUser?.displayName}! Change your profile information here.</p><br/>
+        <form className='globalForm' onSubmit={updateUserProfile}>
           <label htmlFor="displayname">User name:</label>
-          <input id='displayname' onChange={(event) => {setdisplayname(event.target.value)}} defaultValue={displayname}></input>
+          <input 
+            className='globalForm__input'
+            id='displayname' 
+            onChange={(event) => {setdisplayname(event.target.value)}} 
+            defaultValue={displayname}></input>
           <label htmlFor="photoURL">photo URL:</label>
-          <input id='photoURL' onChange={(event) => {setphotoURL(event.target.value)}} defaultValue={photoURL}></input>
+          <input 
+            className='globalForm__input'
+            id='photoURL' 
+            onChange={(event) => {setphotoURL(event.target.value)}} 
+            defaultValue={photoURL}></input>
           <label htmlFor="email">Email:</label>
-          <input id='email' defaultValue={auth.currentUser!.email!}/>
-          <input type="submit" value="Go!"/>
+          <input 
+            className='globalForm__input'
+            id='email' 
+            defaultValue={auth.currentUser!.email!}/>
+          <input 
+            className='globalForm__submit'
+            type="submit" 
+            value="Go!"/>
         </form>
-    </>
+    </div>
   )
 }
 

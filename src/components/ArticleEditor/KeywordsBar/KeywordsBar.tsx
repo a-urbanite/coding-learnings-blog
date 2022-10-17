@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import './KeywordsBar.css'
-import { findDuplicates } from '../../pages/Blog/sorters'
+import { findDuplicates } from '../../../pages/Blog/sorters'
 
 const KeywordsBar = ({keywords, setkeywords}: any) => {
   const [validating, setvalidating] = useState(false)
@@ -32,7 +32,7 @@ const KeywordsBar = ({keywords, setkeywords}: any) => {
 
   return (
     <div className='keywordContainer'>
-      <form>
+      <form className='form'>
           <input placeholder='keywords...' className='globalInput'></input>
           <span className='globalBtn' onClick={(e) => addKeyword(e)}>add keyword</span>
       </form>

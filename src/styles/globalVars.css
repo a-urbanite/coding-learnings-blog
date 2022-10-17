@@ -1,0 +1,101 @@
+:root {
+  --as-neongreen: #00ffC3;
+  --as-neonblue: #01FFFF;
+  /* --as-neonpink: #FFB3FD; */
+  --as-neonpink: #d88ed6;
+  --as-neonviolet: #9D72FF;
+  --as-lightwhite: rgb(219, 219, 219);
+  --as-darkGrey: #292929;
+
+  --as-blue: #3CB9FC;
+  --as-pink: #B537F2;
+  --as-violet: #8A2BE2;
+  --as-dark: #1d0e35;
+}
+
+body {
+  color: var(--as-lightwhite);
+  background-color: var(--as-dark);
+}
+
+* {
+  padding: 0% ;
+  margin: 0% ;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+.page {
+  width: 90%;
+  margin: 2rem;
+  padding: 1rem;
+}
+
+.pageFrame {
+  border: 1px solid var(--as-violet);
+}
+
+.sectionTitle {
+  color: var(--as-lightwhite);
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 2rem;
+}
+
+    /* for tablets */
+    @media only screen and (min-width: 601px) and (max-width: 900px) {
+      .sectionTitle {
+        font-size: 1.5rem;
+      }
+  }
+
+    /* for mobile */
+    @media only screen and (max-width: 600px) {
+      .sectionTitle {
+        font-size: 1.2rem;
+      }
+    }
+
+.sectionTitleLeft {
+  color: var(--as-lightwhite);
+  margin-bottom: 1rem;
+  text-align: left;
+  font-size: 2rem;
+}
+
+.globalForm {
+  display: flex;
+  flex-direction: column;
+  /* align-items: flex-start; */
+  
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3rem;
+}
+
+.globalForm__input {
+  /* width: 100%; */
+  padding: 10px 15px;
+  margin: 8px 1px;
+  /* box-sizing: border-box; */
+  border: 1px solid var(--as-lightwhite);
+  background-color: var(--as-neonviolet) !important;
+}
+
+.globalForm__submit {
+  background-color: var(--as-neonpink);
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.globalForm__submit:hover {
+  background-color: var(--as-violet);
+  color: rgb(44, 44, 44);
+}
+

@@ -1,6 +1,6 @@
 import { Key, useEffect, useState } from 'react'
 import './KeywordsUI.css'
-import { countElementInArr } from '../../pages/Blog/sorters'
+import { countElementInArr } from '../../../pages/Blog/sorters'
 
 const KeywordsUI = ({ postList, setfilteredPosts, selectedKeywords, setselectedKeywords }: any) => {
   const [keywordsArr, setallKeywords] = useState<any[]>([])

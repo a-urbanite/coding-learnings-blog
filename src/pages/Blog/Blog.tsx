@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react'
 import { collection, getDocs } from 'firebase/firestore'
 import { db } from '../../firebase-config';
 import './Blog.css'
-import Sidebar from '../../components/Sidebar/Sidebar';
+import Sidebar from '../../components/BlogDisplay/Sidebar/Sidebar';
 import { sortAfterDateDesc } from './sorters';
-import KeywordsUI from '../../components/KeywordsUI/KeywordsUI';
-import Gallery from '../../components/Gallery/Gallery';
+import KeywordsUI from '../../components/BlogDisplay/KeywordsUI/KeywordsUI';
+import Gallery from '../../components/BlogDisplay/Gallery/Gallery';
 
 const Blog = ({isAuth, setPostToEdit}: any) => {
   const [postList, setPostList] = useState<any>([]);
