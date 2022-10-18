@@ -3,8 +3,7 @@ import { addDoc, collection } from 'firebase/firestore'
 import { db, auth } from '../../firebase-config'
 import { useNavigate } from 'react-router-dom'
 import './CreatePost.css'
-import Editor from "../../components/ArticleEditor/ArticleEditor"
-import KeywordsBar from '../../components/ArticleEditor/KeywordsBar/KeywordsBar'
+import ArticleEditor from '../../components/ArticleEditor/ArticleEditor'
 
 interface CreatePostPageProps {
       isAuth: boolean
@@ -40,14 +39,15 @@ const CreatePost = ({isAuth}: CreatePostPageProps) => {
   return (
     <div className='page pageFrame'>
         <h1 className='sectionTitleLeft'>Create a Post</h1>
-        <Editor 
+        <ArticleEditor
           title={title} 
           setTitle={setTitle}
           postText={postText}
           setPostText={setPostText} 
+          keywords={keywords} 
+          setkeywords={setkeywords}
         />
         <div className='bottomBar'>
-          <KeywordsBar keywords={keywords} setkeywords={setkeywords}/>
           <span className='globalBtn' onClick={createPost}>Submit Post</span>
         </div>
     </div>

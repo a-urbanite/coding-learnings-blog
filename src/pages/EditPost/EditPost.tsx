@@ -2,8 +2,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { doc, updateDoc} from 'firebase/firestore'
 import { auth, db } from '../../firebase-config';
-import Editor from '../../components/ArticleEditor/ArticleEditor';
-import KeywordsBar from '../../components/ArticleEditor/KeywordsBar/KeywordsBar';
+import ArticleEditor from '../../components/ArticleEditor/ArticleEditor'
 
 interface CreatePostPageProps {
     isAuth: boolean
@@ -47,13 +46,15 @@ const EditPost = ({isAuth, postToEdit}: CreatePostPageProps) => {
 
   return (
     <div className='page pageFrame'>
-      <h1>Edit a Post</h1>
-      <Editor 
-          title={postToEdit.title} 
+      <h1 className='sectionTitleLeft'>Edit a Post</h1>
+      <ArticleEditor
+          title={title} 
           setTitle={setTitle}
-          postText={postToEdit.postText}
-          setPostText={setPostText}/>
-      <KeywordsBar keywords={keywords} setkeywords={setkeywords}></KeywordsBar>
+          postText={postText}
+          setPostText={setPostText} 
+          keywords={keywords} 
+          setkeywords={setkeywords}
+      />
       <input onChange={() => setchangeDateChecker(!changeDateChecker)} type="checkbox"></input>
       <input type="date" onChange={(event) => {setpubDate(event.target.value)}}></input>
       <button onClick={updatePost}>Update Post</button>

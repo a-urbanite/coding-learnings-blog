@@ -12,7 +12,6 @@ import Settings from './pages/Settings/Settings';
 import ArticlePage from './pages/ArticlePage/ArticlePage'
 import './styles/globalVars.css'
 import './styles/globalButtons.css'
-// import './styles/'
 
 function App() {
   const [isAuth, setIsAuth] = useState<any>(localStorage.getItem('isAuth'));

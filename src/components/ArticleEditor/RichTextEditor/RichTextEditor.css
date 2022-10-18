@@ -1,0 +1,16 @@
+
+.Quill-Editor {
+  height: 300px;
+  margin-bottom: 1rem;
+  background-color: var(--bg-color);
+}
+
+/* frame around textwindow */
+.ql-container.ql-snow {
+  border: 1px solid var(--accent-color) !important;
+}
+
+/* styling of placeholder */
+.quill > .ql-container > .ql-editor.ql-blank::before{
+  color: var(--text-color);
+}

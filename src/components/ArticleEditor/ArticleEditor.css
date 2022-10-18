@@ -1,16 +1,4 @@
-.titleBox {
-  width: 50%;
-  margin-bottom: 1rem;
-  /* background-color: red; */
-}
-
-.ql-toolbar {
-  background-color: var(--as-neonviolet);
-  margin-bottom: 1rem;
-}
-
-.Quill-Editor {
-  height: 300px;
-  margin-bottom: 1rem;
-  background-color: var(--as-neonviolet);
+.headerBar {
+  display: flex;
+  flex-direction: row;
 }

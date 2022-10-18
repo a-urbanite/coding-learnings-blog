@@ -1,0 +1,22 @@
+:root {
+  /* Light mode */
+  --light-switch-shadow: #373d4e;
+  --light-switch-icon: "🌚";
+  --light-switch-text: "dark mode?";
+
+  /* Dark mode */
+  --dark-switch-shadow: #fce477;
+  --dark-switch-icon: "🌝";
+  --dark-switch-text: "light mode?";
+
+  /* Default mode */
+  --switch-shadow-color: var(--light-switch-shadow);
+  --switch-icon: var(--light-switch-icon);
+  --switch-text: var(--light-switch-text);
+}
+
+.theme-switch:checked ~ #page {
+  --switch-shadow-color: var(--dark-switch-shadow);
+  --switch-icon: var(--dark-switch-icon);
+  --switch-text: var(--dark-switch-text);
+}

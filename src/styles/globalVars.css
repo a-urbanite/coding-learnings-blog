@@ -13,9 +13,22 @@
   --as-dark: #1d0e35;
 }
 
+.darkTheme {
+  /* default*/
+  --text-color: var(--as-lightwhite);
+  --bg-color: var(--as-dark);
+  --accent-color: var(--as-neonpink);
+}
+
+.lightTheme {
+  --text-color: var(--as-darkGrey);
+  --bg-color: var(--as-lightwhite);
+  --accent-color: var(--as-neonpink);
+}
+
 body {
-  color: var(--as-lightwhite);
-  background-color: var(--as-dark);
+  color: var(--text-color);
+  background-color: var(--bg-color);
 }
 
 * {
@@ -37,7 +50,7 @@ body {
 }
 
 .sectionTitle {
-  color: var(--as-lightwhite);
+  color: var(--text-color);
   margin-bottom: 1rem;
   text-align: center;
   font-size: 2rem;
@@ -58,7 +71,7 @@ body {
     }
 
 .sectionTitleLeft {
-  color: var(--as-lightwhite);
+  color: var(--text-color);
   margin-bottom: 1rem;
   text-align: left;
   font-size: 2rem;
@@ -76,12 +89,15 @@ body {
 }
 
 .globalForm__input {
-  /* width: 100%; */
   padding: 10px 15px;
   margin: 8px 1px;
-  /* box-sizing: border-box; */
-  border: 1px solid var(--as-lightwhite);
-  background-color: var(--as-neonviolet) !important;
+  border: 1px solid var(--accent-color);
+  background-color: var(--bg-color) !important;
+  color: var(--text-color);
+}
+
+.globalForm__input::placeholder {
+  color: var(--text-color);
 }
 
 .globalForm__submit {

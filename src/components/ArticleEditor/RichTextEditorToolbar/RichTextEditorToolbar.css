@@ -1,0 +1,19 @@
+.ql-toolbar {
+  background-color: var(--bg-color);
+  border: 1px solid var(--accent-color) !important;
+  margin-bottom: 1rem;
+}
+
+.ql-toolbar .ql-stroke {
+  fill: none !important;
+  stroke: var(--text-color) !important;
+}
+
+.ql-toolbar .ql-fill {
+  fill: var(--text-color) !important;
+  stroke: none !important;
+}
+
+.ql-toolbar .ql-picker {
+  color: var(--text-color) !important;
+}

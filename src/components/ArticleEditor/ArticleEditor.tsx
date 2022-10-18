@@ -1,7 +1,7 @@
 import TitleInput from "./TitleInput/TitleInput";
-import RichTextEditorToolbar from "./RichTextEditorToolbar/EditorToolbar";
+import RichTextEditorToolbar from "./RichTextEditorToolbar/RichTextEditorToolbar";
 import RichTextEditor from "./RichTextEditor/RichTextEditor";
-import 'react-quill/dist/quill.snow.css';
+import KeywordsBar from "./KeywordsBar/KeywordsBar";
 import './ArticleEditor.css'
 
 interface EditorProps {
@@ -9,13 +9,18 @@ interface EditorProps {
 	setTitle: Function
 	postText: any
 	setPostText: any
+  keywords: any
+  setkeywords: any
 }
 
-const ArticleEditor = ({title, setTitle, postText, setPostText}: EditorProps) => {
+const ArticleEditor = ({title, setTitle, postText, setPostText, keywords, setkeywords}: EditorProps) => {
 
   return (
     <> 
-      <TitleInput title={title} setTitle={setTitle}/>    	
+      <div className="headerBar">
+        <TitleInput title={title} setTitle={setTitle}/>    	
+        <KeywordsBar keywords={keywords} setkeywords={setkeywords}/>
+      </div>
       <RichTextEditorToolbar/>
       <RichTextEditor postText={postText} setPostText={setPostText}/>
     </>

@@ -1,7 +1,6 @@
-import React from "react";
 import { Quill } from "react-quill";
 import htmlEditButton from "quill-html-edit-button";
-
+import './RichTextEditorToolbar.css'
 
 // Add sizes to whitelist and register them
 const Size = Quill.import("formats/size");

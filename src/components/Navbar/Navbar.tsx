@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import './Navbar.css'
 import { AiFillSetting } from "react-icons/ai";
-
+import ThemeSwitch from '../ThemeSwitch/ThemeSwitch';
 
 const Navbar = ({isAuth, signUserOut}: any) => {
 
@@ -12,6 +12,7 @@ const Navbar = ({isAuth, signUserOut}: any) => {
             { isAuth && <Link className='mainNav__link' to="/createpost"> Create Post </Link>}
             { isAuth && <span className='mainNav__link' onClick={signUserOut}>Log Out</span>}
             { isAuth && <Link className='mainNav__link' to="/settings"> <AiFillSetting/> </Link>}
+            <ThemeSwitch/>
         </div>
     );
 }
