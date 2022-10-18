@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import './Navbar.css'
 import { AiFillSetting } from "react-icons/ai";
-import ThemeSwitch from '../ThemeSwitch/ThemeSwitch';
+import ThemeSwitch from './ThemeSwitch/ThemeSwitch';
 import { useLocation } from 'react-router-dom'
 
 const Navbar = ({isAuth, signUserOut}: any) => {

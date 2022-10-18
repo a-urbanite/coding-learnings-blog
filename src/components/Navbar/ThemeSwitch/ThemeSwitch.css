@@ -1,0 +1,9 @@
+.themeSwitcherIcon {
+  /* background-color: ; */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  scale: 1.3;
+  color: var(--as-lightwhite);
+}
