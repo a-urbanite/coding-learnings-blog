@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { doc, updateDoc} from 'firebase/firestore'
 import { auth, db } from '../../firebase-config';
-import DateChangeBar from '../../components/DateChangeBar/DateChangeBar';
+import DateChangeBar from '../../components/ArticleEditor/DateChangeBar/DateChangeBar';
 import ArticleEditor from '../../components/ArticleEditor/ArticleEditor'
 
 import './EditPost.css'
