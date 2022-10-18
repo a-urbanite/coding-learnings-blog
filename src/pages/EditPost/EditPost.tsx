@@ -2,7 +2,10 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { doc, updateDoc} from 'firebase/firestore'
 import { auth, db } from '../../firebase-config';
+import DateChangeBar from '../../components/DateChangeBar/DateChangeBar';
 import ArticleEditor from '../../components/ArticleEditor/ArticleEditor'
+
+import './EditPost.css'
 
 interface CreatePostPageProps {
     isAuth: boolean
@@ -55,10 +58,18 @@ const EditPost = ({isAuth, postToEdit}: CreatePostPageProps) => {
           keywords={keywords} 
           setkeywords={setkeywords}
       />
-      <input onChange={() => setchangeDateChecker(!changeDateChecker)} type="checkbox"></input>
-      <input type="date" onChange={(event) => {setpubDate(event.target.value)}}></input>
-      <button onClick={updatePost}>Update Post</button>
-      <button onClick={() => navigate("/")}>Back</button>
+      <div className='bottomBar'>
+        <DateChangeBar 
+          changeDateChecker={changeDateChecker}
+          setchangeDateChecker={setchangeDateChecker} 
+          setpubDate={setpubDate}/>
+        <span 
+          className='globalBtn'
+          onClick={updatePost}>Update Post</span>
+        <span
+          className='globalBtn' 
+          onClick={() => navigate("/")}>Back</span>
+      </div>
     </div>
   )
 }

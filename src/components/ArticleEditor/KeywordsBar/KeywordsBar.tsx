@@ -31,13 +31,13 @@ const KeywordsBar = ({keywords, setkeywords}: any) => {
   
 
   return (
-    <div className='keywordContainer'>
+    <div className='container'>
       <form className='form'>
-          <input placeholder='keywords...' className='globalInput'></input>
-          <span className='globalBtn' onClick={(e) => addKeyword(e)}>add keyword</span>
+          <input placeholder='keywords...' className='globalForm__input keyowrdsInput'></input>
+          <span className='globalBtn keyword__addBtn' onClick={(e) => addKeyword(e)}>add keyword</span>
       </form>
       {!validating && 
-      <>
+      <div className='keywordsContainer'>
         {keywords.map((keyword: any) => { return (
           <span 
             key={keyword}
@@ -47,7 +47,7 @@ const KeywordsBar = ({keywords, setkeywords}: any) => {
               {keyword}
           </span>
           )})}
-      </>
+      </div>
       }
     </div>
   )

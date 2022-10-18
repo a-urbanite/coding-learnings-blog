@@ -2,3 +2,8 @@
   display: flex;
   flex-direction: row;
 }
+
+.headerBar > * {
+/* background-color: red; */
+width: 50%;
+}

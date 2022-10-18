@@ -17,10 +17,8 @@ const ArticleEditor = ({title, setTitle, postText, setPostText, keywords, setkey
 
   return (
     <> 
-      <div className="headerBar">
-        <TitleInput title={title} setTitle={setTitle}/>    	
-        <KeywordsBar keywords={keywords} setkeywords={setkeywords}/>
-      </div>
+      <TitleInput title={title} setTitle={setTitle}/>    	
+      <KeywordsBar keywords={keywords} setkeywords={setkeywords}/>
       <RichTextEditorToolbar/>
       <RichTextEditor postText={postText} setPostText={setPostText}/>
     </>

@@ -89,6 +89,7 @@ body {
 }
 
 .globalForm__input {
+  width: 100%;
   padding: 10px 15px;
   margin: 8px 1px;
   border: 1px solid var(--accent-color);

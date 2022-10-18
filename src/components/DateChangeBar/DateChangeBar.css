@@ -1,0 +1,22 @@
+.DateChangeContainer {
+  display: flex;
+  flex-direction: row;
+  /* width: 100%; */
+  gap: 1rem;
+  /* background-color: red; */
+}
+
+.dateTitle {
+  /* width: auto; */
+  display: inline-flex;
+  align-items: center;
+  text-align: left;
+}
+
+.dateCheckbox {
+  width: unset !important;
+}
+
+.dateDateInput {
+  width: unset !important;
+}

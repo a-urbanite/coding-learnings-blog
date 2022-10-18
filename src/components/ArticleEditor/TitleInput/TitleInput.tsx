@@ -1,3 +1,5 @@
+import './TitleInput.css'
+
 interface TitleInputProps {
   title: any,
   setTitle: any
