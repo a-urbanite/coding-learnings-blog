@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { FormEvent, useEffect, useState } from 'react'
 import './KeywordsBar.css'
 import { findDuplicates } from '../../../pages/Blog/sorters'
 
@@ -7,12 +7,13 @@ const KeywordsBar = ({keywords, setkeywords}: any) => {
 
   const addKeyword = (event: any) => {
     event.preventDefault();
-    const enteredKeyword = event.target.parentNode.children[0].value
+    const inputElement = event.type === 'submit' ? event.target.children[0] : event.target.parentNode.children[0]
+    const enteredKeyword = inputElement.value
     if (enteredKeyword.length > 0) { 
       setkeywords((oldArray: any) => [...oldArray, enteredKeyword])
       setvalidating(true)
     } 
-    event.target.parentNode.children[0].value = ""
+    inputElement.value = ""
   }
 
   const deletekeyword = (event: any) => {
@@ -28,11 +29,12 @@ const KeywordsBar = ({keywords, setkeywords}: any) => {
     }
     setvalidating(false)
   }, [keywords])
+
   
 
   return (
     <div className='container'>
-      <form className='form'>
+      <form className='form' onSubmit={(e) => addKeyword(e)}>
           <input placeholder='keywords...' className='globalForm__input keyowrdsInput'></input>
           <span className='globalBtn keyword__addBtn' onClick={(e) => addKeyword(e)}>add keyword</span>
       </form>
