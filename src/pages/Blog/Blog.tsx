@@ -6,13 +6,12 @@ import Sidebar from '../../components/BlogDisplay/Sidebar/Sidebar';
 import { sortAfterDateDesc } from './sorters';
 import KeywordsUI from '../../components/BlogDisplay/KeywordsUI/KeywordsUI';
 import Gallery from '../../components/BlogDisplay/Gallery/Gallery';
+import SearchBar from '../../components/BlogDisplay/SearchBar/SearchBar';
+import SorterBar from '../../components/BlogDisplay/SorterBar/SorterBar';
 
 const Blog = ({isAuth, setPostToEdit}: any) => {
   const [postList, setPostList] = useState<any>([]);
   const [postsToDisplay, setpostsToDisplay] = useState<any>([]);
-  const [filteredPosts, setfilteredPosts] = useState<any[]>([])
-  const [sortOrderAsc, setsortOrderAsc] = useState(false)
-  const [selectedKeywords, setselectedKeywords] = useState<any[]>([])
   const postsCollectionRef = collection(db, "posts" )
 
   const getPosts = async () => {
@@ -30,38 +29,34 @@ const Blog = ({isAuth, setPostToEdit}: any) => {
     setpostsToDisplay(postList)
   }, [postList])
   
-  useEffect(() => {
-    if (filteredPosts.length > 0 && selectedKeywords.length > 0) {
-      setpostsToDisplay(filteredPosts)
-    } else {
-      setpostsToDisplay(postList)
-    }
-  },[filteredPosts])
-
-  
   return (
     <div className='blog'>
       <div className='blog__columnA'>
+        <SearchBar
+          postList={postList}
+          setpostsToDisplay={setpostsToDisplay}
+        />
+        <Sidebar 
+          postsToDisplay={postsToDisplay} 
+        />
         <KeywordsUI 
           postList={postList} 
-          setPostList={setPostList} 
-          filteredPosts={filteredPosts} 
-          setfilteredPosts={setfilteredPosts}
-          selectedKeywords={selectedKeywords}
-          setselectedKeywords={setselectedKeywords}/>
-        <Sidebar postsToDisplay={postsToDisplay} />
+          // setPostList={setPostList}
+
+          postsToDisplay={postsToDisplay}
+          setpostsToDisplay={setpostsToDisplay}
+        />
       </div>
       <div className='blog__columnB'>
-        <Gallery 
-          sortOrderAsc={sortOrderAsc} 
-          setsortOrderAsc={setsortOrderAsc}
-          postList={postList}
-          setPostList={setPostList}
-          isAuth={isAuth}
-          getPosts={getPosts}
-          setPostToEdit={setPostToEdit}
+        <SorterBar 
           postsToDisplay={postsToDisplay}
-          />
+          setpostsToDisplay={setpostsToDisplay}
+        />
+        <Gallery 
+          postsToDisplay={postsToDisplay}
+          isAuth={isAuth}
+          setPostToEdit={setPostToEdit}
+        />
       </div>
     </div>
   )

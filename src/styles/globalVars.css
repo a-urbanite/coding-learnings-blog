@@ -116,3 +116,23 @@ body {
   color: rgb(44, 44, 44);
 }
 
+.ql-video {
+  width: 100% ;
+  height: calc(100% + 3em);
+  /* overflow: hidden !important; */
+  overflow:auto;
+}
+
+iframe {
+  /* height: 50% !important; */
+  overflow: hidden !important;
+  background-color: red;
+  margin: 0 !important;
+}
+
+.gist-file {
+  margin: 0 !important;
+  overflow:auto;
+}
+
+

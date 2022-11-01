@@ -1,11 +1,7 @@
 import { Quill } from "react-quill";
 import htmlEditButton from "quill-html-edit-button";
 import './RichTextEditorToolbar.css'
-
-// Add sizes to whitelist and register them
-const Size = Quill.import("formats/size");
-Size.whitelist = ["extra-small", "small", "medium", "large"];
-Quill.register(Size, true);
+import EmbedBlot from 'quill';
 
 // Add fonts to whitelist and register them
 const Font = Quill.import("formats/font");
@@ -19,9 +15,44 @@ Font.whitelist = [
 ];
 Quill.register(Font, true);
 
+// Add button to view HTML source code
 Quill.register({
   "modules/htmlEditButton": htmlEditButton
 })
+
+//video
+// let Inline = Quill.import('blots/inline');
+// class BoldBlot extends Inline {}
+// BoldBlot.blotName = 'bold';
+// BoldBlot.tagName = 'strong';
+// Quill.register('formats/bold', BoldBlot);
+
+// class VideoBlot extends BlockEmbed {
+//   static create(url) {
+//     let node = super.create();
+//     node.setAttribute('src', url);
+//     // Set non-format related attributes with static values
+//     node.setAttribute('frameborder', '0');
+//     node.setAttribute('allowfullscreen', true);
+
+//     return node;
+//   }
+// }
+
+// let blockEmbed = Quill.import('blots/BlockEmbed');
+let blockEmbed = Quill.import('blots/block/embed');
+class videoBlot extends blockEmbed {
+  static create(url) {
+    let node = super.create();
+    node.setAttribute('src', url);
+    node.setAttribute('frameborder', '0');
+    node.setAttribute('allowfullscreen', true);
+    return node;
+  }
+};
+Quill.register('formats/customVideo', videoBlot);
+
+
 
 // Modules object for setting up the Quill editor
 export const modules = {
@@ -40,7 +71,6 @@ export const modules = {
 export const formats = [
   "header",
   "font",
-  "size",
   "bold",
   "italic",
   "underline",
@@ -54,6 +84,8 @@ export const formats = [
   "indent",
   "link",
   "image",
+  // "video",
+  "customVideo",
   "color",
   "code-block"
 ];
@@ -69,12 +101,6 @@ export const QuillToolbar = () => (
         <option value="georgia">Georgia</option>
         <option value="helvetica">Helvetica</option>
         <option value="lucida">Lucida</option>
-      </select>
-      <select className="ql-size" defaultValue="medium">
-        <option value="extra-small">Size 1</option>
-        <option value="small">Size 2</option>
-        <option value="medium">Size 3</option>
-        <option value="large">Size 4</option>
       </select>
       <select className="ql-header" defaultValue="3">
         <option value="1">Heading</option>
@@ -108,7 +134,7 @@ export const QuillToolbar = () => (
     <span className="ql-formats">
       <button className="ql-link" />
       <button className="ql-image" />
-      <button className="ql-video" />
+      <button className="ql-customVideo" />
     </span>
     <span className="ql-formats">
       <button className="ql-formula" />

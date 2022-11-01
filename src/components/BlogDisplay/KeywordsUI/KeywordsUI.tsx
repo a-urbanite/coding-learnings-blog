@@ -2,78 +2,91 @@ import { Key, useEffect, useState } from 'react'
 import './KeywordsUI.css'
 import { countElementInArr } from '../../../pages/Blog/sorters'
 
-const KeywordsUI = ({ postList, setfilteredPosts, selectedKeywords, setselectedKeywords }: any) => {
-  const [keywordsArr, setallKeywords] = useState<any[]>([])
+const KeywordsUI = ({ postList, postsToDisplay, setpostsToDisplay }: any) => {
+  const [availableKeywords, setAvailableKeywords] = useState<any[]>([])
+  const [selectedKeywords, setselectedKeywords] = useState<any[]>([])
 
-  const getAllKeywords = () => {
-    let keywordsArr: string[] = []
-    postList.forEach((post: { keywords: string[] }) => {
-      if (post.keywords) {
-        keywordsArr = [...keywordsArr, ...post.keywords]
-      }
-    });
-    const keywordsSet = new Set(keywordsArr)
+  useEffect(() => {
+    setAvailableKeywords(getAllKeywords(postList))
+  }, [postList])
+
+  useEffect(() => {
+    if (postsToDisplay.length === 0 && selectedKeywords.length === 0) {
+      setpostsToDisplay(postList)
+    }
+  },[postsToDisplay])
+
+  useEffect(() => {
+    setpostsToDisplay(filterPosts(selectedKeywords, postsToDisplay))
+  }, [selectedKeywords])
+
+
+  const countKeywords = (arr: any) => {
+    const keywordsSet = new Set(arr)
     const countedKeywords: { keyword: string; count: number }[] = []
     keywordsSet.forEach((keyword) => {
       countedKeywords.push({
-        keyword: keyword, 
-        count: countElementInArr(keyword, keywordsArr)
+        keyword: keyword as string, 
+        count: countElementInArr(keyword, arr)
       }) 
     })
-    countedKeywords.sort((a,b) => b.count - a.count);
-    setallKeywords(countedKeywords)
+    return countedKeywords.sort((a,b) => b.count - a.count);
+  }
+
+  const getAllKeywords = (postArr: any) => {
+    let kwArr: string[] = []
+    postArr.forEach((post: { keywords: string[] }) => {
+      if (post.keywords) {
+        kwArr = [...kwArr, ...post.keywords]
+      }
+    });
+    const countedKeywords = countKeywords(kwArr)
+    return countedKeywords
   }
 
   const selectkeyword = (keyword: string) => {
-    setallKeywords(keywordsArr.filter((element) => element.keyword !== keyword))
-    const keywordToAdd = keywordsArr.filter((element) => element.keyword === keyword)
+    setAvailableKeywords(availableKeywords.filter((element) => element.keyword !== keyword))
+    const keywordToAdd = availableKeywords.filter((element) => element.keyword === keyword)
     setselectedKeywords((oldArr: any) => [...oldArr, ...keywordToAdd])
   }
 
   const deselectkeyword = (keyword: string) => {
     const keywordToAdd = selectedKeywords.filter((element: { keyword: string }) => element.keyword === keyword)
-    const sortedKeywords = [...keywordsArr, ...keywordToAdd].sort((a,b) => b.count - a.count);
-    setallKeywords(sortedKeywords)
+    const sortedKeywords = [...availableKeywords, ...keywordToAdd].sort((a,b) => b.count - a.count);
+    setAvailableKeywords(sortedKeywords)
     setselectedKeywords(selectedKeywords.filter((element: { keyword: string }) => element.keyword !== keyword))
   }
 
-  const filterPosts = () => {
-    const simplifiedSelKeywordsArr = selectedKeywords.map((keywordObj: { keyword: any }) => keywordObj.keyword)
-    const sortedPostList = postList.filter((post: any) => {
+  const filterPosts = (keyWordsArr: any, postArr: any) => {
+    const simplifiedSelKeywordsArr = keyWordsArr.map((keywordObj: { keyword: any }) => keywordObj.keyword)
+    const filteredPosts = postArr.filter((post: any) => {
       return  post.keywords && post.keywords.some((keyword: any)=> simplifiedSelKeywordsArr.includes(keyword))
     })
-    setfilteredPosts(sortedPostList)
+    return filteredPosts
   }
-
-  useEffect(() => {
-    getAllKeywords()
-  }, [postList])
-
-  useEffect(() => {
-    filterPosts()
-  }, [selectedKeywords])
-  
 
   return (
     <div className='keywordsUI'>
       <h1 className='sectionTitle'>Keywords</h1>
       <div className='keywordsUI__KeywordsContainer'>
-        {keywordsArr.map((keyword, index) => {
-          return  <span 
-                    key={index}
-                    className='globalBtn' 
-                    onClick={() => selectkeyword(keyword.keyword)}>{keyword.keyword}({keyword.count})
-                  </span>
+        {availableKeywords.map((keyword, index) => { return (
+          <span 
+            key={index}
+            className='globalBtn' 
+            onClick={() => selectkeyword(keyword.keyword)}>{keyword.keyword}({keyword.count})
+          </span>
+        )
         })}
       </div>
       <div className='keywordsUI__KeywordsContainer'>
         <span>{`Selected:`}</span> 
-        {selectedKeywords.map((keyword: any, index: Key | null | undefined) => {
-          return  <span 
-                    key={index}
-                    className='globalBtn' 
-                    onClick={() => deselectkeyword(keyword.keyword)}>{keyword.keyword}({keyword.count})
-                  </span>
+        {selectedKeywords.map((keyword: any, index: Key | null | undefined) => { return (
+          <span 
+            key={index}
+            className='globalBtn' 
+            onClick={() => deselectkeyword(keyword.keyword)}>{keyword.keyword}({keyword.count})
+          </span>
+        ) 
         })}
       </div>
     </div>

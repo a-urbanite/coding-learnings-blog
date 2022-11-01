@@ -6,7 +6,7 @@ import './Post.css'
 import { Link } from 'react-router-dom';
 import { Key } from 'react';
 
-const Post = ({post, isAuth, getPosts, setPostToEdit}: any) => {
+const Post = ({post, isAuth, setPostToEdit}: any) => {
   const location = useLocation();
   let navigate = useNavigate();
 
@@ -15,7 +15,7 @@ const Post = ({post, isAuth, getPosts, setPostToEdit}: any) => {
     if (result) {
         const postDoc = doc(db, 'posts', id)
         await deleteDoc(postDoc);
-        getPosts()
+        navigate(0);
       }
     };
   
