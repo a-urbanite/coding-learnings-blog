@@ -44,7 +44,7 @@ const Blog = ({isAuth, setPostToEdit}: any) => {
           setpostsToDisplay={setpostsToDisplay}
         />
         <Sidebar 
-          postsToDisplay={postsToDisplay} 
+          currentPageContents={currentPageContents} 
         />
       </div>
       <div className='blog__columnB'>
