@@ -21,7 +21,7 @@
   white-space:nowrap;
   width: 100% !important;
   /* padding: 10px 15px !important; */
-  margin: 0 !important;
+  /* margin: 0 !important; */
 }
 
 .keywordsContainer {
@@ -30,4 +30,5 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  gap: 0.25rem;
 }
