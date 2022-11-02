@@ -1,18 +1,14 @@
-.paginationListItem {
-  /* list-style: none; */
-}
-
 .paginationContainer {
   display: flex;
+  gap: 0.4rem;
+  align-items:center;
+  justify-content:center;
 }
 
 .paginationList {
   list-style: none;
   display: flex;
-}
-
-.pagiantionlabel {
-  margin: 0rem 0.5rem;
+  gap: 0.25rem;
 }
 
 .postsPerPageSelecter {

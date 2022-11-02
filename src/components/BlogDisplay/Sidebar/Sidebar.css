@@ -5,6 +5,8 @@
 
 .sidebar__list {
     list-style: none;
-    /* padding-inline-start: 0px; */
+}
 
+.articleBtn {
+    margin-bottom: 0.25rem;
 }

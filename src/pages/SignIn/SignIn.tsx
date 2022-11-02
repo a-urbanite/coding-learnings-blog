@@ -40,7 +40,7 @@ const Login = ({ setIsAuth }: any) => {
           onChange={(event) => {setlogInPassword(event.target.value)}}>
         </input>
         <input 
-          className='globalForm__submit'
+          className='globalBtn'
           type="submit" 
           autoFocus 
           value="Go!"/> 

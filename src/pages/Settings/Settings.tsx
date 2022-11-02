@@ -39,7 +39,7 @@ const Settings = (isAuth: any) => {
             id='email' 
             defaultValue={auth.currentUser!.email!}/>
           <input 
-            className='globalForm__submit'
+            className='globalBtn'
             type="submit" 
             value="Go!"/>
         </form>

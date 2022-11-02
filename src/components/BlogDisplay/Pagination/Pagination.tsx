@@ -45,8 +45,7 @@ const Pagination = ({postsToDisplay, setcurrentPageContents}: any) => {
       <p>{postsToDisplay.length}</p>
       <p className='pagiantionlabel'>posts</p>
       <select 
-        // name="postsPerPageSelecter" 
-        className='postsPerPageSelecter'
+        className='globalForm__input'
         defaultValue={5} 
         onChange={(e) => setpostsPerPage(+e.target.value)}
       >

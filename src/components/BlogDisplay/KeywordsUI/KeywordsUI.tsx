@@ -108,7 +108,7 @@ const KeywordsUI = ({ postList, postsToDisplay, setpostsToDisplay }: any) => {
         {availableKeywords.map((keyword, index) => { return (
           <span 
             key={index}
-            className='globalBtn' 
+            className='globalBtn keywordBtn' 
             onClick={() => selectkeyword(keyword.keyword)}>{keyword.keyword}({keyword.count})
           </span>
         )
@@ -119,7 +119,7 @@ const KeywordsUI = ({ postList, postsToDisplay, setpostsToDisplay }: any) => {
         {selectedKeywords.map((keyword: any, index: Key | null | undefined) => { return (
           <span 
             key={index}
-            className='globalBtn' 
+            className='globalBtn keywordBtn' 
             onClick={() => deselectkeyword(keyword.keyword)}>{keyword.keyword}({keyword.count})
           </span>
         ) 

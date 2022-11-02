@@ -12,12 +12,12 @@ const Sidebar = ({postsToDisplay}: any) => {
       <h2 className='sectionTitle'>Articles</h2>
       <ul className='sidebar__list'>
           <>{postsToDisplay.map((post: any) => {
-              return (<li key={post.id} className='globalBtn'>
+              return (<li key={post.id} className='globalBtn articleBtn'>
                         <span 
                           
                           onClick={() => scrollToFunc(post.id)}
                         > 
-                          <b>{post.title}</b> - {new Date(post.date.seconds * 1000).toLocaleDateString()} 
+                          {post.title} - {new Date(post.date.seconds * 1000).toLocaleDateString()} 
                         </span>
                       </li>)
           })}</>
