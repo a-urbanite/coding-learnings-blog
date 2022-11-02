@@ -7,7 +7,10 @@ const SearchBar = ({postList, setpostsToDisplay}: any) => {
   
 const searchArticles = (e: any) => {
   e.preventDefault();
-  if (searchString.length === 0) return
+  if (searchString.length === 0) {
+    setpostsToDisplay(postList)
+    return
+  };
   const filteredList = postList.filter((element: any) => element.title.toLowerCase().includes(searchString.toLowerCase()))
   setpostsToDisplay(filteredList)
   setsearchString('')
