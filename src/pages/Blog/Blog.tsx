@@ -13,20 +13,21 @@ import Pagination from '../../components/BlogDisplay/Pagination/Pagination';
 const Blog = ({isAuth, setPostToEdit}: any) => {
   const [postList, setPostList] = useState<any>([]);
   const [postsToDisplay, setpostsToDisplay] = useState<any>([]);
-
   const [currentPageContents, setcurrentPageContents] = useState<any>([])
   
-  const postsCollectionRef = collection(db, "posts" )
+  const fetchPosts = async () => {
+    const postsCollectionRef = collection(db, "posts" )
+    const data = await getDocs(postsCollectionRef);
+    const postArr: any[] = data.docs.map((doc) => ({...doc.data(), id: doc.id}))
+    const sortedArr = sortAfterDateDesc(postArr, "date")
+    return sortedArr
+  }
   
   useEffect(() => {
-    const getPosts = async () => {
-      const data = await getDocs(postsCollectionRef);
-      const postArr: any[] = data.docs.map((doc) => ({...doc.data(), id: doc.id}))
-      const sortedArr = sortAfterDateDesc(postArr, "date")
-      setPostList(sortedArr)
-      setpostsToDisplay(sortedArr)
-    }
-    getPosts()
+    fetchPosts().then((posts) => {
+      setPostList(posts)
+      setpostsToDisplay(posts)
+    })
   },[])
   
 
@@ -47,16 +48,18 @@ const Blog = ({isAuth, setPostToEdit}: any) => {
         />
       </div>
       <div className='blog__columnB'>
-        <SorterBar 
-          postsToDisplay={postsToDisplay}
-          setpostsToDisplay={setpostsToDisplay}
-        />
-        <Pagination 
-          postsToDisplay={postsToDisplay}
-          setcurrentPageContents={setcurrentPageContents}
-        />
+        <div className='galleryHeaderBar'>
+          <Pagination 
+            postsToDisplay={postsToDisplay}
+            setcurrentPageContents={setcurrentPageContents}
+          />
+          <SorterBar 
+            postsToDisplay={postsToDisplay}
+            setpostsToDisplay={setpostsToDisplay}
+          />
+        </div>
         <Gallery 
-          postsToDisplay={currentPageContents}
+          currentPageContents={currentPageContents}
           isAuth={isAuth}
           setPostToEdit={setPostToEdit}
         />

@@ -1,7 +1,3 @@
-.gallery {
-  /* background-color: aqua; */
-}
-
-.gallery__sorter {
-  margin-bottom: 1rem;
+.galleryHeaderBar {
+  margin-bottom: 0.5rem;
 }

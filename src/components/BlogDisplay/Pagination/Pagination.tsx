@@ -42,20 +42,24 @@ const Pagination = ({postsToDisplay, setcurrentPageContents}: any) => {
   
   return (
     <div className='paginationContainer'>
-      number of posts: 
       <p>{postsToDisplay.length}</p>
-      <p>posts per page: </p>
-      <select name="postsPerPage" defaultValue={5} onChange={(e) => setpostsPerPage(+e.target.value)}>
+      <p className='pagiantionlabel'>posts</p>
+      <select 
+        // name="postsPerPageSelecter" 
+        className='postsPerPageSelecter'
+        defaultValue={5} 
+        onChange={(e) => setpostsPerPage(+e.target.value)}
+      >
         <option value={1}>1</option>
         <option value={5}>5</option>
         <option value={10}>10</option>
         <option value={25}>25</option>
       </select>
-      <p> pages: </p> 
+      <p className='pagiantionlabel'>posts/page</p>
       <ul className='paginationList'>{pageNumbers.map((pageNumber: any) => {
         return (
           <li 
-            key={pageNumber} 
+          key={pageNumber} 
             className='paginationListItem' 
             onClick={() => setcurrentPage(pageNumber)}
           >
@@ -63,6 +67,7 @@ const Pagination = ({postsToDisplay, setcurrentPageContents}: any) => {
           </li>
         )
       })}</ul>
+      <p className='pagiantionlabel'>pages</p> 
     </div>
   )
 }

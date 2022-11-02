@@ -4,13 +4,15 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  /* width: 100%; */
+
+  /* height: 100%; */
+
   margin: 0.2rem 0.4rem 0.2rem 0rem;
   padding: 0rem 0.3rem 0.1rem 0.3rem;
-  /* border: 1px solid var(--as-neonpink); */
+
   color: var(--as-darkGrey);
-  /* color: var(--as-lightwhite); */
   background-color: var(--as-neonpink);
+
   cursor: pointer;
   user-select: none;
   font-size: 1rem;

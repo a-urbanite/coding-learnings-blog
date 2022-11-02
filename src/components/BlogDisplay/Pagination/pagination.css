@@ -10,3 +10,11 @@
   list-style: none;
   display: flex;
 }
+
+.pagiantionlabel {
+  margin: 0rem 0.5rem;
+}
+
+.postsPerPageSelecter {
+  max-height: 1.5rem;
+}
