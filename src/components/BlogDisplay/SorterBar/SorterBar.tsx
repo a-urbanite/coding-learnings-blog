@@ -19,10 +19,13 @@ const SorterBar = ({postsToDisplay, setpostsToDisplay}: any) => {
 
   return (
     <div className='sorterBar__container'>
+      <p>
+        {!sortOrderAsc ? " ASC" : " DESC"}
+      </p>
       <span 
         className='globalBtn'
         onClick={() => sortByTitle()}
-      >
+        >
         Sort after name
       </span>
       <span 
@@ -31,9 +34,6 @@ const SorterBar = ({postsToDisplay, setpostsToDisplay}: any) => {
       >
         Sort after date
       </span>
-      <p>
-        {!sortOrderAsc ? " ASC" : " DESC"}
-      </p>
     </div>
   )
 }

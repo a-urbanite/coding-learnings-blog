@@ -42,6 +42,17 @@ const Pagination = ({postsToDisplay, setcurrentPageContents}: any) => {
   
   return (
     <div className='paginationContainer'>
+      <ul className='paginationList'>{pageNumbers.map((pageNumber: any) => {
+        return (
+          <li 
+          key={pageNumber} 
+            className='paginationListItem' 
+            onClick={() => setcurrentPage(pageNumber)}
+          >
+            <span className='globalBtn'>{pageNumber}</span>
+          </li>
+        )
+      })}</ul>
       <p>{postsToDisplay.length}</p>
       <p className='pagiantionlabel'>posts</p>
       <select 
@@ -55,18 +66,6 @@ const Pagination = ({postsToDisplay, setcurrentPageContents}: any) => {
         <option value={25}>25</option>
       </select>
       <p className='pagiantionlabel'>posts/page</p>
-      <ul className='paginationList'>{pageNumbers.map((pageNumber: any) => {
-        return (
-          <li 
-          key={pageNumber} 
-            className='paginationListItem' 
-            onClick={() => setcurrentPage(pageNumber)}
-          >
-            <span className='globalBtn'>{pageNumber}</span>
-          </li>
-        )
-      })}</ul>
-      <p className='pagiantionlabel'>pages</p> 
     </div>
   )
 }
