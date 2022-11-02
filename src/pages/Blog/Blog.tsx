@@ -8,27 +8,28 @@ import KeywordsUI from '../../components/BlogDisplay/KeywordsUI/KeywordsUI';
 import Gallery from '../../components/BlogDisplay/Gallery/Gallery';
 import SearchBar from '../../components/BlogDisplay/SearchBar/SearchBar';
 import SorterBar from '../../components/BlogDisplay/SorterBar/SorterBar';
+import Pagination from '../../components/BlogDisplay/Pagination/Pagination';
 
 const Blog = ({isAuth, setPostToEdit}: any) => {
   const [postList, setPostList] = useState<any>([]);
   const [postsToDisplay, setpostsToDisplay] = useState<any>([]);
+
+  const [currentPageContents, setcurrentPageContents] = useState<any>([])
+  
   const postsCollectionRef = collection(db, "posts" )
-
-  const getPosts = async () => {
-    const data = await getDocs(postsCollectionRef);
-    const postArr: any[] = data.docs.map((doc) => ({...doc.data(), id: doc.id}))
-    const sortedArr = sortAfterDateDesc(postArr, "date")
-    setPostList(sortedArr)
-  }
-
+  
   useEffect(() => {
+    const getPosts = async () => {
+      const data = await getDocs(postsCollectionRef);
+      const postArr: any[] = data.docs.map((doc) => ({...doc.data(), id: doc.id}))
+      const sortedArr = sortAfterDateDesc(postArr, "date")
+      setPostList(sortedArr)
+      setpostsToDisplay(sortedArr)
+    }
     getPosts()
   },[])
-
-  useEffect(() => {
-    setpostsToDisplay(postList)
-  }, [postList])
   
+
   return (
     <div className='blog'>
       <div className='blog__columnA'>
@@ -36,15 +37,13 @@ const Blog = ({isAuth, setPostToEdit}: any) => {
           postList={postList}
           setpostsToDisplay={setpostsToDisplay}
         />
-        <Sidebar 
-          postsToDisplay={postsToDisplay} 
-        />
         <KeywordsUI 
-          postList={postList} 
-          // setPostList={setPostList}
-
+          postList={postList}
           postsToDisplay={postsToDisplay}
           setpostsToDisplay={setpostsToDisplay}
+        />
+        <Sidebar 
+          postsToDisplay={postsToDisplay} 
         />
       </div>
       <div className='blog__columnB'>
@@ -52,8 +51,12 @@ const Blog = ({isAuth, setPostToEdit}: any) => {
           postsToDisplay={postsToDisplay}
           setpostsToDisplay={setpostsToDisplay}
         />
-        <Gallery 
+        <Pagination 
           postsToDisplay={postsToDisplay}
+          setcurrentPageContents={setcurrentPageContents}
+        />
+        <Gallery 
+          postsToDisplay={currentPageContents}
           isAuth={isAuth}
           setPostToEdit={setPostToEdit}
         />

@@ -1,0 +1,12 @@
+.paginationListItem {
+  /* list-style: none; */
+}
+
+.paginationContainer {
+  display: flex;
+}
+
+.paginationList {
+  list-style: none;
+  display: flex;
+}
