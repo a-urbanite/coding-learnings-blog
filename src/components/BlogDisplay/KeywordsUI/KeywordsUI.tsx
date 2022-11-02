@@ -1,44 +1,24 @@
 import { Key, useEffect, useState } from 'react'
-import './KeywordsUI.css'
 import { countElementInArr } from '../../../pages/Blog/sorters'
+import './KeywordsUI.css'
 
 const KeywordsUI = ({ postList, postsToDisplay, setpostsToDisplay }: any) => {
   const [availableKeywords, setAvailableKeywords] = useState<any[]>([])
   const [selectedKeywords, setselectedKeywords] = useState<any[]>([])
+  const [lastAction, setlastAction] = useState(null as unknown as string)
 
-  //get list of all keywords at start
   useEffect(() => {
-    // console.log("trigger1")
-    setAvailableKeywords(getAllKeywords(postList))
-  }, [postList])
-
-  //show filtered posts when keywords are selected
-  useEffect(() => {
-    // console.log("trigger2")
-    const filteredPosts = filterPosts(selectedKeywords, postsToDisplay)
-    setpostsToDisplay(filteredPosts)
-
-    // const keywordsArr = getAllKeywords(filteredPosts)
-    // console.log("unfilered keywords Arr", keywordsArr)
-    // const filteredArr = keywordsArr.filter((keyword) => selectedKeywords.includes(keyword.keyword))
-    // console.log("filtered keywords Arr", filteredArr)
-    // setAvailableKeywords(getAllKeywords(postsToDisplay))
+    setpostsToDisplay(filterPosts(selectedKeywords, lastAction === 'deletedKeyword' ? postList : postsToDisplay))
   }, [selectedKeywords])
 
-  //failsafe to return to full list when stuff is empty
   useEffect(() => {
-    // console.log("trigger3")
-    // setAvailableKeywords(getAllKeywords(postsToDisplay))
-    if (postsToDisplay.length === 0 && selectedKeywords.length === 0) {
-      setpostsToDisplay(postList)
-    }
+    const keywordsArr = getAllKeywords(postsToDisplay)
+    const simplifiedSelectedKeywordsArray = simplifyKeywordArray(selectedKeywords)
+    const cleanedArray = keywordsArr.filter( function( el: any ) {
+      return !simplifiedSelectedKeywordsArray.includes( el.keyword );
+    } );
+    setAvailableKeywords(cleanedArray)
   },[postsToDisplay])
-
-  // useEffect(() => {
-  //   setAvailableKeywords(getAllKeywords(postsToDisplay))
-  // }, [availableKeywords])
-  
-
 
   const countKeywords = (arr: any) => {
     const keywordsSet = new Set(arr)
@@ -63,42 +43,27 @@ const KeywordsUI = ({ postList, postsToDisplay, setpostsToDisplay }: any) => {
     return countedKeywords
   }
 
+  const simplifyKeywordArray = (arr:any) => {
+    return arr.map((keywordObj: { keyword: any }) => keywordObj.keyword)
+  }
+
+  const filterPosts = (keyWordsArr: any, postArr: any) => {
+    const simplifiedSelKeywordsArr = simplifyKeywordArray(keyWordsArr)
+    const filteredPosts = postArr.filter((post: any) => {
+      return simplifiedSelKeywordsArr.every((keyword: any) => post.keywords.includes(keyword))
+    })
+    return filteredPosts
+  }
+
   const selectkeyword = (keyword: string) => {
     const keywordToAdd = availableKeywords.filter((element) => element.keyword === keyword)
+    setlastAction('addedKeyword')
     setselectedKeywords((oldArr: any) => [...oldArr, ...keywordToAdd])
-
-    // const filteredPosts = filterPosts(selectedKeywords, postsToDisplay)
-    // console.log(filteredPosts)
-    // const keywordsArr = getAllKeywords(filteredPosts)
-    // console.log(keywordsArr)
-    // const filteredArr = keywordsArr.filter((keyword) => !selectedKeywords.includes(keyword.keyword))
-    // console.log(filteredArr)
-    //remove the selected keyords from that array
-    //set available keyowrds to that array
-
-    setAvailableKeywords(availableKeywords.filter((element) => element.keyword !== keyword))
   }
 
   const deselectkeyword = (keyword: string) => {
-    const keywordToAdd = selectedKeywords.filter((element: { keyword: string }) => element.keyword === keyword)
-    const sortedKeywords = [...availableKeywords, ...keywordToAdd].sort((a,b) => b.count - a.count);
-    setAvailableKeywords(sortedKeywords)
+    setlastAction('deletedKeyword')
     setselectedKeywords(selectedKeywords.filter((element: { keyword: string }) => element.keyword !== keyword))
-  }
-
-  // const simplifyKeywordArray = (arr:any) => {
-  //   return arr.map((keywordObj: { keyword: any }) => keywordObj.keyword)
-  // }
-
-  const filterPosts = (keyWordsArr: any, postArr: any) => {
-    const simplifiedSelKeywordsArr = keyWordsArr.map((keywordObj: { keyword: any }) => keywordObj.keyword)
-    const filteredPosts = postArr.filter((post: any) => {
-      return post.keywords.some((keyword: any)=> simplifiedSelKeywordsArr.includes(keyword))
-      // simplifiedSelKeywordsArr.every((keyword: any) => post.keywords.includes(keyword))
-      // post.keywords.some((keyword: any)=> simplifiedSelKeywordsArr.includes(keyword))
-      
-    })
-    return filteredPosts
   }
 
   return (
