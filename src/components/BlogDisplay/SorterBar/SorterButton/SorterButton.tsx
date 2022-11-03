@@ -1,21 +1,35 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { HiChevronDown, HiChevronUp } from "react-icons/hi";
 
-const SorterButton = ({btnText, sorterFunc}: {btnText: any, sorterFunc: any}) => {
-  const [sortBtnOrder, setSortBtnOrder] = useState(null as any)
+const SortByDateBtn = ({postsToDisplay, setpostsToDisplay, globalSortCategory, setglobalSortCategory, buttonSortCategory, sorterFuncAsc, sorterFuncDesc}: any) => {
+  const [sortOrder, setsortOrder] = useState('DESC')
+
+  useEffect(() => {
+    if (globalSortCategory === buttonSortCategory) {
+      const sortedPosts = sortOrder === 'ASC' ? sorterFuncAsc(postsToDisplay, buttonSortCategory) : sorterFuncDesc(postsToDisplay, buttonSortCategory)
+      setpostsToDisplay([...sortedPosts])
+    }
+  }, [sortOrder, globalSortCategory])
+  
+
+  const sortByDate = () => {
+    setsortOrder(sortOrder === 'ASC' ? 'DESC' : "ASC")
+    setglobalSortCategory(buttonSortCategory)
+  }
+
   return (
-    <span 
-    // className={`globalBtn ${sortCategory === 'title' && 'globalBtnActive'}`}
-    onClick={() => sorterFunc()}
-  >
-    <p>{btnText}</p>
-    {sortBtnOrder === 'ASC' ? (
-        <HiChevronUp className='sorterIcon' />
-      ) : (
-        <HiChevronDown className='sorterIcon' />
-      )}
-  </span>
+      <span 
+        className={`globalBtn ${globalSortCategory === buttonSortCategory && 'globalBtnActive'}`}
+        onClick={() => sortByDate()}
+      >
+        <p>{buttonSortCategory}</p>
+        {sortOrder === 'ASC' ? (
+            <HiChevronUp className='sorterIcon' />
+          ) : (
+            <HiChevronDown className='sorterIcon' />
+          )}
+      </span>
   )
 }
 
-export default SorterButton
+export default SortByDateBtn
