@@ -8,13 +8,16 @@ const Navbar = ({isAuth, signUserOut}: any) => {
     const location = useLocation();
 
     return (
-        <div className='mainNav'>
-            { location.pathname !== '/' && <Link className='mainNav__link' to="/"> Blog </Link>}
-            { !isAuth && <Link className='mainNav__link' to="/login"> Login </Link>}
-            { isAuth && <Link className='mainNav__link' to="/createpost"> Create Post </Link>}
-            { isAuth && <span className='mainNav__link' onClick={signUserOut}>Log Out</span>}
-            { isAuth && <Link className='mainNav__link' to="/settings"> <AiFillSetting/> </Link>}
-            <ThemeSwitch/>
+        <div className='navContainer'>
+            <h2 className='blogTitle'>A-urbanite`s Coding Blog </h2>
+            <div className='navButtonBar'>
+                { location.pathname !== '/' && <Link className='mainNav__link' to="/"> Blog </Link>}
+                { !isAuth && <Link className='mainNav__link' to="/login"> Login </Link>}
+                { isAuth && <Link className='mainNav__link' to="/createpost"> Create Post </Link>}
+                { isAuth && <span className='mainNav__link' onClick={signUserOut}>Log Out</span>}
+                { isAuth && <Link className='mainNav__link' to="/settings"> <AiFillSetting/> </Link>}
+                <ThemeSwitch/>
+            </div>
         </div>
     );
 }

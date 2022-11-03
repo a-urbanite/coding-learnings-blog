@@ -18,7 +18,7 @@ const ThemeSwitch = () => {
 
   return (
     <span className='themeSwitcherIcon' onClick={() => switchTheme()}>
-      {currentTheme === 'darkTheme' ? <BsSun/> : <BsMoon/>}
+      {currentTheme === 'darkTheme' ? <BsSun size={28}/> : <BsMoon size={28}/>}
     </span>
   )
 }

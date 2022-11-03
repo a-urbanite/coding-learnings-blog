@@ -1,10 +1,25 @@
-.mainNav {
+.navContainer {
     display: flex;
-    justify-content: space-evenly;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
-    padding-left: 4rem;
+    padding-left: 2rem;
     padding-right: 2rem;
     background-color: var(--as-violet);
+}
+
+.blogTitle {
+    /* text-decoration: none; */
+    /* display: table-cell;
+    vertical-align: middle; */
+    /* margin: none !important; */
+}
+
+.navButtonBar {
+    /* background-color: red; */
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
 }
 
 .mainNav__link {

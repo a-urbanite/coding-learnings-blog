@@ -4,6 +4,12 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  scale: 1.3;
+  width: 3rem;
+  /* height: 100%; */
+  /* scale: 1.3; */
   color: var(--as-lightwhite);
+}
+
+.themeSwitcherIcon:hover {
+  background-color: var(--as-neonpink);
 }
