@@ -44,12 +44,10 @@ const Pagination = ({postsToDisplay, setcurrentPageContents}: any) => {
     <div className='paginationContainer'>
       <ul className='paginationList'>{pageNumbers.map((pageNumber: any) => {
         return (
-          <li 
-          key={pageNumber} 
-            className='paginationListItem' 
-            onClick={() => setcurrentPage(pageNumber)}
-          >
-            <span className='globalBtn'>{pageNumber}</span>
+          <li  key={pageNumber} onClick={() => setcurrentPage(pageNumber)}>
+            <span className={`globalBtn ${pageNumber === currentPage && 'globalBtnActive'}`}>
+              {pageNumber}
+            </span>
           </li>
         )
       })}</ul>
