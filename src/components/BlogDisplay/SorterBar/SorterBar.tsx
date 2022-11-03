@@ -12,6 +12,7 @@ const SorterBar = ({postsToDisplay, setpostsToDisplay}: any) => {
     }
   }, [postsToDisplay])
 
+  
   return (
     <div className='sorterBar__container'>
       <SorterButton
