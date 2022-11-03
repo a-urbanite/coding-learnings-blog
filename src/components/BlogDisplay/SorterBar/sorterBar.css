@@ -4,3 +4,10 @@
   justify-content:center;
   gap: 0.25rem;
 }
+
+.sorterIcon {
+  height: 1.5rem;
+  width: auto;
+  color: var(--as-darkGrey);
+  /* margin-top: -0.2rem; */
+}

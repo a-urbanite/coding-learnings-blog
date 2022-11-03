@@ -1,38 +1,58 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { sortAfterDateAsc, sortAfterDateDesc, sortAfterStringAsc, sortAfterStringDesc } from '../../../pages/Blog/sorters';
 import './sorterBar.css'
+import { HiChevronDown, HiChevronUp } from "react-icons/hi";
 
 const SorterBar = ({postsToDisplay, setpostsToDisplay}: any) => {
-  const [sortOrderAsc, setsortOrderAsc] = useState(false)
+  const [sortOrder, setsortOrder] = useState(null as any)
+  const [sortCategory, setsortCategory] = useState(null as any)
+
+  useEffect(() => {
+    if ( !sortCategory && postsToDisplay.length > 0 ) {
+        const sortedPosts = sortAfterDateDesc(postsToDisplay, "date")
+        setpostsToDisplay([...sortedPosts])
+        setsortCategory('date')
+        setsortOrder('DESC')
+    }
+  }, [postsToDisplay])
 
   const sortByTitle = () => {
-    const sortedPosts = !sortOrderAsc ? sortAfterStringAsc(postsToDisplay, "title") : sortAfterStringDesc(postsToDisplay, "title")
-    setsortOrderAsc(!sortOrderAsc)
+    const sortedPosts = sortOrder === 'ASC' ? sortAfterStringAsc(postsToDisplay, "title") : sortAfterStringDesc(postsToDisplay, "title")
+    setsortOrder(sortOrder === 'ASC' ? 'DESC' : "ASC")
+    setsortCategory('title')
     setpostsToDisplay([...sortedPosts])
   }
 
   const sortByDate = () => {
-    const sortedPosts = !sortOrderAsc ? sortAfterDateAsc(postsToDisplay, 'date') : sortAfterDateDesc(postsToDisplay, 'date')
-    setsortOrderAsc(!sortOrderAsc)
+    const sortedPosts = sortOrder === 'ASC' ? sortAfterDateAsc(postsToDisplay, 'date') : sortAfterDateDesc(postsToDisplay, 'date')
+    setsortOrder(sortOrder === 'ASC' ? 'DESC' : "ASC")
+    setsortCategory('date')
     setpostsToDisplay([...sortedPosts])
   }
 
   return (
     <div className='sorterBar__container'>
-      <p>
-        {!sortOrderAsc ? " ASC" : " DESC"}
-      </p>
       <span 
-        className='globalBtn'
+        className={`globalBtn ${sortCategory === 'title' && 'globalBtnActive'}`}
         onClick={() => sortByTitle()}
-        >
-        Sort after name
+      >
+        <p>title</p>
+        {sortOrder === 'ASC' ? (
+            <HiChevronUp className='sorterIcon' />
+          ) : (
+            <HiChevronDown className='sorterIcon' />
+          )}
       </span>
       <span 
-        className='globalBtn'
+        className={`globalBtn ${sortCategory === 'date' && 'globalBtnActive'}`}
         onClick={() => sortByDate()}
       >
-        Sort after date
+        <p>date</p>
+        {sortOrder === 'ASC' ? (
+            <HiChevronUp className='sorterIcon' />
+          ) : (
+            <HiChevronDown className='sorterIcon' />
+          )}
       </span>
     </div>
   )

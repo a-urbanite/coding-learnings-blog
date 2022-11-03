@@ -19,8 +19,8 @@ const Blog = ({isAuth, setPostToEdit}: any) => {
     const postsCollectionRef = collection(db, "posts" )
     const data = await getDocs(postsCollectionRef);
     const postArr: any[] = data.docs.map((doc) => ({...doc.data(), id: doc.id}))
-    const sortedArr = sortAfterDateDesc(postArr, "date")
-    return sortedArr
+    // const sortedArr = sortAfterDateDesc(postArr, "date")
+    return postArr
   }
   
   useEffect(() => {
