@@ -103,12 +103,21 @@ body {
 }
 
 
+a {
+  color: var(--as-neonpink)
+}
 
+a:hover {
+  color: var(--as-violet)
+}
 
-
-
-
-
+.ql-syntax {
+  /* margin: 1rem; */
+  padding: 1rem;
+  background: rgb(32, 32, 32) ;
+  border: 1px solid var(--as-violet);
+  /* color: whitesmoke ; */
+}
 
 .ql-video {
   width: 100% ;

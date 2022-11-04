@@ -45,20 +45,7 @@
     /* border: 1px solid var(--as-violet); */
 }
 
-a {
-    color: var(--as-neonpink)
-}
 
-a:hover {
-    color: var(--as-violet)
-}
-
-.ql-syntax {
-    /* margin: 1rem; */
-    padding: 1rem;
-    background: rgb(78, 78, 78) ;
-    color: whitesmoke ;
-}
 
 
 
