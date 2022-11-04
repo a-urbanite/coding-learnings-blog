@@ -25,8 +25,8 @@
 .logoContainer .spanB {
   color: #d4eaff;
   text-shadow: 0 0 0 transparent, 0 0 10px #2695ff, 0 0 20px rgba(38, 149, 255, 0.5), 0 0 40px #2695ff, 0 0 100px #2695ff, 0 0 200px #2695ff, 0 0 300px #2695ff, 0 0 500px #2695ff;
-  -webkit-animation: buzz 0.01s infinite alternate;
-          animation: buzz 0.01s infinite alternate;
+  -webkit-animation: buzz 0.01s infinite alternate, blink 2s infinite alternate;
+          animation: buzz 0.01s infinite alternate, blink 2s infinite alternate;
 }
  
 @-webkit-keyframes buzz {
