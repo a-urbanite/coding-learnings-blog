@@ -1,0 +1,76 @@
+.logoContainer {
+  font-family: "neontubes";
+  text-align: center;
+  white-space: nowrap;
+  margin-bottom: 0.3rem;
+  cursor: pointer;
+}
+.logoContainer span {
+  font-size: 2rem;
+  /* display: block; */
+  /* position: relative; */
+  -webkit-transform: translateZ(0) translate3D(0, 0, 0);
+          transform: translateZ(0) translate3D(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  will-change: opacity;
+}
+.logoContainer .spanA {
+  padding-right: 1rem;
+  color: #ffd9e2;
+  text-shadow: 0 0 0 transparent, 0 0 10px #ff003c, 0 0 20px rgba(255, 0, 60, 0.5), 0 0 40px #ff003c, 0 0 100px #ff003c, 0 0 200px #ff003c, 0 0 300px #ff003c, 0 0 500px #ff003c, 0 0 1000px #ff003c;
+  -webkit-animation: blink 4s infinite alternate;
+          animation: blink 4s infinite alternate;
+}
+.logoContainer .spanB {
+  color: #d4eaff;
+  text-shadow: 0 0 0 transparent, 0 0 10px #2695ff, 0 0 20px rgba(38, 149, 255, 0.5), 0 0 40px #2695ff, 0 0 100px #2695ff, 0 0 200px #2695ff, 0 0 300px #2695ff, 0 0 500px #2695ff;
+  -webkit-animation: buzz 0.01s infinite alternate;
+          animation: buzz 0.01s infinite alternate;
+}
+ 
+@-webkit-keyframes buzz {
+  70% {
+    opacity: 0.80;
+  }
+}
+ 
+@keyframes buzz {
+  70% {
+    opacity: 0.80;
+  }
+}
+@-webkit-keyframes blink {
+  40% {
+    opacity: 1;
+  }
+  42% {
+    opacity: 0.8;
+  }
+  43% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 0.2;
+  }
+  46% {
+    opacity: 1;
+  }
+}
+@keyframes blink {
+  40% {
+    opacity: 1;
+  }
+  42% {
+    opacity: 0.8;
+  }
+  43% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 0.2;
+  }
+  46% {
+    opacity: 1;
+  }
+}

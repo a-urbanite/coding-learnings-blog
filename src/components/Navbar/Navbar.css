@@ -8,15 +8,7 @@
     background-color: var(--as-violet);
 }
 
-.blogTitle {
-    /* text-decoration: none; */
-    /* display: table-cell;
-    vertical-align: middle; */
-    /* margin: none !important; */
-}
-
 .navButtonBar {
-    /* background-color: red; */
     display: flex;
     justify-content: flex-end;
     gap: 1rem;
@@ -36,8 +28,6 @@
     text-decoration: none;
     padding-left: 1rem;
     padding-right: 1rem;
-    /* margin: 0;
-    margin-right: 0.3rem; */
 }
 
 .mainNav__link:hover {
@@ -45,35 +35,3 @@
     color: var(--as-darkGrey);
     cursor: pointer;
 }
-
-
-
-/* @media only screen and (min-width: 601px) and (max-width: 900px) {
-
-    .mainNav {
-        width: 85%;
-        margin-left: 10%;
-        margin-right: 5%;
-    }
-
-    .mainNav__link {
-        font-size: 1.5rem;
-        margin-right: 1.0rem;
-    }
-
-} */
-
-/* @media only screen and (min-width: 901px) { 
-
-    .mainNav {
-        width: 80%;
-        margin-left: 15%;
-        margin-right: 5%;
-    }
-
-    .mainNav__link {
-        font-size: 1.5rem;
-        margin-right: 1.0rem;
-    }
-
-} */
