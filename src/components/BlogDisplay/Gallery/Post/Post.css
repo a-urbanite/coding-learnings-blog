@@ -45,6 +45,11 @@
     /* border: 1px solid var(--as-violet); */
 }
 
+.post__buttonContainer {
+    display: flex;
+    gap: 1rem;
+}
+
 
 
 

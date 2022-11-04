@@ -38,13 +38,13 @@ const Blog = ({isAuth, setPostToEdit}: any) => {
           postList={postList}
           setpostsToDisplay={setpostsToDisplay}
         />
+        <Sidebar 
+          currentPageContents={currentPageContents} 
+        />
         <KeywordsUI 
           postList={postList}
           postsToDisplay={postsToDisplay}
           setpostsToDisplay={setpostsToDisplay}
-        />
-        <Sidebar 
-          currentPageContents={currentPageContents} 
         />
       </div>
       <div className='blog__columnB'>

@@ -116,6 +116,8 @@ a:hover {
   padding: 1rem;
   background: rgb(32, 32, 32) ;
   border: 1px solid var(--as-violet);
+  white-space: normal;
+  word-wrap: break-word;
   /* color: whitesmoke ; */
 }
 
