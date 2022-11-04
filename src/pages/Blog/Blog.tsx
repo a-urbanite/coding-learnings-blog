@@ -3,7 +3,6 @@ import { collection, getDocs } from 'firebase/firestore'
 import { db } from '../../firebase-config';
 import './Blog.css'
 import Sidebar from '../../components/BlogDisplay/Sidebar/Sidebar';
-import { sortAfterDateDesc } from './sorters';
 import KeywordsUI from '../../components/BlogDisplay/KeywordsUI/KeywordsUI';
 import Gallery from '../../components/BlogDisplay/Gallery/Gallery';
 import SearchBar from '../../components/BlogDisplay/SearchBar/SearchBar';
@@ -13,13 +12,13 @@ import Pagination from '../../components/BlogDisplay/Pagination/Pagination';
 const Blog = ({isAuth, setPostToEdit}: any) => {
   const [postList, setPostList] = useState<any>([]);
   const [postsToDisplay, setpostsToDisplay] = useState<any>([]);
+  const [currentPage, setcurrentPage] = useState(1);
   const [currentPageContents, setcurrentPageContents] = useState<any>([])
   
   const fetchPosts = async () => {
     const postsCollectionRef = collection(db, "posts" )
     const data = await getDocs(postsCollectionRef);
     const postArr: any[] = data.docs.map((doc) => ({...doc.data(), id: doc.id}))
-    // const sortedArr = sortAfterDateDesc(postArr, "date")
     return postArr
   }
   
@@ -52,6 +51,8 @@ const Blog = ({isAuth, setPostToEdit}: any) => {
           <Pagination 
             postsToDisplay={postsToDisplay}
             setcurrentPageContents={setcurrentPageContents}
+            currentPage={currentPage}
+            setcurrentPage={setcurrentPage}
           />
           <SorterBar 
             postsToDisplay={postsToDisplay}
@@ -63,6 +64,14 @@ const Blog = ({isAuth, setPostToEdit}: any) => {
           isAuth={isAuth}
           setPostToEdit={setPostToEdit}
         />
+        <div className='galleryFooterBar'>
+          <Pagination 
+            postsToDisplay={postsToDisplay}
+            setcurrentPageContents={setcurrentPageContents}
+            currentPage={currentPage}
+            setcurrentPage={setcurrentPage}
+          />
+        </div>
       </div>
     </div>
   )
