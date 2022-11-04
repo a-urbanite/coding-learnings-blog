@@ -1,0 +1,10 @@
+.impressumContainer {
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  width: 50%;
+  margin-left: 0;
+  margin-right: auto;
+}

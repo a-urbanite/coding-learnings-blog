@@ -12,6 +12,8 @@ import Settings from './pages/Settings/Settings';
 import ArticlePage from './pages/ArticlePage/ArticlePage'
 import './styles/globalVars.css'
 import './styles/globalButtons.css'
+import FooterBar from './components/FooterBar/FooterBar';
+import Impressum from './pages/Impressum/Impressum';
 
 function App() {
   const [isAuth, setIsAuth] = useState<any>(localStorage.getItem('isAuth'));
@@ -28,15 +30,19 @@ function App() {
   return (
     <Router>
       <Navbar isAuth={isAuth} setIsAuth={setIsAuth} signUserOut={signUserOut}></Navbar>
-      <Routes>
-        <Route path="/" element={<Blog isAuth={isAuth} setPostToEdit={setPostToEdit}/>}/>
-          <Route path='/blog/:id' element={<ArticlePage />}/>
-        <Route path="/createpost" element={<CreatePost isAuth={isAuth}/>} />
-        <Route path="/editpost" element={<EditPost isAuth={isAuth} postToEdit={postToEdit}/>}/>
-        <Route path="/login" element={<Login setIsAuth={setIsAuth}/>} />
-        <Route path="/signup" element={<SignUp/>} />
-        <Route path="/settings" element={<Settings isAuth={isAuth}/>} />
-      </Routes>
+      <div className='pageWrapper'>
+        <Routes>
+          <Route path="/" element={<Blog isAuth={isAuth} setPostToEdit={setPostToEdit}/>}/>
+            <Route path='/blog/:id' element={<ArticlePage />}/>
+          <Route path="/createpost" element={<CreatePost isAuth={isAuth}/>} />
+          <Route path="/editpost" element={<EditPost isAuth={isAuth} postToEdit={postToEdit}/>}/>
+          <Route path="/login" element={<Login setIsAuth={setIsAuth}/>} />
+          <Route path="/signup" element={<SignUp/>} />
+          <Route path="/settings" element={<Settings isAuth={isAuth}/>} />
+          <Route path="/impressum" element={<Impressum/>} />
+        </Routes>
+      </div>
+      <FooterBar/>
     </Router>
   );
 }
